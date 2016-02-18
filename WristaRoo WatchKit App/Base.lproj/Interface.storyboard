@@ -20,7 +20,7 @@
                                     </group>
                                     <connections>
                                         <outlet property="interfaceLabel" destination="NEc-Ho-ZK5" id="Vee-gJ-Ylg"/>
-                                        <segue destination="KiU-8d-y3j" kind="push" id="NDj-i3-8IL"/>
+                                        <segue destination="KiU-8d-y3j" kind="modal" identifier="showSchedule" id="NDj-i3-8IL"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -48,7 +48,7 @@
                                     </group>
                                     <connections>
                                         <outlet property="dayLabel" destination="CLD-rq-eIX" id="ph7-n6-FBg"/>
-                                        <segue destination="ArA-9e-8bL" kind="push" id="cL7-6V-8TD"/>
+                                        <segue destination="ArA-9e-8bL" kind="modal" identifier="showDays" id="cL7-6V-8TD"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -76,7 +76,7 @@
                                     </group>
                                     <connections>
                                         <outlet property="choiceLabel" destination="AB7-56-qJR" id="a1h-9E-deS"/>
-                                        <segue destination="aGw-W6-f5P" kind="push" id="jQS-TP-Tlc"/>
+                                        <segue destination="aGw-W6-f5P" kind="modal" identifier="showChoices" id="jQS-TP-Tlc"/>
                                     </connections>
                                 </tableRow>
                             </items>

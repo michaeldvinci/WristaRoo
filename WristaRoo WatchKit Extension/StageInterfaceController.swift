@@ -12,23 +12,87 @@ class StageInterfaceController: WKInterfaceController {
     
     @IBOutlet var stageTable: WKInterfaceTable!
     
-    let stage = ["What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent", "Silent Disco", "Christmas Barn"]
+    let stageTh = ["What Stage    Th", "Which Stage    Th", "This Tent    Th", "That Tent    Th", "The Other Tent    Th", "Silent Disco    Th", "Christmas Barn    Th"]
+    let stageFr = ["What Stage    Fr", "Which Stage    Fr", "This Tent    Fr", "That Tent    Fr", "The Other Tent    Fr", "Silent Disco    Fr", "Christmas Barn    Fr"]
+    let stageSa = ["What Stage    Sa", "Which Stage    Sa", "This Tent    Sa", "That Tent    Sa", "The Other Tent    Sa", "Silent Disco    Sa", "Christmas Barn    Sa"]
+    let stageSu = ["What Stage    Su", "Which Stage    Su", "This Tent    Su", "That Tent    Su", "The Other Tent    Su", "Silent Disco    Su", "Christmas Barn    Su"]
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        loadTableData()
+        guard let context = context as? String else {
+            return
+        }
+        
+        if context == "By Stage    Th" {
+            loadThStage()
+            MyVariables.yourVariable = "sth"
+        } else if context == "By Stage    Fr" {
+            loadFrStage()
+            MyVariables.yourVariable = "sfr"
+        } else if context == "By Stage    Sa" {
+            loadSaStage()
+            MyVariables.yourVariable = "ssa"
+        } else if context == "By Stage    Su" {
+            loadSuStage()
+            MyVariables.yourVariable = "ssu"
+        }
+        
     }
     
-    private func loadTableData() {
+    struct MyVariables {
+        static var yourVariable = "someString"
+    }
         
-        stageTable.setNumberOfRows(stage.count, withRowType: "StageTableRowController")
+    
+    private func loadThStage() {
         
-        for (index, stageName) in stage.enumerate() {
+        stageTable.setNumberOfRows(stageTh.count, withRowType: "StageTableRowController")
+        
+        for (index, stageThName) in stageTh.enumerate() {
             
             let row3 = stageTable.rowControllerAtIndex(index) as! StageTableRowController
             
-            row3.stageLabel.setText(stageName)
+            row3.stageLabel.setText(stageThName)
+        }
+        
+    }
+    
+    private func loadFrStage() {
+        
+        stageTable.setNumberOfRows(stageFr.count, withRowType: "StageTableRowController")
+        
+        for (index, stageFrName) in stageFr.enumerate() {
+            
+            let row3 = stageTable.rowControllerAtIndex(index) as! StageTableRowController
+            
+            row3.stageLabel.setText(stageFrName)
+        }
+        
+    }
+    
+    private func loadSaStage() {
+        
+        stageTable.setNumberOfRows(stageSa.count, withRowType: "StageTableRowController")
+        
+        for (index, stageSaName) in stageSa.enumerate() {
+            
+            let row3 = stageTable.rowControllerAtIndex(index) as! StageTableRowController
+            
+            row3.stageLabel.setText(stageSaName)
+        }
+        
+    }
+    
+    private func loadSuStage() {
+        
+        stageTable.setNumberOfRows(stageSu.count, withRowType: "StageTableRowController")
+        
+        for (index, stageSuName) in stageSu.enumerate() {
+            
+            let row3 = stageTable.rowControllerAtIndex(index) as! StageTableRowController
+            
+            row3.stageLabel.setText(stageSuName)
         }
         
     }
@@ -36,7 +100,7 @@ class StageInterfaceController: WKInterfaceController {
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject?
     {
         
-        let stageName = stage[rowIndex]
+        let stageName = stageTh[rowIndex]
         return stageName
     }
     

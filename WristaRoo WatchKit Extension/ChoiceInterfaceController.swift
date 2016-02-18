@@ -12,24 +12,86 @@ class ChoiceInterfaceController: WKInterfaceController {
 
     @IBOutlet var choiceTable: WKInterfaceTable!
     
-    let choice = ["By Time", "By Stage"]
+    let thChoice = ["By Time    Th", "By Stage    Th"]
+    let frChoice = ["By Time    Fr", "By Stage    Fr"]
+    let saChoice = ["By Time    Sa", "By Stage    Sa"]
+    let suChoice = ["By Time    Su", "By Stage    Su"]
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        loadTableData()
+        guard let context = context as? String else {
+            return
+        }
+        
+        if context == "Thursday" {
+            loadThChoices()
+            MyVariables.yourVariable = "thurs"
+        } else if context == "Friday" {
+            loadFrChoices()
+            MyVariables.yourVariable = "fri"
+        } else if context == "Saturday" {
+            loadSaChoices()
+            MyVariables.yourVariable = "sat"
+        } else if context == "Sunday" {
+            loadSuChoices()
+            MyVariables.yourVariable = "sun"
+        }
         
     }
     
-    private func loadTableData() {
+    struct MyVariables {
+        static var yourVariable = "someString"
+    }
+    
+    private func loadThChoices() {
         
-        choiceTable.setNumberOfRows(choice.count, withRowType: "ChoiceTableRowController")
+        choiceTable.setNumberOfRows(thChoice.count, withRowType: "ChoiceTableRowController")
         
-        for (index, choiceName) in choice.enumerate() {
+        for (index, thName) in thChoice.enumerate() {
             
             let row2 = choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
             
-            row2.choiceLabel.setText(choiceName)
+            row2.choiceLabel.setText(thName)
+        }
+        
+    }
+    
+    private func loadFrChoices() {
+        
+        choiceTable.setNumberOfRows(frChoice.count, withRowType: "ChoiceTableRowController")
+        
+        for (index, frName) in frChoice.enumerate() {
+            
+            let row2 = choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
+            
+            row2.choiceLabel.setText(frName)
+        }
+        
+    }
+    
+    private func loadSaChoices() {
+        
+        choiceTable.setNumberOfRows(saChoice.count, withRowType: "ChoiceTableRowController")
+        
+        for (index, saName) in saChoice.enumerate() {
+            
+            let row2 = choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
+            
+            row2.choiceLabel.setText(saName)
+        }
+        
+    }
+    
+    private func loadSuChoices() {
+        
+        choiceTable.setNumberOfRows(suChoice.count, withRowType: "ChoiceTableRowController")
+        
+        for (index, suName) in suChoice.enumerate() {
+            
+            let row2 = choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
+            
+            row2.choiceLabel.setText(suName)
         }
         
     }
@@ -37,8 +99,24 @@ class ChoiceInterfaceController: WKInterfaceController {
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject?
     {
         
-        let choiceName = choice[rowIndex]
-        return choiceName
+        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "thurs"{
+            let dayName = thChoice[rowIndex]
+            return dayName
+        }
+        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "fri"{
+            let dayName = frChoice[rowIndex]
+            return dayName
+        }
+        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "sat"{
+            let dayName = saChoice[rowIndex]
+            return dayName
+        }
+        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "sun"{
+            let dayName = suChoice[rowIndex]
+            return dayName
+        }
+        
+        return nil
         
     }
     

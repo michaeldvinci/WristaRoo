@@ -34,11 +34,15 @@ class InterfaceController: WKInterfaceController {
         
     }
     
-    override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject?
-    {
+    override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
         
-        let mainName = mains[rowIndex]
-        return mainName
+        if segueIdentifier == "showSchedule" {
+            let mainName = mains[rowIndex]
+            return mainName
+        }
+        
+        return nil
+    
     }
     
     
