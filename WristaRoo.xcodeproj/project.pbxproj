@@ -1,0 +1,772 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F5E19FC01C756409007653F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19FBF1C756409007653F6 /* AppDelegate.swift */; };
+		F5E19FC21C756409007653F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19FC11C756409007653F6 /* ViewController.swift */; };
+		F5E19FC51C756409007653F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E19FC31C756409007653F6 /* Main.storyboard */; };
+		F5E19FC71C756409007653F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E19FC61C756409007653F6 /* Assets.xcassets */; };
+		F5E19FCA1C756409007653F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E19FC81C756409007653F6 /* LaunchScreen.storyboard */; };
+		F5E19FD51C756409007653F6 /* WristaRooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19FD41C756409007653F6 /* WristaRooTests.swift */; };
+		F5E19FE01C756409007653F6 /* WristaRooUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19FDF1C756409007653F6 /* WristaRooUITests.swift */; };
+		F5E19FE51C756409007653F6 /* WristaRoo WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F5E19FE41C756409007653F6 /* WristaRoo WatchKit App.app */; };
+		F5E19FEB1C756409007653F6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E19FE91C756409007653F6 /* Interface.storyboard */; };
+		F5E19FED1C756409007653F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E19FEC1C756409007653F6 /* Assets.xcassets */; };
+		F5E19FF41C75640A007653F6 /* WristaRoo WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F5E19FF31C75640A007653F6 /* WristaRoo WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F5E19FFB1C75640A007653F6 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19FFA1C75640A007653F6 /* InterfaceController.swift */; };
+		F5E19FFD1C75640A007653F6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19FFC1C75640A007653F6 /* ExtensionDelegate.swift */; };
+		F5E19FFF1C75640A007653F6 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19FFE1C75640A007653F6 /* NotificationController.swift */; };
+		F5E1A0011C75640A007653F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A0001C75640A007653F6 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F5E19FD11C756409007653F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5E19FB41C756409007653F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5E19FBB1C756409007653F6;
+			remoteInfo = WristaRoo;
+		};
+		F5E19FDC1C756409007653F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5E19FB41C756409007653F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5E19FBB1C756409007653F6;
+			remoteInfo = WristaRoo;
+		};
+		F5E19FE61C756409007653F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5E19FB41C756409007653F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5E19FE31C756409007653F6;
+			remoteInfo = "WristaRoo WatchKit App";
+		};
+		F5E19FF51C75640A007653F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5E19FB41C756409007653F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5E19FF21C75640A007653F6;
+			remoteInfo = "WristaRoo WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F5E1A0081C75640A007653F6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F5E19FF41C75640A007653F6 /* WristaRoo WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E1A00C1C75640A007653F6 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F5E19FE51C756409007653F6 /* WristaRoo WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F5E19FBC1C756409007653F6 /* WristaRoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WristaRoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5E19FBF1C756409007653F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F5E19FC11C756409007653F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F5E19FC41C756409007653F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F5E19FC61C756409007653F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5E19FC91C756409007653F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F5E19FCB1C756409007653F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5E19FD01C756409007653F6 /* WristaRooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WristaRooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5E19FD41C756409007653F6 /* WristaRooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WristaRooTests.swift; sourceTree = "<group>"; };
+		F5E19FD61C756409007653F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5E19FDB1C756409007653F6 /* WristaRooUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WristaRooUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5E19FDF1C756409007653F6 /* WristaRooUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WristaRooUITests.swift; sourceTree = "<group>"; };
+		F5E19FE11C756409007653F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5E19FE41C756409007653F6 /* WristaRoo WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WristaRoo WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5E19FEA1C756409007653F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		F5E19FEC1C756409007653F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5E19FEE1C756409007653F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5E19FF31C75640A007653F6 /* WristaRoo WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WristaRoo WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5E19FF91C75640A007653F6 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		F5E19FFA1C75640A007653F6 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		F5E19FFC1C75640A007653F6 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		F5E19FFE1C75640A007653F6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		F5E1A0001C75640A007653F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5E1A0021C75640A007653F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F5E19FB91C756409007653F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E19FCD1C756409007653F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E19FD81C756409007653F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E19FF01C75640A007653F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F5E19FB31C756409007653F6 = {
+			isa = PBXGroup;
+			children = (
+				F5E19FBE1C756409007653F6 /* WristaRoo */,
+				F5E19FD31C756409007653F6 /* WristaRooTests */,
+				F5E19FDE1C756409007653F6 /* WristaRooUITests */,
+				F5E19FE81C756409007653F6 /* WristaRoo WatchKit App */,
+				F5E19FF71C75640A007653F6 /* WristaRoo WatchKit Extension */,
+				F5E19FBD1C756409007653F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F5E19FBD1C756409007653F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5E19FBC1C756409007653F6 /* WristaRoo.app */,
+				F5E19FD01C756409007653F6 /* WristaRooTests.xctest */,
+				F5E19FDB1C756409007653F6 /* WristaRooUITests.xctest */,
+				F5E19FE41C756409007653F6 /* WristaRoo WatchKit App.app */,
+				F5E19FF31C75640A007653F6 /* WristaRoo WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5E19FBE1C756409007653F6 /* WristaRoo */ = {
+			isa = PBXGroup;
+			children = (
+				F5E19FBF1C756409007653F6 /* AppDelegate.swift */,
+				F5E19FC11C756409007653F6 /* ViewController.swift */,
+				F5E19FC31C756409007653F6 /* Main.storyboard */,
+				F5E19FC61C756409007653F6 /* Assets.xcassets */,
+				F5E19FC81C756409007653F6 /* LaunchScreen.storyboard */,
+				F5E19FCB1C756409007653F6 /* Info.plist */,
+			);
+			path = WristaRoo;
+			sourceTree = "<group>";
+		};
+		F5E19FD31C756409007653F6 /* WristaRooTests */ = {
+			isa = PBXGroup;
+			children = (
+				F5E19FD41C756409007653F6 /* WristaRooTests.swift */,
+				F5E19FD61C756409007653F6 /* Info.plist */,
+			);
+			path = WristaRooTests;
+			sourceTree = "<group>";
+		};
+		F5E19FDE1C756409007653F6 /* WristaRooUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F5E19FDF1C756409007653F6 /* WristaRooUITests.swift */,
+				F5E19FE11C756409007653F6 /* Info.plist */,
+			);
+			path = WristaRooUITests;
+			sourceTree = "<group>";
+		};
+		F5E19FE81C756409007653F6 /* WristaRoo WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				F5E19FE91C756409007653F6 /* Interface.storyboard */,
+				F5E19FEC1C756409007653F6 /* Assets.xcassets */,
+				F5E19FEE1C756409007653F6 /* Info.plist */,
+			);
+			path = "WristaRoo WatchKit App";
+			sourceTree = "<group>";
+		};
+		F5E19FF71C75640A007653F6 /* WristaRoo WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F5E19FFA1C75640A007653F6 /* InterfaceController.swift */,
+				F5E19FFC1C75640A007653F6 /* ExtensionDelegate.swift */,
+				F5E19FFE1C75640A007653F6 /* NotificationController.swift */,
+				F5E1A0001C75640A007653F6 /* Assets.xcassets */,
+				F5E1A0021C75640A007653F6 /* Info.plist */,
+				F5E19FF81C75640A007653F6 /* Supporting Files */,
+			);
+			path = "WristaRoo WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		F5E19FF81C75640A007653F6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5E19FF91C75640A007653F6 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F5E19FBB1C756409007653F6 /* WristaRoo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5E1A00D1C75640A007653F6 /* Build configuration list for PBXNativeTarget "WristaRoo" */;
+			buildPhases = (
+				F5E19FB81C756409007653F6 /* Sources */,
+				F5E19FB91C756409007653F6 /* Frameworks */,
+				F5E19FBA1C756409007653F6 /* Resources */,
+				F5E1A00C1C75640A007653F6 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5E19FE71C756409007653F6 /* PBXTargetDependency */,
+			);
+			name = WristaRoo;
+			productName = WristaRoo;
+			productReference = F5E19FBC1C756409007653F6 /* WristaRoo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F5E19FCF1C756409007653F6 /* WristaRooTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5E1A0101C75640A007653F6 /* Build configuration list for PBXNativeTarget "WristaRooTests" */;
+			buildPhases = (
+				F5E19FCC1C756409007653F6 /* Sources */,
+				F5E19FCD1C756409007653F6 /* Frameworks */,
+				F5E19FCE1C756409007653F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5E19FD21C756409007653F6 /* PBXTargetDependency */,
+			);
+			name = WristaRooTests;
+			productName = WristaRooTests;
+			productReference = F5E19FD01C756409007653F6 /* WristaRooTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F5E19FDA1C756409007653F6 /* WristaRooUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5E1A0131C75640A007653F6 /* Build configuration list for PBXNativeTarget "WristaRooUITests" */;
+			buildPhases = (
+				F5E19FD71C756409007653F6 /* Sources */,
+				F5E19FD81C756409007653F6 /* Frameworks */,
+				F5E19FD91C756409007653F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5E19FDD1C756409007653F6 /* PBXTargetDependency */,
+			);
+			name = WristaRooUITests;
+			productName = WristaRooUITests;
+			productReference = F5E19FDB1C756409007653F6 /* WristaRooUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		F5E19FE31C756409007653F6 /* WristaRoo WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5E1A0091C75640A007653F6 /* Build configuration list for PBXNativeTarget "WristaRoo WatchKit App" */;
+			buildPhases = (
+				F5E19FE21C756409007653F6 /* Resources */,
+				F5E1A0081C75640A007653F6 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5E19FF61C75640A007653F6 /* PBXTargetDependency */,
+			);
+			name = "WristaRoo WatchKit App";
+			productName = "WristaRoo WatchKit App";
+			productReference = F5E19FE41C756409007653F6 /* WristaRoo WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		F5E19FF21C75640A007653F6 /* WristaRoo WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5E1A0051C75640A007653F6 /* Build configuration list for PBXNativeTarget "WristaRoo WatchKit Extension" */;
+			buildPhases = (
+				F5E19FEF1C75640A007653F6 /* Sources */,
+				F5E19FF01C75640A007653F6 /* Frameworks */,
+				F5E19FF11C75640A007653F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WristaRoo WatchKit Extension";
+			productName = "WristaRoo WatchKit Extension";
+			productReference = F5E19FF31C75640A007653F6 /* WristaRoo WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5E19FB41C756409007653F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Michael Vinci";
+				TargetAttributes = {
+					F5E19FBB1C756409007653F6 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					F5E19FCF1C756409007653F6 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = F5E19FBB1C756409007653F6;
+					};
+					F5E19FDA1C756409007653F6 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = F5E19FBB1C756409007653F6;
+					};
+					F5E19FE31C756409007653F6 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					F5E19FF21C75640A007653F6 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = F5E19FB71C756409007653F6 /* Build configuration list for PBXProject "WristaRoo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F5E19FB31C756409007653F6;
+			productRefGroup = F5E19FBD1C756409007653F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5E19FBB1C756409007653F6 /* WristaRoo */,
+				F5E19FCF1C756409007653F6 /* WristaRooTests */,
+				F5E19FDA1C756409007653F6 /* WristaRooUITests */,
+				F5E19FE31C756409007653F6 /* WristaRoo WatchKit App */,
+				F5E19FF21C75640A007653F6 /* WristaRoo WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F5E19FBA1C756409007653F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5E19FCA1C756409007653F6 /* LaunchScreen.storyboard in Resources */,
+				F5E19FC71C756409007653F6 /* Assets.xcassets in Resources */,
+				F5E19FC51C756409007653F6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E19FCE1C756409007653F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E19FD91C756409007653F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E19FE21C756409007653F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5E19FED1C756409007653F6 /* Assets.xcassets in Resources */,
+				F5E19FEB1C756409007653F6 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E19FF11C75640A007653F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5E1A0011C75640A007653F6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F5E19FB81C756409007653F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5E19FC21C756409007653F6 /* ViewController.swift in Sources */,
+				F5E19FC01C756409007653F6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E19FCC1C756409007653F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5E19FD51C756409007653F6 /* WristaRooTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E19FD71C756409007653F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5E19FE01C756409007653F6 /* WristaRooUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E19FEF1C75640A007653F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5E19FFF1C75640A007653F6 /* NotificationController.swift in Sources */,
+				F5E19FFD1C75640A007653F6 /* ExtensionDelegate.swift in Sources */,
+				F5E19FFB1C75640A007653F6 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F5E19FD21C756409007653F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5E19FBB1C756409007653F6 /* WristaRoo */;
+			targetProxy = F5E19FD11C756409007653F6 /* PBXContainerItemProxy */;
+		};
+		F5E19FDD1C756409007653F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5E19FBB1C756409007653F6 /* WristaRoo */;
+			targetProxy = F5E19FDC1C756409007653F6 /* PBXContainerItemProxy */;
+		};
+		F5E19FE71C756409007653F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5E19FE31C756409007653F6 /* WristaRoo WatchKit App */;
+			targetProxy = F5E19FE61C756409007653F6 /* PBXContainerItemProxy */;
+		};
+		F5E19FF61C75640A007653F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5E19FF21C75640A007653F6 /* WristaRoo WatchKit Extension */;
+			targetProxy = F5E19FF51C75640A007653F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F5E19FC31C756409007653F6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5E19FC41C756409007653F6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F5E19FC81C756409007653F6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5E19FC91C756409007653F6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F5E19FE91C756409007653F6 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5E19FEA1C756409007653F6 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F5E1A0031C75640A007653F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F5E1A0041C75640A007653F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5E1A0061C75640A007653F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "WristaRoo WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRoo.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		F5E1A0071C75640A007653F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "WristaRoo WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRoo.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		F5E1A00A1C75640A007653F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = WristaRoo_WatchKit_Extension;
+				INFOPLIST_FILE = "WristaRoo WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRoo.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		F5E1A00B1C75640A007653F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = WristaRoo_WatchKit_Extension;
+				INFOPLIST_FILE = "WristaRoo WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRoo.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		F5E1A00E1C75640A007653F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WristaRoo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRoo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F5E1A00F1C75640A007653F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WristaRoo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRoo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F5E1A0111C75640A007653F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WristaRooTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRooTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WristaRoo.app/WristaRoo";
+			};
+			name = Debug;
+		};
+		F5E1A0121C75640A007653F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WristaRooTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRooTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WristaRoo.app/WristaRoo";
+			};
+			name = Release;
+		};
+		F5E1A0141C75640A007653F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WristaRooUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRooUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WristaRoo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		F5E1A0151C75640A007653F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WristaRooUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRooUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WristaRoo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F5E19FB71C756409007653F6 /* Build configuration list for PBXProject "WristaRoo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5E1A0031C75640A007653F6 /* Debug */,
+				F5E1A0041C75640A007653F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5E1A0051C75640A007653F6 /* Build configuration list for PBXNativeTarget "WristaRoo WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5E1A0061C75640A007653F6 /* Debug */,
+				F5E1A0071C75640A007653F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F5E1A0091C75640A007653F6 /* Build configuration list for PBXNativeTarget "WristaRoo WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5E1A00A1C75640A007653F6 /* Debug */,
+				F5E1A00B1C75640A007653F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F5E1A00D1C75640A007653F6 /* Build configuration list for PBXNativeTarget "WristaRoo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5E1A00E1C75640A007653F6 /* Debug */,
+				F5E1A00F1C75640A007653F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F5E1A0101C75640A007653F6 /* Build configuration list for PBXNativeTarget "WristaRooTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5E1A0111C75640A007653F6 /* Debug */,
+				F5E1A0121C75640A007653F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F5E1A0131C75640A007653F6 /* Build configuration list for PBXNativeTarget "WristaRooUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5E1A0141C75640A007653F6 /* Debug */,
+				F5E1A0151C75640A007653F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F5E19FB41C756409007653F6 /* Project object */;
+}
