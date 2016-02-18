@@ -22,6 +22,13 @@
 		F5E19FFD1C75640A007653F6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19FFC1C75640A007653F6 /* ExtensionDelegate.swift */; };
 		F5E19FFF1C75640A007653F6 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19FFE1C75640A007653F6 /* NotificationController.swift */; };
 		F5E1A0011C75640A007653F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E1A0001C75640A007653F6 /* Assets.xcassets */; };
+		F5E1A0171C7564A9007653F6 /* InterfaceTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A0161C7564A9007653F6 /* InterfaceTableRowController.swift */; };
+		F5E1A0191C756583007653F6 /* DayInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A0181C756583007653F6 /* DayInterfaceController.swift */; };
+		F5E1A01B1C7565D2007653F6 /* DayTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A01A1C7565D2007653F6 /* DayTableRowController.swift */; };
+		F5E1A01F1C75669E007653F6 /* ChoiceInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A01E1C75669E007653F6 /* ChoiceInterfaceController.swift */; };
+		F5E1A0211C7566B8007653F6 /* ChoiceTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A0201C7566B8007653F6 /* ChoiceTableRowController.swift */; };
+		F5E1A0251C756758007653F6 /* StageInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A0241C756758007653F6 /* StageInterfaceController.swift */; };
+		F5E1A0271C75676E007653F6 /* StageTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A0261C75676E007653F6 /* StageTableRowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +112,13 @@
 		F5E19FFE1C75640A007653F6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		F5E1A0001C75640A007653F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5E1A0021C75640A007653F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5E1A0161C7564A9007653F6 /* InterfaceTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceTableRowController.swift; sourceTree = "<group>"; };
+		F5E1A0181C756583007653F6 /* DayInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayInterfaceController.swift; sourceTree = "<group>"; };
+		F5E1A01A1C7565D2007653F6 /* DayTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableRowController.swift; sourceTree = "<group>"; };
+		F5E1A01E1C75669E007653F6 /* ChoiceInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceInterfaceController.swift; sourceTree = "<group>"; };
+		F5E1A0201C7566B8007653F6 /* ChoiceTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceTableRowController.swift; sourceTree = "<group>"; };
+		F5E1A0241C756758007653F6 /* StageInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageInterfaceController.swift; sourceTree = "<group>"; };
+		F5E1A0261C75676E007653F6 /* StageTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageTableRowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +222,13 @@
 			isa = PBXGroup;
 			children = (
 				F5E19FFA1C75640A007653F6 /* InterfaceController.swift */,
+				F5E1A0181C756583007653F6 /* DayInterfaceController.swift */,
+				F5E1A01E1C75669E007653F6 /* ChoiceInterfaceController.swift */,
+				F5E1A0241C756758007653F6 /* StageInterfaceController.swift */,
+				F5E1A0161C7564A9007653F6 /* InterfaceTableRowController.swift */,
+				F5E1A01A1C7565D2007653F6 /* DayTableRowController.swift */,
+				F5E1A0201C7566B8007653F6 /* ChoiceTableRowController.swift */,
+				F5E1A0261C75676E007653F6 /* StageTableRowController.swift */,
 				F5E19FFC1C75640A007653F6 /* ExtensionDelegate.swift */,
 				F5E19FFE1C75640A007653F6 /* NotificationController.swift */,
 				F5E1A0001C75640A007653F6 /* Assets.xcassets */,
@@ -442,9 +463,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5E1A0251C756758007653F6 /* StageInterfaceController.swift in Sources */,
+				F5E1A0211C7566B8007653F6 /* ChoiceTableRowController.swift in Sources */,
+				F5E1A01F1C75669E007653F6 /* ChoiceInterfaceController.swift in Sources */,
 				F5E19FFF1C75640A007653F6 /* NotificationController.swift in Sources */,
+				F5E1A0271C75676E007653F6 /* StageTableRowController.swift in Sources */,
 				F5E19FFD1C75640A007653F6 /* ExtensionDelegate.swift in Sources */,
+				F5E1A0191C756583007653F6 /* DayInterfaceController.swift in Sources */,
 				F5E19FFB1C75640A007653F6 /* InterfaceController.swift in Sources */,
+				F5E1A01B1C7565D2007653F6 /* DayTableRowController.swift in Sources */,
+				F5E1A0171C7564A9007653F6 /* InterfaceTableRowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

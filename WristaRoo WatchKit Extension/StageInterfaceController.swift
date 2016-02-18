@@ -1,5 +1,5 @@
 //
-//  InterfaceController.swift
+//  StageInterfaceController.swift
 //  AppleRoo WatchKit Extension
 //
 //  Created by Michael Vinci on 2/17/16.
@@ -8,12 +8,11 @@
 
 import WatchKit
 
-class InterfaceController: WKInterfaceController {
+class StageInterfaceController: WKInterfaceController {
     
+    @IBOutlet var stageTable: WKInterfaceTable!
     
-    @IBOutlet var mainTable: WKInterfaceTable!
-    
-    let mains = ["Full Schedule", "Custom Sched."]
+    let stage = ["What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent", "Silent Disco", "Christmas Barn"]
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -23,13 +22,13 @@ class InterfaceController: WKInterfaceController {
     
     private func loadTableData() {
         
-        mainTable.setNumberOfRows(mains.count, withRowType: "InterfaceTableRowController")
+        stageTable.setNumberOfRows(stage.count, withRowType: "StageTableRowController")
         
-        for (index, mainName) in mains.enumerate() {
+        for (index, stageName) in stage.enumerate() {
             
-            let row = mainTable.rowControllerAtIndex(index) as! InterfaceTableRowController
+            let row3 = stageTable.rowControllerAtIndex(index) as! StageTableRowController
             
-            row.interfaceLabel.setText(mainName)
+            row3.stageLabel.setText(stageName)
         }
         
     }
@@ -37,8 +36,8 @@ class InterfaceController: WKInterfaceController {
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject?
     {
         
-        let mainName = mains[rowIndex]
-        return mainName
+        let stageName = stage[rowIndex]
+        return stageName
     }
     
     

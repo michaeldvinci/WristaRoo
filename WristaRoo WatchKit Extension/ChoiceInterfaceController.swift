@@ -8,28 +8,28 @@
 
 import WatchKit
 
-class InterfaceController: WKInterfaceController {
+class ChoiceInterfaceController: WKInterfaceController {
+
+    @IBOutlet var choiceTable: WKInterfaceTable!
     
-    
-    @IBOutlet var mainTable: WKInterfaceTable!
-    
-    let mains = ["Full Schedule", "Custom Sched."]
+    let choice = ["By Time", "By Stage"]
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
         loadTableData()
+        
     }
     
     private func loadTableData() {
         
-        mainTable.setNumberOfRows(mains.count, withRowType: "InterfaceTableRowController")
+        choiceTable.setNumberOfRows(choice.count, withRowType: "ChoiceTableRowController")
         
-        for (index, mainName) in mains.enumerate() {
+        for (index, choiceName) in choice.enumerate() {
             
-            let row = mainTable.rowControllerAtIndex(index) as! InterfaceTableRowController
+            let row2 = choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
             
-            row.interfaceLabel.setText(mainName)
+            row2.choiceLabel.setText(choiceName)
         }
         
     }
@@ -37,8 +37,9 @@ class InterfaceController: WKInterfaceController {
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject?
     {
         
-        let mainName = mains[rowIndex]
-        return mainName
+        let choiceName = choice[rowIndex]
+        return choiceName
+        
     }
     
     

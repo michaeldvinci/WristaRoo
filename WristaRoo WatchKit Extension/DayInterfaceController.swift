@@ -8,12 +8,11 @@
 
 import WatchKit
 
-class InterfaceController: WKInterfaceController {
+class DayInterfaceController: WKInterfaceController {
     
+    @IBOutlet var rooTable: WKInterfaceTable!
     
-    @IBOutlet var mainTable: WKInterfaceTable!
-    
-    let mains = ["Full Schedule", "Custom Sched."]
+    let days = ["Thursday", "Friday", "Saturday", "Sunday"]
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -23,13 +22,13 @@ class InterfaceController: WKInterfaceController {
     
     private func loadTableData() {
         
-        mainTable.setNumberOfRows(mains.count, withRowType: "InterfaceTableRowController")
+        rooTable.setNumberOfRows(days.count, withRowType: "DayTableRowController")
         
-        for (index, mainName) in mains.enumerate() {
+        for (index, dayName) in days.enumerate() {
             
-            let row = mainTable.rowControllerAtIndex(index) as! InterfaceTableRowController
+            let row = rooTable.rowControllerAtIndex(index) as! DayTableRowController
             
-            row.interfaceLabel.setText(mainName)
+            row.dayLabel.setText(dayName)
         }
         
     }
@@ -37,8 +36,8 @@ class InterfaceController: WKInterfaceController {
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject?
     {
         
-        let mainName = mains[rowIndex]
-        return mainName
+        let dayName = days[rowIndex]
+        return dayName
     }
     
     
