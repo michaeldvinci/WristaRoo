@@ -12,30 +12,39 @@ class StageInterfaceController: WKInterfaceController {
     
     @IBOutlet var stageTable: WKInterfaceTable!
     
-    let stageTh = ["What Stage    Th", "Which Stage    Th", "This Tent    Th", "That Tent    Th", "The Other Tent    Th", "Silent Disco    Th", "Christmas Barn    Th"]
-    let stageFr = ["What Stage    Fr", "Which Stage    Fr", "This Tent    Fr", "That Tent    Fr", "The Other Tent    Fr", "Silent Disco    Fr", "Christmas Barn    Fr"]
-    let stageSa = ["What Stage    Sa", "Which Stage    Sa", "This Tent    Sa", "That Tent    Sa", "The Other Tent    Sa", "Silent Disco    Sa", "Christmas Barn    Sa"]
-    let stageSu = ["What Stage    Su", "Which Stage    Su", "This Tent    Su", "That Tent    Su", "The Other Tent    Su", "Silent Disco    Su", "Christmas Barn    Su"]
+    static let stages : [String] = ["What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent", "Silent Disco", "Christmas Barn"]
+    
+    //let stageTh = stages
+    //let stageFr = stages
+    //let stageSa = stages
+    //let stageSu = stages
+    
+    
+    let stageTh = ["1What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent", "Silent Disco", "Christmas Barn"]
+    let stageFr = ["2What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent", "Silent Disco", "Christmas Barn"]
+    let stageSa = ["3What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent", "Silent Disco", "Christmas Barn"]
+    let stageSu = ["4What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent", "Silent Disco", "Christmas Barn"]
+    
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        guard let context = context as? String else {
+        guard let context = context as? [AnyObject] else {
             return
         }
         
-        if context == "By Stage    Th" {
+        if context[0] as! String == "By Stage" && context[1] as! String == "th"{
             loadThStage()
-            MyVariables.yourVariable = "sth"
-        } else if context == "By Stage    Fr" {
+            MyVariables.yourVariable = "th"
+        } else if context[0] as! String == "By Stage" && context[1] as! String == "fr"{
             loadFrStage()
-            MyVariables.yourVariable = "sfr"
-        } else if context == "By Stage    Sa" {
+            MyVariables.yourVariable = "th"
+        } else if context[0] as! String == "By Stage" && context[1] as! String == "sa"{
             loadSaStage()
-            MyVariables.yourVariable = "ssa"
-        } else if context == "By Stage    Su" {
+            MyVariables.yourVariable = "th"
+        } else if context[0] as! String == "By Stage" && context[1] as! String == "su"{
             loadSuStage()
-            MyVariables.yourVariable = "ssu"
+            MyVariables.yourVariable = "th"
         }
         
     }

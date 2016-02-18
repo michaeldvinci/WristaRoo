@@ -12,8 +12,10 @@ class DayInterfaceController: WKInterfaceController {
     
     @IBOutlet var rooTable: WKInterfaceTable!
     
-    let days = ["Thursday", "Friday", "Saturday", "Sunday"]
-    let custom = ["Thursday2", "Friday2", "Saturday2", "Sunday2"]
+    static let daysC = ["Thursday", "Friday", "Saturday", "Sunday"]
+    
+    let days = daysC
+    let custom = daysC
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -24,10 +26,16 @@ class DayInterfaceController: WKInterfaceController {
         
         if context == "Full Schedule" {
             loadTableData()
+            DayVariables.dayGlobal = "full"
         } else if context == "Custom Sched." {
             loadCustomSchedule()
+            DayVariables.dayGlobal = "cust"
         }
         
+    }
+    
+    struct DayVariables {
+        static var dayGlobal = ""
     }
     
     private func loadTableData() {
@@ -59,9 +67,15 @@ class DayInterfaceController: WKInterfaceController {
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject?
     {
         
-        if segueIdentifier == "showDays" {
+        if segueIdentifier == "showDays" && DayVariables.dayGlobal == "full"{
             let dayName = days[rowIndex]
-            return dayName
+            let choiceA = [dayName, DayVariables.dayGlobal]
+            return choiceA
+        }
+        if segueIdentifier == "showDays" && DayVariables.dayGlobal == "cust"{
+            let dayName = custom[rowIndex]
+            let choiceA = [dayName, DayVariables.dayGlobal]
+            return choiceA
         }
         
         return nil

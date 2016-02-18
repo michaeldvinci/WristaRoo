@@ -12,30 +12,32 @@ class ChoiceInterfaceController: WKInterfaceController {
 
     @IBOutlet var choiceTable: WKInterfaceTable!
     
-    let thChoice = ["By Time    Th", "By Stage    Th"]
-    let frChoice = ["By Time    Fr", "By Stage    Fr"]
-    let saChoice = ["By Time    Sa", "By Stage    Sa"]
-    let suChoice = ["By Time    Su", "By Stage    Su"]
+    static let choicesC : [String] = ["By Time", "By Stage"]
+    
+    let thChoice = choicesC
+    let frChoice = choicesC
+    let saChoice = choicesC
+    let suChoice = choicesC
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        guard let context = context as? String else {
+        guard let context = context as? [AnyObject] else {
             return
         }
         
-        if context == "Thursday" {
+        if context[0] as! String == "Thursday" && context[1] as! String == "full" {
             loadThChoices()
-            MyVariables.yourVariable = "thurs"
-        } else if context == "Friday" {
+            MyVariables.yourVariable = "th"
+        } else if context[0] as! String == "Friday" && context[1] as! String == "full" {
             loadFrChoices()
-            MyVariables.yourVariable = "fri"
-        } else if context == "Saturday" {
+            MyVariables.yourVariable = "fr"
+        } else if context[0] as! String == "Saturday" && context[1] as! String == "full" {
             loadSaChoices()
-            MyVariables.yourVariable = "sat"
-        } else if context == "Sunday" {
+            MyVariables.yourVariable = "sa"
+        } else if context[0] as! String == "Sunday" && context[1] as! String == "full" {
             loadSuChoices()
-            MyVariables.yourVariable = "sun"
+            MyVariables.yourVariable = "su"
         }
         
     }
@@ -99,21 +101,25 @@ class ChoiceInterfaceController: WKInterfaceController {
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject?
     {
         
-        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "thurs"{
+        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "th"{
             let dayName = thChoice[rowIndex]
-            return dayName
+            let dayA = [dayName, MyVariables.yourVariable]
+            return dayA
         }
-        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "fri"{
+        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "fr"{
             let dayName = frChoice[rowIndex]
-            return dayName
+            let dayA = [dayName, MyVariables.yourVariable]
+            return dayA
         }
-        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "sat"{
+        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "sa"{
             let dayName = saChoice[rowIndex]
-            return dayName
+            let dayA = [dayName, MyVariables.yourVariable]
+            return dayA
         }
-        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "sun"{
+        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "su"{
             let dayName = suChoice[rowIndex]
-            return dayName
+            let dayA = [dayName, MyVariables.yourVariable]
+            return dayA
         }
         
         return nil
