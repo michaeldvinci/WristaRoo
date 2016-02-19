@@ -14,6 +14,8 @@
 		F5D432A01C7696F800B018C0 /* StageActInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D4329F1C7696F800B018C0 /* StageActInterfaceController.swift */; };
 		F5D432A21C76972400B018C0 /* TimeStageActTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D432A11C76972400B018C0 /* TimeStageActTableRowController.swift */; };
 		F5D432A41C76975C00B018C0 /* ActStageActTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D432A31C76975C00B018C0 /* ActStageActTableRowController.swift */; };
+		F5D432A81C76ADBF00B018C0 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D432A61C76ADBF00B018C0 /* Fabric.framework */; };
+		F5D432A91C76ADBF00B018C0 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D432A71C76ADBF00B018C0 /* Crashlytics.framework */; };
 		F5E19FC01C756409007653F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19FBF1C756409007653F6 /* AppDelegate.swift */; };
 		F5E19FC21C756409007653F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19FC11C756409007653F6 /* ViewController.swift */; };
 		F5E19FC51C756409007653F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E19FC31C756409007653F6 /* Main.storyboard */; };
@@ -102,6 +104,8 @@
 		F5D4329F1C7696F800B018C0 /* StageActInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageActInterfaceController.swift; sourceTree = "<group>"; };
 		F5D432A11C76972400B018C0 /* TimeStageActTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStageActTableRowController.swift; sourceTree = "<group>"; };
 		F5D432A31C76975C00B018C0 /* ActStageActTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActStageActTableRowController.swift; sourceTree = "<group>"; };
+		F5D432A61C76ADBF00B018C0 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		F5D432A71C76ADBF00B018C0 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		F5E19FBC1C756409007653F6 /* WristaRoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WristaRoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E19FBF1C756409007653F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5E19FC11C756409007653F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D432A91C76ADBF00B018C0 /* Crashlytics.framework in Frameworks */,
+				F5D432A81C76ADBF00B018C0 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +200,8 @@
 		F5E19FBE1C756409007653F6 /* WristaRoo */ = {
 			isa = PBXGroup;
 			children = (
+				F5D432A61C76ADBF00B018C0 /* Fabric.framework */,
+				F5D432A71C76ADBF00B018C0 /* Crashlytics.framework */,
 				F5E19FBF1C756409007653F6 /* AppDelegate.swift */,
 				F5E19FC11C756409007653F6 /* ViewController.swift */,
 				F5E19FC31C756409007653F6 /* Main.storyboard */,
@@ -278,6 +286,7 @@
 				F5E19FB91C756409007653F6 /* Frameworks */,
 				F5E19FBA1C756409007653F6 /* Resources */,
 				F5E1A00C1C75640A007653F6 /* Embed Watch Content */,
+				F5D432A51C76AD4800B018C0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -371,6 +380,7 @@
 				TargetAttributes = {
 					F5E19FBB1C756409007653F6 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = BB27LSL797;
 					};
 					F5E19FCF1C756409007653F6 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -453,6 +463,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F5D432A51C76AD4800B018C0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run fd94ba868ea30f254acfa01b783b0b86e1bbb662 32b75067eec6f4a001217d386c6ad46853580aba024e7e52878eff66fa63f4f0";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F5E19FB81C756409007653F6 /* Sources */ = {
@@ -704,10 +730,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WristaRoo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -715,10 +748,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WristaRoo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
