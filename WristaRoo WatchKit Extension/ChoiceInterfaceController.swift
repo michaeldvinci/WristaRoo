@@ -165,6 +165,11 @@ class ChoiceInterfaceController: WKInterfaceController {
             let dayA = [dayName, MyVariables.yourVariable]
             return dayA
         }
+        if segueIdentifier == "showByTime" && MyVariables.yourVariable == "th"{
+            let dayName = thTime[rowIndex]
+            let dayA = [dayName, MyVariables.yourVariable]
+            return dayA
+        }
         
         return nil
         

@@ -20,7 +20,7 @@
                                     </group>
                                     <connections>
                                         <outlet property="interfaceLabel" destination="NEc-Ho-ZK5" id="Vee-gJ-Ylg"/>
-                                        <segue destination="KiU-8d-y3j" kind="modal" identifier="showSchedule" id="NDj-i3-8IL"/>
+                                        <segue destination="KiU-8d-y3j" kind="push" identifier="showSchedule" id="NDj-i3-8IL"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -48,7 +48,7 @@
                                     </group>
                                     <connections>
                                         <outlet property="dayLabel" destination="CLD-rq-eIX" id="ph7-n6-FBg"/>
-                                        <segue destination="ArA-9e-8bL" kind="modal" identifier="showDays" id="cL7-6V-8TD"/>
+                                        <segue destination="ArA-9e-8bL" kind="push" identifier="showDays" id="cL7-6V-8TD"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -76,7 +76,7 @@
                                     </group>
                                     <connections>
                                         <outlet property="choiceLabel" destination="AB7-56-qJR" id="a1h-9E-deS"/>
-                                        <segue destination="aGw-W6-f5P" kind="modal" identifier="showChoices" id="jQS-TP-Tlc"/>
+                                        <segue destination="aGw-W6-f5P" kind="push" identifier="showChoices" id="jQS-TP-Tlc"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -91,7 +91,7 @@
                                     </group>
                                     <connections>
                                         <outlet property="choiceTime" destination="kgQ-eM-XE9" id="6D2-u3-uQi"/>
-                                        <segue destination="YNV-GE-EVC" kind="modal" id="IRA-9K-Qrx"/>
+                                        <segue destination="YNV-GE-EVC" kind="push" identifier="showByTime" id="IRA-9K-Qrx"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -120,7 +120,7 @@
                                     </group>
                                     <connections>
                                         <outlet property="stageLabel" destination="zyW-7x-SlO" id="aQ9-F3-tR8"/>
-                                        <segue destination="M9G-nw-wuM" kind="modal" identifier="showStageAct" id="Fqp-t1-80u"/>
+                                        <segue destination="M9G-nw-wuM" kind="push" identifier="showStageAct" id="Fqp-t1-80u"/>
                                     </connections>
                                 </tableRow>
                             </items>

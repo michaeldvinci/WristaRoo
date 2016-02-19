@@ -38,13 +38,13 @@ class StageInterfaceController: WKInterfaceController {
             MyVariables.yourVariable = "th"
         } else if context[0] as! String == "By Stage" && context[1] as! String == "fr"{
             loadFrStage()
-            MyVariables.yourVariable = "th"
+            MyVariables.yourVariable = "fr"
         } else if context[0] as! String == "By Stage" && context[1] as! String == "sa"{
             loadSaStage()
-            MyVariables.yourVariable = "th"
+            MyVariables.yourVariable = "sa"
         } else if context[0] as! String == "By Stage" && context[1] as! String == "su"{
             loadSuStage()
-            MyVariables.yourVariable = "th"
+            MyVariables.yourVariable = "su"
         }
         
     }
@@ -109,8 +109,29 @@ class StageInterfaceController: WKInterfaceController {
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject?
     {
         
-        let stageName = stageTh[rowIndex]
-        return stageName
+        if segueIdentifier == "showStageAct" && MyVariables.yourVariable == "th"{
+            let stage = stageTh[rowIndex]
+            let stageA = [stage, MyVariables.yourVariable]
+            return stageA
+        }
+        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "fr"{
+            let stage = stageFr[rowIndex]
+            let stageA = [stage, MyVariables.yourVariable]
+            return stageA
+        }
+        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "sa"{
+            let stage = stageSa[rowIndex]
+            let stageA = [stage, MyVariables.yourVariable]
+            return stageA
+        }
+        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "su"{
+            let stage = stageSu[rowIndex]
+            let stageA = [stage, MyVariables.yourVariable]
+            return stageA
+        }
+        
+        return nil
+
     }
     
     
