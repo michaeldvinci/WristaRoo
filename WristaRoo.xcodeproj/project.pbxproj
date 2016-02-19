@@ -11,6 +11,9 @@
 		F5D4329A1C7677FF00B018C0 /* ActTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D432991C7677FF00B018C0 /* ActTableRowController.swift */; };
 		F5D4329C1C76780900B018C0 /* LocationTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D4329B1C76780900B018C0 /* LocationTableRowController.swift */; };
 		F5D4329E1C76781D00B018C0 /* ByTimeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D4329D1C76781C00B018C0 /* ByTimeInterfaceController.swift */; };
+		F5D432A01C7696F800B018C0 /* StageActInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D4329F1C7696F800B018C0 /* StageActInterfaceController.swift */; };
+		F5D432A21C76972400B018C0 /* TimeStageActTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D432A11C76972400B018C0 /* TimeStageActTableRowController.swift */; };
+		F5D432A41C76975C00B018C0 /* ActStageActTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D432A31C76975C00B018C0 /* ActStageActTableRowController.swift */; };
 		F5E19FC01C756409007653F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19FBF1C756409007653F6 /* AppDelegate.swift */; };
 		F5E19FC21C756409007653F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19FC11C756409007653F6 /* ViewController.swift */; };
 		F5E19FC51C756409007653F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E19FC31C756409007653F6 /* Main.storyboard */; };
@@ -96,6 +99,9 @@
 		F5D432991C7677FF00B018C0 /* ActTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActTableRowController.swift; sourceTree = "<group>"; };
 		F5D4329B1C76780900B018C0 /* LocationTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableRowController.swift; sourceTree = "<group>"; };
 		F5D4329D1C76781C00B018C0 /* ByTimeInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ByTimeInterfaceController.swift; sourceTree = "<group>"; };
+		F5D4329F1C7696F800B018C0 /* StageActInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageActInterfaceController.swift; sourceTree = "<group>"; };
+		F5D432A11C76972400B018C0 /* TimeStageActTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStageActTableRowController.swift; sourceTree = "<group>"; };
+		F5D432A31C76975C00B018C0 /* ActStageActTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActStageActTableRowController.swift; sourceTree = "<group>"; };
 		F5E19FBC1C756409007653F6 /* WristaRoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WristaRoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E19FBF1C756409007653F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5E19FC11C756409007653F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -233,19 +239,22 @@
 				F5E1A0181C756583007653F6 /* DayInterfaceController.swift */,
 				F5E1A01E1C75669E007653F6 /* ChoiceInterfaceController.swift */,
 				F5E1A0241C756758007653F6 /* StageInterfaceController.swift */,
+				F5D4329D1C76781C00B018C0 /* ByTimeInterfaceController.swift */,
 				F5E1A0161C7564A9007653F6 /* InterfaceTableRowController.swift */,
 				F5E1A01A1C7565D2007653F6 /* DayTableRowController.swift */,
 				F5E1A0201C7566B8007653F6 /* ChoiceTableRowController.swift */,
 				F5E1A0261C75676E007653F6 /* StageTableRowController.swift */,
+				F5D432971C7677F600B018C0 /* TimeTableRowController.swift */,
+				F5D432991C7677FF00B018C0 /* ActTableRowController.swift */,
+				F5D4329B1C76780900B018C0 /* LocationTableRowController.swift */,
 				F5E19FFC1C75640A007653F6 /* ExtensionDelegate.swift */,
 				F5E19FFE1C75640A007653F6 /* NotificationController.swift */,
 				F5E1A0001C75640A007653F6 /* Assets.xcassets */,
 				F5E1A0021C75640A007653F6 /* Info.plist */,
 				F5E19FF81C75640A007653F6 /* Supporting Files */,
-				F5D4329D1C76781C00B018C0 /* ByTimeInterfaceController.swift */,
-				F5D432971C7677F600B018C0 /* TimeTableRowController.swift */,
-				F5D432991C7677FF00B018C0 /* ActTableRowController.swift */,
-				F5D4329B1C76780900B018C0 /* LocationTableRowController.swift */,
+				F5D4329F1C7696F800B018C0 /* StageActInterfaceController.swift */,
+				F5D432A11C76972400B018C0 /* TimeStageActTableRowController.swift */,
+				F5D432A31C76975C00B018C0 /* ActStageActTableRowController.swift */,
 			);
 			path = "WristaRoo WatchKit Extension";
 			sourceTree = "<group>";
@@ -482,12 +491,15 @@
 				F5E1A0271C75676E007653F6 /* StageTableRowController.swift in Sources */,
 				F5E19FFD1C75640A007653F6 /* ExtensionDelegate.swift in Sources */,
 				F5D4329A1C7677FF00B018C0 /* ActTableRowController.swift in Sources */,
+				F5D432A01C7696F800B018C0 /* StageActInterfaceController.swift in Sources */,
 				F5E1A0191C756583007653F6 /* DayInterfaceController.swift in Sources */,
+				F5D432A41C76975C00B018C0 /* ActStageActTableRowController.swift in Sources */,
 				F5D432981C7677F600B018C0 /* TimeTableRowController.swift in Sources */,
 				F5D4329E1C76781D00B018C0 /* ByTimeInterfaceController.swift in Sources */,
 				F5D4329C1C76780900B018C0 /* LocationTableRowController.swift in Sources */,
 				F5E19FFB1C75640A007653F6 /* InterfaceController.swift in Sources */,
 				F5E1A01B1C7565D2007653F6 /* DayTableRowController.swift in Sources */,
+				F5D432A21C76972400B018C0 /* TimeStageActTableRowController.swift in Sources */,
 				F5E1A0171C7564A9007653F6 /* InterfaceTableRowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

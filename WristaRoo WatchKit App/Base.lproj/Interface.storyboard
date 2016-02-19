@@ -120,6 +120,7 @@
                                     </group>
                                     <connections>
                                         <outlet property="stageLabel" destination="zyW-7x-SlO" id="aQ9-F3-tR8"/>
+                                        <segue destination="M9G-nw-wuM" kind="modal" identifier="showStageAct" id="Fqp-t1-80u"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -131,6 +132,47 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="948" y="232"/>
+        </scene>
+        <!--Stage Act Interface Controller-->
+        <scene sceneID="xcu-AX-dR5">
+            <objects>
+                <controller id="M9G-nw-wuM" customClass="StageActInterfaceController" customModule="WristaRoo_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="laF-pd-xpz">
+                            <items>
+                                <tableRow identifier="Time" selectable="NO" id="3xg-mv-V5Y" customClass="TimeStageActTableRowController" customModule="WristaRoo_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="22.5" alignment="left" id="dfx-ou-UZP">
+                                        <items>
+                                            <label alignment="left" text="Label" id="GQ9-U5-vf2">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="timeLabel" destination="GQ9-U5-vf2" id="9DD-Be-69t"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="Act" id="tIQ-Ax-oEG" customClass="ActStageActTableRowController" customModule="WristaRoo_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="2xl-0o-BvF">
+                                        <items>
+                                            <label width="127.5" alignment="left" verticalAlignment="center" text="Label" id="Vnc-5A-qKr">
+                                                <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="actLabel" destination="Vnc-5A-qKr" id="Jkc-mJ-PUK"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="stageActTable" destination="laF-pd-xpz" id="PRw-3N-EL8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1197" y="232"/>
         </scene>
         <!--ByTimeInterfaceController-->
         <scene sceneID="8RS-CR-q0N">
