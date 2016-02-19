@@ -11,5 +11,7 @@ import WatchKit
 class ChoiceTableRowController: NSObject {
 
     @IBOutlet var choiceLabel: WKInterfaceLabel!
+    
+    @IBOutlet var choiceTime: WKInterfaceLabel!
 
 }

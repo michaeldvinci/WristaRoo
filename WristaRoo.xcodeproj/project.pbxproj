@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5D432981C7677F600B018C0 /* TimeTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D432971C7677F600B018C0 /* TimeTableRowController.swift */; };
+		F5D4329A1C7677FF00B018C0 /* ActTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D432991C7677FF00B018C0 /* ActTableRowController.swift */; };
+		F5D4329C1C76780900B018C0 /* LocationTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D4329B1C76780900B018C0 /* LocationTableRowController.swift */; };
+		F5D4329E1C76781D00B018C0 /* ByTimeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D4329D1C76781C00B018C0 /* ByTimeInterfaceController.swift */; };
 		F5E19FC01C756409007653F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19FBF1C756409007653F6 /* AppDelegate.swift */; };
 		F5E19FC21C756409007653F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19FC11C756409007653F6 /* ViewController.swift */; };
 		F5E19FC51C756409007653F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E19FC31C756409007653F6 /* Main.storyboard */; };
@@ -88,6 +92,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F5D432971C7677F600B018C0 /* TimeTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableRowController.swift; sourceTree = "<group>"; };
+		F5D432991C7677FF00B018C0 /* ActTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActTableRowController.swift; sourceTree = "<group>"; };
+		F5D4329B1C76780900B018C0 /* LocationTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableRowController.swift; sourceTree = "<group>"; };
+		F5D4329D1C76781C00B018C0 /* ByTimeInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ByTimeInterfaceController.swift; sourceTree = "<group>"; };
 		F5E19FBC1C756409007653F6 /* WristaRoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WristaRoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E19FBF1C756409007653F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5E19FC11C756409007653F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +242,10 @@
 				F5E1A0001C75640A007653F6 /* Assets.xcassets */,
 				F5E1A0021C75640A007653F6 /* Info.plist */,
 				F5E19FF81C75640A007653F6 /* Supporting Files */,
+				F5D4329D1C76781C00B018C0 /* ByTimeInterfaceController.swift */,
+				F5D432971C7677F600B018C0 /* TimeTableRowController.swift */,
+				F5D432991C7677FF00B018C0 /* ActTableRowController.swift */,
+				F5D4329B1C76780900B018C0 /* LocationTableRowController.swift */,
 			);
 			path = "WristaRoo WatchKit Extension";
 			sourceTree = "<group>";
@@ -469,7 +481,11 @@
 				F5E19FFF1C75640A007653F6 /* NotificationController.swift in Sources */,
 				F5E1A0271C75676E007653F6 /* StageTableRowController.swift in Sources */,
 				F5E19FFD1C75640A007653F6 /* ExtensionDelegate.swift in Sources */,
+				F5D4329A1C7677FF00B018C0 /* ActTableRowController.swift in Sources */,
 				F5E1A0191C756583007653F6 /* DayInterfaceController.swift in Sources */,
+				F5D432981C7677F600B018C0 /* TimeTableRowController.swift in Sources */,
+				F5D4329E1C76781D00B018C0 /* ByTimeInterfaceController.swift in Sources */,
+				F5D4329C1C76780900B018C0 /* LocationTableRowController.swift in Sources */,
 				F5E19FFB1C75640A007653F6 /* InterfaceController.swift in Sources */,
 				F5E1A01B1C7565D2007653F6 /* DayTableRowController.swift in Sources */,
 				F5E1A0171C7564A9007653F6 /* InterfaceTableRowController.swift in Sources */,
@@ -761,6 +777,7 @@
 				F5E1A0071C75640A007653F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5E1A0091C75640A007653F6 /* Build configuration list for PBXNativeTarget "WristaRoo WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -769,6 +786,7 @@
 				F5E1A00B1C75640A007653F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5E1A00D1C75640A007653F6 /* Build configuration list for PBXNativeTarget "WristaRoo" */ = {
 			isa = XCConfigurationList;
@@ -777,6 +795,7 @@
 				F5E1A00F1C75640A007653F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5E1A0101C75640A007653F6 /* Build configuration list for PBXNativeTarget "WristaRooTests" */ = {
 			isa = XCConfigurationList;
@@ -785,6 +804,7 @@
 				F5E1A0121C75640A007653F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5E1A0131C75640A007653F6 /* Build configuration list for PBXNativeTarget "WristaRooUITests" */ = {
 			isa = XCConfigurationList;
@@ -793,6 +813,7 @@
 				F5E1A0151C75640A007653F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

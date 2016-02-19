@@ -59,7 +59,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="473" y="217"/>
+            <point key="canvasLocation" x="462" y="345"/>
         </scene>
         <!--Choice Interface Controller-->
         <scene sceneID="bht-kh-1z7">
@@ -81,13 +81,29 @@
                                 </tableRow>
                             </items>
                         </table>
+                        <table alignment="left" id="CjJ-fm-m1o">
+                            <items>
+                                <tableRow identifier="ChoiceTableRowController2" id="TCn-Be-mJE" customClass="ChoiceTableRowController" customModule="WristaRoo_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="Ytk-hc-gi8">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Label" id="kgQ-eM-XE9"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="choiceTime" destination="kgQ-eM-XE9" id="6D2-u3-uQi"/>
+                                        <segue destination="YNV-GE-EVC" kind="modal" id="IRA-9K-Qrx"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
                     <connections>
+                        <outlet property="cTimeTable" destination="CjJ-fm-m1o" id="s0d-q6-wrh"/>
                         <outlet property="choiceTable" destination="CBR-hZ-sFq" id="drz-wT-us7"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="723" y="74"/>
+            <point key="canvasLocation" x="698" y="345"/>
         </scene>
         <!--Stage Interface Controller-->
         <scene sceneID="UlP-Xh-50M">
@@ -114,7 +130,60 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="973" y="-74"/>
+            <point key="canvasLocation" x="948" y="232"/>
+        </scene>
+        <!--ByTimeInterfaceController-->
+        <scene sceneID="8RS-CR-q0N">
+            <objects>
+                <controller identifier="ByTimeInterfaceController" id="YNV-GE-EVC" customClass="ByTimeInterfaceController" customModule="WristaRoo_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="xMv-cI-O5w">
+                            <items>
+                                <tableRow identifier="Time" selectable="NO" id="73O-w0-SCB" customClass="TimeTableRowController" customModule="WristaRoo_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="21.5" alignment="left" id="aE0-Hs-XaJ">
+                                        <items>
+                                            <label alignment="left" text="Label" id="EDj-zW-32s">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="timeLabel" destination="EDj-zW-32s" id="wzo-Nj-NJx"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="Act" id="PFy-2F-two" customClass="ActTableRowController" customModule="WristaRoo_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="35.5" alignment="left" id="05B-qs-Tss">
+                                        <items>
+                                            <label width="123.5" height="28.5" alignment="left" verticalAlignment="center" text="Label" id="wX0-19-Tyw">
+                                                <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="actLabel" destination="wX0-19-Tyw" id="2iH-ED-38g"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="Location" id="kzx-jt-SPI" customClass="LocationTableRowController" customModule="WristaRoo_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="19.5" alignment="left" id="TQP-BD-zIO">
+                                        <items>
+                                            <label alignment="right" text="Label" id="eOe-7y-EMP">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="locationLabel" destination="eOe-7y-EMP" id="uSm-dO-EhD"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="ByTimeTable" destination="xMv-cI-O5w" id="7aD-eH-kcF"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="948" y="474"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

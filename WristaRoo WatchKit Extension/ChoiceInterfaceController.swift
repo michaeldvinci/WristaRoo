@@ -12,12 +12,19 @@ class ChoiceInterfaceController: WKInterfaceController {
 
     @IBOutlet var choiceTable: WKInterfaceTable!
     
-    static let choicesC : [String] = ["By Time", "By Stage"]
+    @IBOutlet var cTimeTable: WKInterfaceTable!
+    static let choicesC : [String] = ["By Stage"]
+    static let choicesD : [String] = ["By Time"]
     
     let thChoice = choicesC
     let frChoice = choicesC
     let saChoice = choicesC
     let suChoice = choicesC
+    
+    let thTime = choicesD
+    let frTime = choicesD
+    let saTime = choicesD
+    let suTime = choicesD
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -57,6 +64,16 @@ class ChoiceInterfaceController: WKInterfaceController {
             row2.choiceLabel.setText(thName)
         }
         
+        cTimeTable.setNumberOfRows(thTime.count, withRowType: "ChoiceTableRowController2")
+        
+        for (index, thName) in thTime.enumerate() {
+            
+            let row2 = cTimeTable.rowControllerAtIndex(index) as! ChoiceTableRowController
+            
+            row2.choiceTime.setText(thName)
+        }
+
+        
     }
     
     private func loadFrChoices() {
@@ -68,6 +85,15 @@ class ChoiceInterfaceController: WKInterfaceController {
             let row2 = choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
             
             row2.choiceLabel.setText(frName)
+        }
+        
+        cTimeTable.setNumberOfRows(frTime.count, withRowType: "ChoiceTableRowController2")
+        
+        for (index, thName) in frTime.enumerate() {
+            
+            let row2 = cTimeTable.rowControllerAtIndex(index) as! ChoiceTableRowController
+            
+            row2.choiceTime.setText(thName)
         }
         
     }
@@ -83,6 +109,15 @@ class ChoiceInterfaceController: WKInterfaceController {
             row2.choiceLabel.setText(saName)
         }
         
+        cTimeTable.setNumberOfRows(saTime.count, withRowType: "ChoiceTableRowController2")
+        
+        for (index, thName) in saTime.enumerate() {
+            
+            let row2 = cTimeTable.rowControllerAtIndex(index) as! ChoiceTableRowController
+            
+            row2.choiceTime.setText(thName)
+        }
+        
     }
     
     private func loadSuChoices() {
@@ -94,6 +129,15 @@ class ChoiceInterfaceController: WKInterfaceController {
             let row2 = choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
             
             row2.choiceLabel.setText(suName)
+        }
+        
+        cTimeTable.setNumberOfRows(suTime.count, withRowType: "ChoiceTableRowController2")
+        
+        for (index, thName) in suTime.enumerate() {
+            
+            let row2 = cTimeTable.rowControllerAtIndex(index) as! ChoiceTableRowController
+            
+            row2.choiceTime.setText(thName)
         }
         
     }
