@@ -11,12 +11,116 @@ import WatchConnectivity
 
 class ViewController: UIViewController, WCSessionDelegate {
 
-    @IBOutlet weak var sendButton: UIButton!
     
     var watchSession: WCSession?
-    var arrayCustom = ["thing1", "thing2"]
+    var arrayCustom = [
+        "Pearl Jam",
+        "Dead & Co.",
+        "LCD Soundsystem",
+        "J. Cole",
+        "Ellie Goulding",
+        "Macklemore",
+        "Tame Impala",
+        "Death Cab for Cutie",
+        "M83",
+        "HAIM",
+        "Halsey",
+        "Ween",
+        "Jason Isbell",
+        "CHVRCHES",
+        "Miguel",
+        "Chris Stapleson",
+        "Judd Apatow & Friends",
+        "The Chainsmokers",
+        "Superjam",
+        "Big Grams",
+        "Band of Horses",
+        "Leon Bridges",
+        "Grace Potter",
+        "Father John Misty",
+        "Adam Devine",
+        "Purity Ring",
+        "The Claypool Lennon Delirium",
+        "Two Door Cinema Club",
+        "Sam Hunt",
+        "Flosstradaumus",
+        "Zeds Dead",
+        "Adventure Club",
+        "Tyler The Creator",
+        "Bridget Everett",
+        "Griz",
+        "Mavis Staples",
+        "TouchPants",
+        "Kurt Vile & the Violators",
+        "Blood Orange",
+        "Lord Huron",
+        "RL Grime",
+        "The Bluegrass Situation",
+        "X Ambassadors",
+        "St. Lucia",
+        "Piff the Magic Dragon",
+        "Lucius",
+        "Vince Staples",
+        "Third eye Blind",
+        "Cymande",
+        "Misterwives",
+        "Clutch",
+        "Goldlink",
+        "Lettuce",
+        "Cashmere Cat",
+        "Goddamn Comedy Jam",
+        "Fidlar",
+        "Ibeyi",
+        "Keys N Krates",
+        "Sam Bush Band",
+        "The Wood Brothers",
+        "Saint Motel",
+        "Daughter",
+        "The FLoozies",
+        "Marian Hill",
+        "Kamasi Washington",
+        "BØRNS",
+        "Post Malone",
+        "Shamir",
+        "Allen Stone",
+        "Brett Dennen",
+        "Oh Wonder",
+        "Boy & the Bear",
+        "Dungen",
+        "Judah & the Lion",
+        "Steve Gunn",
+        "Steep Canyon Rangers",
+        "The Oh Hellos",
+        "The Internet",
+        "John Moreland",
+        "Andra Day",
+        "Anderson East",
+        "Twin Peaks",
+        "Bully",
+        "Natalie Prass",
+        "Chicano Batman",
+        "Givers",
+        "Hermitude",
+        "Jarryd James",
+        "Lizzo",
+        "Papadosio",
+        "Rayland Baxter",
+        "Vulfpeck",
+        "Sata Watkins",
+        "The Knocks",
+        "Waxahatchee",
+        "Beach Fossils",
+        "Whilk and Misky",
+        "Hundred Waters",
+        "The London Souls",
+        "Lolawolf",
+        "Civil Twilight",
+        "Roman Gianarthur",
+        "Lany",
+        "Con Brio",
+        "Flux Capacitor"
+    ]
     
-    let appGroupID = "group.conedmiro.wristaroo"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +135,11 @@ class ViewController: UIViewController, WCSessionDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
-    @IBAction func sendArray(sender: AnyObject) {
-        sendToWatch()
-        
     }
     
+    @IBAction func sendCustArray(sender: AnyObject) {
+        sendToWatch()
+    }
     
     private func sendToWatch() {
         do {
