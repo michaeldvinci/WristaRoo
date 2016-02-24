@@ -7,9 +7,11 @@
 //
 
 import WatchKit
+import WatchConnectivity
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
+    var watchSession: WCSession!
     
     @IBOutlet var mainTable: WKInterfaceTable!
     
@@ -19,6 +21,19 @@ class InterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
         
         loadTableData()
+    }
+    
+    
+    @IBAction func updateCustom() {
+        if (WCSession.isSupported()) {
+            watchSession = WCSession.defaultSession()
+            watchSession.delegate = self;
+            watchSession.activateSession()
+            print(" ")
+            print("CONNECTED!2")
+            print("CONNECTED!2")
+            print("CONNECTED!2")
+        }
     }
     
     private func loadTableData() {

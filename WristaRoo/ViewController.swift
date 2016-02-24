@@ -9,121 +9,20 @@
 import UIKit
 import WatchConnectivity
 
-class ViewController: UIViewController, WCSessionDelegate {
+class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource, UITableViewDelegate {
 
     
+    @IBOutlet var tableView: UITableView!
+    
+    var toPass = ["", ""]
     var watchSession: WCSession?
-    var arrayCustom = [
-        "Pearl Jam",
-        "Dead & Co.",
-        "LCD Soundsystem",
-        "J. Cole",
-        "Ellie Goulding",
-        "Macklemore",
-        "Tame Impala",
-        "Death Cab for Cutie",
-        "M83",
-        "HAIM",
-        "Halsey",
-        "Ween",
-        "Jason Isbell",
-        "CHVRCHES",
-        "Miguel",
-        "Chris Stapleson",
-        "Judd Apatow & Friends",
-        "The Chainsmokers",
-        "Superjam",
-        "Big Grams",
-        "Band of Horses",
-        "Leon Bridges",
-        "Grace Potter",
-        "Father John Misty",
-        "Adam Devine",
-        "Purity Ring",
-        "The Claypool Lennon Delirium",
-        "Two Door Cinema Club",
-        "Sam Hunt",
-        "Flosstradaumus",
-        "Zeds Dead",
-        "Adventure Club",
-        "Tyler The Creator",
-        "Bridget Everett",
-        "Griz",
-        "Mavis Staples",
-        "TouchPants",
-        "Kurt Vile & the Violators",
-        "Blood Orange",
-        "Lord Huron",
-        "RL Grime",
-        "The Bluegrass Situation",
-        "X Ambassadors",
-        "St. Lucia",
-        "Piff the Magic Dragon",
-        "Lucius",
-        "Vince Staples",
-        "Third eye Blind",
-        "Cymande",
-        "Misterwives",
-        "Clutch",
-        "Goldlink",
-        "Lettuce",
-        "Cashmere Cat",
-        "Goddamn Comedy Jam",
-        "Fidlar",
-        "Ibeyi",
-        "Keys N Krates",
-        "Sam Bush Band",
-        "The Wood Brothers",
-        "Saint Motel",
-        "Daughter",
-        "The FLoozies",
-        "Marian Hill",
-        "Kamasi Washington",
-        "BØRNS",
-        "Post Malone",
-        "Shamir",
-        "Allen Stone",
-        "Brett Dennen",
-        "Oh Wonder",
-        "Boy & the Bear",
-        "Dungen",
-        "Judah & the Lion",
-        "Steve Gunn",
-        "Steep Canyon Rangers",
-        "The Oh Hellos",
-        "The Internet",
-        "John Moreland",
-        "Andra Day",
-        "Anderson East",
-        "Twin Peaks",
-        "Bully",
-        "Natalie Prass",
-        "Chicano Batman",
-        "Givers",
-        "Hermitude",
-        "Jarryd James",
-        "Lizzo",
-        "Papadosio",
-        "Rayland Baxter",
-        "Vulfpeck",
-        "Sata Watkins",
-        "The Knocks",
-        "Waxahatchee",
-        "Beach Fossils",
-        "Whilk and Misky",
-        "Hundred Waters",
-        "The London Souls",
-        "Lolawolf",
-        "Civil Twilight",
-        "Roman Gianarthur",
-        "Lany",
-        "Con Brio",
-        "Flux Capacitor"
-    ]
+    var arrayNewCustom = ["", ""]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        arrayNewCustom = toPass
         
         if(WCSession.isSupported()) {
             watchSession = WCSession.defaultSession()
@@ -131,8 +30,34 @@ class ViewController: UIViewController, WCSessionDelegate {
             watchSession?.activateSession()
         }
         
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.reloadData()
+        self.tableView.allowsMultipleSelection = true
+    }
+    
+    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
+    {
+        return arrayNewCustom.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCellWithIdentifier("customCell", forIndexPath: indexPath)
+        cell.textLabel?.text = arrayNewCustom[indexPath.item]
+        return cell
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        self.navigationController?.setToolbarHidden(false, animated: animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated);
+        self.navigationController?.setToolbarHidden(true, animated: animated)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -141,9 +66,15 @@ class ViewController: UIViewController, WCSessionDelegate {
         sendToWatch()
     }
     
+    @IBAction func toEdit(sender: AnyObject) {
+        
+        performSegueWithIdentifier("toEdit", sender: sender)
+    }
+    
+    
     private func sendToWatch() {
         do {
-            let applicationDict = ["Array1": arrayCustom]
+            let applicationDict = ["Array1": arrayNewCustom]
             try WCSession.defaultSession().updateApplicationContext(applicationDict)
         }
             

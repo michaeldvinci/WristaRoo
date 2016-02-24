@@ -11,13 +11,12 @@ import Foundation
 import WatchConnectivity
 
 class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
-
+    
     @IBOutlet var choiceTable: WKInterfaceTable!
     @IBOutlet var cTimeTable: WKInterfaceTable!
     
     var custArray = [String]()
     var watchSession: WCSession!
-    let appGroupID = "group.conedmiro.wristaroo"
     
     static let choicesC : [String] = ["By Stage"]
     static let choicesD : [String] = ["By Time"]
@@ -27,7 +26,7 @@ class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-
+        
         
         guard let context = context as? [AnyObject] else {
             return
@@ -153,26 +152,25 @@ class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
-    
+        
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
-    
+            
             if let retrievedArray1 = applicationContext["Array1"] as? [String] {
-                print("")
-                print("----------")
-                print("----------")
-                print("----------")
                 self.custArray = retrievedArray1
+                print(" ")
+                print("----------")
                 print(" ")
                 print(self.custArray)
                 print(" ")
                 print("++++++++++")
+                print(" ")
             }
             self.choiceTable.setNumberOfRows(self.custArray.count, withRowType: "ChoiceTableRowController")
             for (index, thName) in self.custArray.enumerate() {
                 let row2 = self.choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
                 row2.choiceLabel.setText(thName)
-                }
             }
         }
+    }
     
 }
