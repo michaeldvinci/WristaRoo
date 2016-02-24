@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F567D9AA1C7771E900817543 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F567D9A91C7771E900817543 /* Images.xcassets */; };
+		F56930191C7D2EF00048DDAB /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F56930181C7D2EF00048DDAB /* WatchConnectivity.framework */; };
 		F5D432981C7677F600B018C0 /* TimeTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D432971C7677F600B018C0 /* TimeTableRowController.swift */; };
 		F5D4329A1C7677FF00B018C0 /* ActTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D432991C7677FF00B018C0 /* ActTableRowController.swift */; };
 		F5D4329C1C76780900B018C0 /* LocationTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D4329B1C76780900B018C0 /* LocationTableRowController.swift */; };
@@ -97,6 +98,10 @@
 
 /* Begin PBXFileReference section */
 		F567D9A91C7771E900817543 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F56930161C7D2C8B0048DDAB /* WristaRoo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WristaRoo.entitlements; sourceTree = "<group>"; };
+		F56930171C7D2CC90048DDAB /* WristaRoo WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "WristaRoo WatchKit App.entitlements"; sourceTree = "<group>"; };
+		F56930181C7D2EF00048DDAB /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		F569301A1C7D3FBD0048DDAB /* WristaRoo WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "WristaRoo WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		F5D432971C7677F600B018C0 /* TimeTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableRowController.swift; sourceTree = "<group>"; };
 		F5D432991C7677FF00B018C0 /* ActTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActTableRowController.swift; sourceTree = "<group>"; };
 		F5D4329B1C76780900B018C0 /* LocationTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableRowController.swift; sourceTree = "<group>"; };
@@ -142,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F56930191C7D2EF00048DDAB /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +178,7 @@
 		F5E19FB31C756409007653F6 = {
 			isa = PBXGroup;
 			children = (
+				F56930181C7D2EF00048DDAB /* WatchConnectivity.framework */,
 				F5E19FBE1C756409007653F6 /* WristaRoo */,
 				F5E19FD31C756409007653F6 /* WristaRooTests */,
 				F5E19FDE1C756409007653F6 /* WristaRooUITests */,
@@ -196,6 +203,7 @@
 		F5E19FBE1C756409007653F6 /* WristaRoo */ = {
 			isa = PBXGroup;
 			children = (
+				F56930161C7D2C8B0048DDAB /* WristaRoo.entitlements */,
 				F5E19FBF1C756409007653F6 /* AppDelegate.swift */,
 				F5E19FC11C756409007653F6 /* ViewController.swift */,
 				F5E19FC31C756409007653F6 /* Main.storyboard */,
@@ -228,6 +236,7 @@
 		F5E19FE81C756409007653F6 /* WristaRoo WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				F56930171C7D2CC90048DDAB /* WristaRoo WatchKit App.entitlements */,
 				F5E19FE91C756409007653F6 /* Interface.storyboard */,
 				F5E19FEC1C756409007653F6 /* Assets.xcassets */,
 				F5E19FEE1C756409007653F6 /* Info.plist */,
@@ -238,6 +247,7 @@
 		F5E19FF71C75640A007653F6 /* WristaRoo WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F569301A1C7D3FBD0048DDAB /* WristaRoo WatchKit Extension.entitlements */,
 				F5E19FFA1C75640A007653F6 /* InterfaceController.swift */,
 				F5E1A0181C756583007653F6 /* DayInterfaceController.swift */,
 				F5E1A01E1C75669E007653F6 /* ChoiceInterfaceController.swift */,
@@ -374,6 +384,12 @@
 				TargetAttributes = {
 					F5E19FBB1C756409007653F6 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = BB27LSL797;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					F5E19FCF1C756409007653F6 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -385,9 +401,21 @@
 					};
 					F5E19FE31C756409007653F6 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = BB27LSL797;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					F5E19FF21C75640A007653F6 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = BB27LSL797;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -649,10 +677,14 @@
 		F5E1A0061C75640A007653F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "WristaRoo WatchKit Extension/WristaRoo WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WristaRoo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRoo.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -663,10 +695,14 @@
 		F5E1A0071C75640A007653F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "WristaRoo WatchKit Extension/WristaRoo WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WristaRoo WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRoo.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -678,11 +714,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "WristaRoo WatchKit App/WristaRoo WatchKit App.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = WristaRoo_WatchKit_Extension;
 				INFOPLIST_FILE = "WristaRoo WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRoo.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -694,11 +734,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "WristaRoo WatchKit App/WristaRoo WatchKit App.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = WristaRoo_WatchKit_Extension;
 				INFOPLIST_FILE = "WristaRoo WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRoo.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -711,6 +755,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_ENTITLEMENTS = WristaRoo/WristaRoo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -730,6 +775,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_ENTITLEMENTS = WristaRoo/WristaRoo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

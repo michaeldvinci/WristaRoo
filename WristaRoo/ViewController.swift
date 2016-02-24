@@ -7,12 +7,28 @@
 //
 
 import UIKit
+import WatchConnectivity
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var sendButton: UIButton!
+    
+    let appGroupID = "group.conedmiro.wristaroo"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let session = WCSession.defaultSession()
+        session.activateSession()
+        
+        var customSchedArray: [NSString] = ["test1", "test2"]
+        
+        let defaults = NSUserDefaults(suiteName: appGroupID)!
+        defaults.setObject(customSchedArray, forKey: "arrayCustom")
+        defaults.synchronize()
+        
+        //let myArray = defaults!.objectForKey("array") as! [String]
+        
     }
 
     override func didReceiveMemoryWarning() {

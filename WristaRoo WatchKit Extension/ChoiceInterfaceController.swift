@@ -13,6 +13,9 @@ class ChoiceInterfaceController: WKInterfaceController {
     @IBOutlet var choiceTable: WKInterfaceTable!
     
     @IBOutlet var cTimeTable: WKInterfaceTable!
+    
+    let appGroupID = "group.conedmiro.wristaroo"
+    
     static let choicesC : [String] = ["By Stage"]
     static let choicesD : [String] = ["By Time"]
     
@@ -28,6 +31,7 @@ class ChoiceInterfaceController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+
         
         guard let context = context as? [AnyObject] else {
             return
@@ -45,12 +49,49 @@ class ChoiceInterfaceController: WKInterfaceController {
         } else if context[0] as! String == "Sunday" && context[1] as! String == "full" {
             loadSuChoices()
             MyVariables.yourVariable = "su"
+        } else if context[0] as! String == "Thursday" && context[1] as! String == "cust" {
+        
+            loadThCustChoices()
+            
+            MyVariables.yourVariable = "th"
+            
         }
         
     }
     
     struct MyVariables {
         static var yourVariable = "someString"
+    }
+    
+    private func loadThCustChoices() {
+        
+        
+        if let testArray : AnyObject? = NSUserDefaults(suiteName: appGroupID)!.objectForKey("arrayCustom") {
+            let phoneArray : [NSString] = testArray! as! [NSString]
+        
+        
+        //let defaults = NSUserDefaults(suiteName: appGroupID)
+        //let phoneArray = NSUserDefaults.standardUserDefaults().objectForKey("arrayCustom") as! [String]
+
+        choiceTable.setNumberOfRows(phoneArray.count, withRowType: "ChoiceTableRowController")
+        
+        for (index, thName) in phoneArray.enumerate() {
+            
+            let row2 = choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
+            
+            row2.choiceLabel.setText(thName as String)
+        }
+            
+        }
+        
+        cTimeTable.setNumberOfRows(thTime.count, withRowType: "ChoiceTableRowController2")
+        
+        for (index, thName) in thTime.enumerate() {
+            
+            let row2 = cTimeTable.rowControllerAtIndex(index) as! ChoiceTableRowController
+            
+            row2.choiceTime.setText(thName)
+        }
     }
     
     private func loadThChoices() {
