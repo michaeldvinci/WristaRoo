@@ -9,25 +9,23 @@
 import UIKit
 import WatchConnectivity
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WCSessionDelegate {
 
     @IBOutlet weak var sendButton: UIButton!
+    
+    var watchSession: WCSession?
+    var arrayCustom = ["thing1", "thing2"]
     
     let appGroupID = "group.conedmiro.wristaroo"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let session = WCSession.defaultSession()
-        session.activateSession()
-        
-        var customSchedArray: [NSString] = ["test1", "test2"]
-        
-        let defaults = NSUserDefaults(suiteName: appGroupID)!
-        defaults.setObject(customSchedArray, forKey: "arrayCustom")
-        defaults.synchronize()
-        
-        //let myArray = defaults!.objectForKey("array") as! [String]
+        if(WCSession.isSupported()) {
+            watchSession = WCSession.defaultSession()
+            watchSession?.delegate = self
+            watchSession?.activateSession()
+        }
         
     }
 
@@ -37,5 +35,21 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func sendArray(sender: AnyObject) {
+        sendToWatch()
+        
+    }
+    
+    
+    private func sendToWatch() {
+        do {
+            let applicationDict = ["Array1": arrayCustom]
+            try WCSession.defaultSession().updateApplicationContext(applicationDict)
+        }
+            
+        catch {
+            print(error)
+        }
+    }
 }
 

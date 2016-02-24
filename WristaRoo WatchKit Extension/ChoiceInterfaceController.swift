@@ -7,27 +7,23 @@
 //
 
 import WatchKit
+import Foundation
+import WatchConnectivity
 
-class ChoiceInterfaceController: WKInterfaceController {
+class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
 
     @IBOutlet var choiceTable: WKInterfaceTable!
-    
     @IBOutlet var cTimeTable: WKInterfaceTable!
     
+    var custArray = [String]()
+    var watchSession: WCSession!
     let appGroupID = "group.conedmiro.wristaroo"
     
     static let choicesC : [String] = ["By Stage"]
     static let choicesD : [String] = ["By Time"]
     
     let thChoice = choicesC
-    let frChoice = choicesC
-    let saChoice = choicesC
-    let suChoice = choicesC
-    
     let thTime = choicesD
-    let frTime = choicesD
-    let saTime = choicesD
-    let suTime = choicesD
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -41,18 +37,16 @@ class ChoiceInterfaceController: WKInterfaceController {
             loadThChoices()
             MyVariables.yourVariable = "th"
         } else if context[0] as! String == "Friday" && context[1] as! String == "full" {
-            loadFrChoices()
+            loadThChoices()
             MyVariables.yourVariable = "fr"
         } else if context[0] as! String == "Saturday" && context[1] as! String == "full" {
-            loadSaChoices()
+            loadThChoices()
             MyVariables.yourVariable = "sa"
         } else if context[0] as! String == "Sunday" && context[1] as! String == "full" {
-            loadSuChoices()
+            loadThChoices()
             MyVariables.yourVariable = "su"
         } else if context[0] as! String == "Thursday" && context[1] as! String == "cust" {
-        
-            loadThCustChoices()
-            
+            loadThCust()
             MyVariables.yourVariable = "th"
             
         }
@@ -63,25 +57,18 @@ class ChoiceInterfaceController: WKInterfaceController {
         static var yourVariable = "someString"
     }
     
-    private func loadThCustChoices() {
+    
+    private func loadThCust() {
         
-        
-        if let testArray : AnyObject? = NSUserDefaults(suiteName: appGroupID)!.objectForKey("arrayCustom") {
-            let phoneArray : [NSString] = testArray! as! [NSString]
-        
-        
-        //let defaults = NSUserDefaults(suiteName: appGroupID)
-        //let phoneArray = NSUserDefaults.standardUserDefaults().objectForKey("arrayCustom") as! [String]
-
-        choiceTable.setNumberOfRows(phoneArray.count, withRowType: "ChoiceTableRowController")
-        
-        for (index, thName) in phoneArray.enumerate() {
-            
-            let row2 = choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
-            
-            row2.choiceLabel.setText(thName as String)
-        }
-            
+        if (WCSession.isSupported()) {
+            watchSession = WCSession.defaultSession()
+            watchSession.delegate = self;
+            watchSession.activateSession()
+            print("CONNECTED!")
+            print("CONNECTED!")
+            print("CONNECTED!")
+            print("CONNECTED!")
+            print("CONNECTED!")
         }
         
         cTimeTable.setNumberOfRows(thTime.count, withRowType: "ChoiceTableRowController2")
@@ -92,7 +79,11 @@ class ChoiceInterfaceController: WKInterfaceController {
             
             row2.choiceTime.setText(thName)
         }
+        
+        
     }
+    
+    
     
     private func loadThChoices() {
         
@@ -113,75 +104,9 @@ class ChoiceInterfaceController: WKInterfaceController {
             
             row2.choiceTime.setText(thName)
         }
-
         
     }
     
-    private func loadFrChoices() {
-        
-        choiceTable.setNumberOfRows(frChoice.count, withRowType: "ChoiceTableRowController")
-        
-        for (index, frName) in frChoice.enumerate() {
-            
-            let row2 = choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
-            
-            row2.choiceLabel.setText(frName)
-        }
-        
-        cTimeTable.setNumberOfRows(frTime.count, withRowType: "ChoiceTableRowController2")
-        
-        for (index, thName) in frTime.enumerate() {
-            
-            let row2 = cTimeTable.rowControllerAtIndex(index) as! ChoiceTableRowController
-            
-            row2.choiceTime.setText(thName)
-        }
-        
-    }
-    
-    private func loadSaChoices() {
-        
-        choiceTable.setNumberOfRows(saChoice.count, withRowType: "ChoiceTableRowController")
-        
-        for (index, saName) in saChoice.enumerate() {
-            
-            let row2 = choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
-            
-            row2.choiceLabel.setText(saName)
-        }
-        
-        cTimeTable.setNumberOfRows(saTime.count, withRowType: "ChoiceTableRowController2")
-        
-        for (index, thName) in saTime.enumerate() {
-            
-            let row2 = cTimeTable.rowControllerAtIndex(index) as! ChoiceTableRowController
-            
-            row2.choiceTime.setText(thName)
-        }
-        
-    }
-    
-    private func loadSuChoices() {
-        
-        choiceTable.setNumberOfRows(suChoice.count, withRowType: "ChoiceTableRowController")
-        
-        for (index, suName) in suChoice.enumerate() {
-            
-            let row2 = choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
-            
-            row2.choiceLabel.setText(suName)
-        }
-        
-        cTimeTable.setNumberOfRows(suTime.count, withRowType: "ChoiceTableRowController2")
-        
-        for (index, thName) in suTime.enumerate() {
-            
-            let row2 = cTimeTable.rowControllerAtIndex(index) as! ChoiceTableRowController
-            
-            row2.choiceTime.setText(thName)
-        }
-        
-    }
     
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject?
     {
@@ -192,17 +117,17 @@ class ChoiceInterfaceController: WKInterfaceController {
             return dayA
         }
         if segueIdentifier == "showChoices" && MyVariables.yourVariable == "fr"{
-            let dayName = frChoice[rowIndex]
+            let dayName = thChoice[rowIndex]
             let dayA = [dayName, MyVariables.yourVariable]
             return dayA
         }
         if segueIdentifier == "showChoices" && MyVariables.yourVariable == "sa"{
-            let dayName = saChoice[rowIndex]
+            let dayName = thChoice[rowIndex]
             let dayA = [dayName, MyVariables.yourVariable]
             return dayA
         }
         if segueIdentifier == "showChoices" && MyVariables.yourVariable == "su"{
-            let dayName = suChoice[rowIndex]
+            let dayName = thChoice[rowIndex]
             let dayA = [dayName, MyVariables.yourVariable]
             return dayA
         }
@@ -220,6 +145,13 @@ class ChoiceInterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        if(WCSession.isSupported()) {
+            watchSession = WCSession.defaultSession()
+            watchSession!.delegate = self
+            watchSession!.activateSession()
+        }
+        
         NSLog("%@ will activate", self)
     }
     
@@ -228,5 +160,24 @@ class ChoiceInterfaceController: WKInterfaceController {
         NSLog("%@ did deactivate", self)
         super.didDeactivate()
     }
+    
+    func watchSession(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+    
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+    
+            if let retrievedArray1 = applicationContext["Array1"] as? [String] {
+                print("----------")
+                print("----------")
+                print("----------")
+                print("----------")
+                self.custArray = retrievedArray1
+                print(self.custArray)
+            }
+            for (index, thName) in self.custArray.enumerate() {
+                let row2 = self.choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
+                row2.choiceLabel.setText(thName)
+                }
+            }
+        }
     
 }
