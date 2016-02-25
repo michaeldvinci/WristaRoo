@@ -61,7 +61,9 @@ class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
         
         let tabledata = NSUserDefaults.standardUserDefaults().arrayForKey("keyRoo")
         
-        self.choiceTable.setNumberOfRows(tabledata!.count, withRowType: "ChoiceTableRowController")
+        if tabledata!.count > 0 {
+            self.choiceTable.setNumberOfRows(tabledata!.count, withRowType: "ChoiceTableRowController")
+        }
         
         for (index, thName) in tabledata!.enumerate() {
             

@@ -11,13 +11,13 @@ import WatchConnectivity
 
 class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource, UITableViewDelegate {
 
-    
     @IBOutlet var tableView: UITableView!
     
-    var toPass = ["", ""]
+    var toPass = []
     var watchSession: WCSession?
-    var arrayNewCustom = ["", ""]
-    
+    var arrayNewCustom = []
+    var clearA = []
+    var tempANC: NSMutableArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,11 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
         tableView.delegate = self
         tableView.reloadData()
         self.tableView.allowsMultipleSelection = true
+        self.tableView.allowsMultipleSelectionDuringEditing = false
+
     }
+    
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
@@ -46,7 +50,7 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("customCell", forIndexPath: indexPath)
-        cell.textLabel?.text = arrayNewCustom[indexPath.item]
+        cell.textLabel?.text = arrayNewCustom[indexPath.item] as? String
         return cell
     }
 
@@ -69,10 +73,35 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
     }
     
     @IBAction func toEdit(sender: AnyObject) {
-        
-        performSegueWithIdentifier("toEdit", sender: sender)
+        if (self.tableView.editing) {
+            editButton.title = "Edit"
+            self.tableView.setEditing(false, animated: true)
+        } else {
+            editButton.title = "Done"
+            self.tableView.setEditing(true, animated: true)
+        }
     }
     
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    @IBAction func clearA(sender: AnyObject) {
+        NSUserDefaults.standardUserDefaults().setObject(clearA, forKey: "keyCustom")
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableView.reloadData()
+        })
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            tempANC = arrayNewCustom.mutableCopy() as! NSMutableArray
+            tempANC.removeObjectAtIndex(indexPath.row)
+            arrayNewCustom = tempANC
+            NSUserDefaults.standardUserDefaults().setObject(arrayNewCustom, forKey: "keyCustom")
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
     
     private func sendToWatch() {
         do {

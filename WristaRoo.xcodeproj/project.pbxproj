@@ -39,6 +39,7 @@
 		F5E1A0211C7566B8007653F6 /* ChoiceTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A0201C7566B8007653F6 /* ChoiceTableRowController.swift */; };
 		F5E1A0251C756758007653F6 /* StageInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A0241C756758007653F6 /* StageInterfaceController.swift */; };
 		F5E1A0271C75676E007653F6 /* StageTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1A0261C75676E007653F6 /* StageTableRowController.swift */; };
+		F5EA5BA41C7F530E003378DC /* EditCustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EA5BA31C7F530E003378DC /* EditCustomTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		F5E1A0201C7566B8007653F6 /* ChoiceTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceTableRowController.swift; sourceTree = "<group>"; };
 		F5E1A0241C756758007653F6 /* StageInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageInterfaceController.swift; sourceTree = "<group>"; };
 		F5E1A0261C75676E007653F6 /* StageTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageTableRowController.swift; sourceTree = "<group>"; };
+		F5EA5BA31C7F530E003378DC /* EditCustomTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCustomTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				F5E19FBF1C756409007653F6 /* AppDelegate.swift */,
 				F5E19FC11C756409007653F6 /* ViewController.swift */,
 				F57720911C7E504E00D189D7 /* AddCustomViewController.swift */,
+				F5EA5BA31C7F530E003378DC /* EditCustomTableViewController.swift */,
 				F5E19FC31C756409007653F6 /* Main.storyboard */,
 				F5E19FC61C756409007653F6 /* Assets.xcassets */,
 				F5E19FC81C756409007653F6 /* LaunchScreen.storyboard */,
@@ -527,6 +530,7 @@
 			files = (
 				F5E19FC21C756409007653F6 /* ViewController.swift in Sources */,
 				F5E19FC01C756409007653F6 /* AppDelegate.swift in Sources */,
+				F5EA5BA41C7F530E003378DC /* EditCustomTableViewController.swift in Sources */,
 				F57720921C7E504E00D189D7 /* AddCustomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

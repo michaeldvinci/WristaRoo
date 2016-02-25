@@ -207,6 +207,7 @@
                                                 <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
                                             </label>
                                         </items>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </group>
                                     <connections>
                                         <outlet property="actLabel" destination="wX0-19-Tyw" id="2iH-ED-38g"/>

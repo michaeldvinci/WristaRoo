@@ -21,6 +21,16 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
+        if (WCSession.isSupported()) {
+            watchSession = WCSession.defaultSession()
+            watchSession.delegate = self;
+            watchSession.activateSession()
+            print(" ")
+            print("CONNECTED!2")
+            print("CONNECTED!2")
+            print("CONNECTED!2")
+        }
+        
         loadTableData()
     }
     

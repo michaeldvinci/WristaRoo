@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lO3-yn-k19">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lO3-yn-k19">
                                 <rect key="frame" x="0.0" y="54" width="600" height="384"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -58,7 +58,19 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUX-w7-AJS">
                                 <rect key="frame" x="0.0" y="441" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Edit Custom Schedule" id="fXg-2W-Ijp">
+                                    <barButtonItem systemItem="edit" id="tCN-v4-QVf">
+                                        <connections>
+                                            <action selector="toEdit:" destination="BYZ-38-t0r" id="R32-bd-7oU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="od2-fF-KrF"/>
+                                    <barButtonItem title="Clear" id="lhC-WU-nga">
+                                        <connections>
+                                            <action selector="clearA:" destination="BYZ-38-t0r" id="ZlG-Ru-cOv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fO7-Rr-q13"/>
+                                    <barButtonItem title="Add" id="fXg-2W-Ijp">
                                         <connections>
                                             <segue destination="msp-4r-Hch" kind="show" id="pqa-K9-9lN"/>
                                         </connections>
@@ -71,18 +83,16 @@
                             <constraint firstItem="lO3-yn-k19" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="54" id="0pq-Qn-xCg"/>
                             <constraint firstItem="LQj-8R-PEp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Jy-2q-ala"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CUX-w7-AJS" secondAttribute="bottom" constant="2" id="8JE-Nz-0xQ"/>
+                            <constraint firstItem="lO3-yn-k19" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="PGK-pe-5Kx"/>
                             <constraint firstItem="CUX-w7-AJS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="d0D-kh-AYz"/>
                             <constraint firstItem="CUX-w7-AJS" firstAttribute="bottom" secondItem="lO3-yn-k19" secondAttribute="bottom" id="g4c-C5-SMm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lO3-yn-k19" secondAttribute="trailing" constant="-20" id="lkJ-cU-VTM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CUX-w7-AJS" secondAttribute="trailing" constant="-20" id="sV9-aF-Ldt"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems>
-                        <barButtonItem title="Item" id="tXZ-3c-T2a">
-                            <connections>
-                                <action selector="toEdit:" destination="BYZ-38-t0r" id="rHy-1g-ezR"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem title="Item" id="tXZ-3c-T2a"/>
                     </toolbarItems>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -91,12 +101,13 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
+                        <outlet property="editButton" destination="tCN-v4-QVf" id="1IS-95-ffx"/>
                         <outlet property="tableView" destination="lO3-yn-k19" id="ggp-6V-h3b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="312" y="212"/>
+            <point key="canvasLocation" x="411" y="446"/>
         </scene>
         <!--Add Custom View Controller-->
         <scene sceneID="loE-q8-5ex">
@@ -110,7 +121,7 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z00-YY-Xj1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z00-YY-Xj1">
                                 <rect key="frame" x="0.0" y="63" width="600" height="385"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -132,11 +143,19 @@
                                             <action selector="addToCustom:" destination="msp-4r-Hch" id="8lg-ta-1Lo"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Er1-Ai-FJ0"/>
+                                    <barButtonItem title="Clear" id="gNi-pq-BGv">
+                                        <connections>
+                                            <action selector="clearList:" destination="msp-4r-Hch" id="zvg-s2-xZB"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="z00-YY-Xj1" firstAttribute="leading" secondItem="0Et-bZ-eQJ" secondAttribute="leadingMargin" constant="-20" id="L7h-CI-o4E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z00-YY-Xj1" secondAttribute="trailing" constant="-20" id="Q8c-d5-XAd"/>
                             <constraint firstItem="4Gi-e9-WBs" firstAttribute="top" secondItem="l8G-AV-nED" secondAttribute="bottom" id="QFU-pp-qkd"/>
                             <constraint firstItem="z00-YY-Xj1" firstAttribute="top" secondItem="Knr-nb-OU2" secondAttribute="bottom" id="WlN-YF-92l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l8G-AV-nED" secondAttribute="trailing" constant="-20" id="gZb-uO-tBU"/>
@@ -153,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tba-do-esT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125" y="212"/>
+            <point key="canvasLocation" x="1117" y="-336"/>
         </scene>
     </scenes>
 </document>

@@ -5,16 +5,17 @@
 //  Created by Michael Vinci on 2/24/16.
 //  Copyright © 2016 Michael Vinci. All rights reserved.
 //
-
+        
 import UIKit
-
+        
 class AddCustomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-   
+            
     var selectedIndexPaths = [NSIndexPath]()
     var newCustom = [String]()
+    var clearA = [String]()
     @IBOutlet weak var toPrint: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
-    
+            
     var arrayCustom = [
         "Pearl Jam",
         "Dead & Co.",
@@ -127,6 +128,11 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tabledata = NSUserDefaults.standardUserDefaults().arrayForKey("keyCustom")
+        if tabledata?.count > 0 {
+            newCustom = tabledata as! [String]
+        }
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.reloadData()
@@ -148,7 +154,9 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         selectedIndexPaths.append(indexPath)
-        newCustom.append(arrayCustom[indexPath.row])
+        if !newCustom.contains(arrayCustom[indexPath.row]) {
+            newCustom.append(arrayCustom[indexPath.row])
+        }
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
@@ -157,6 +165,10 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
             selectedIndexPaths.removeAtIndex(index)
         }
         
+    }
+    @IBAction func clearList(sender: AnyObject) {
+        newCustom = clearA
+        NSUserDefaults.standardUserDefaults().setObject(newCustom, forKey: "keyCustom")
     }
     
     override func viewWillAppear(animated: Bool) {
