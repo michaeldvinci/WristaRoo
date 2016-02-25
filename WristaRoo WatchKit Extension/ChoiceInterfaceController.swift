@@ -64,7 +64,9 @@ class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
         self.choiceTable.setNumberOfRows(tabledata!.count, withRowType: "ChoiceTableRowController")
         
         for (index, thName) in tabledata!.enumerate() {
+            
             let row2 = self.choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
+            
             row2.choiceLabel.setText(thName as? String)
         }
         

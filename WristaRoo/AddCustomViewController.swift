@@ -149,7 +149,6 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
         
         selectedIndexPaths.append(indexPath)
         newCustom.append(arrayCustom[indexPath.row])
-        NSUserDefaults.standardUserDefaults().setObject(newCustom, forKey: "keyCustom")
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
@@ -181,7 +180,7 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "addToCustom") {
             var svc = segue.destinationViewController as! ViewController;
-            
+            NSUserDefaults.standardUserDefaults().setObject(newCustom, forKey: "keyCustom")
             svc.toPass = newCustom
         }
     }
