@@ -149,6 +149,7 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
         
         selectedIndexPaths.append(indexPath)
         newCustom.append(arrayCustom[indexPath.row])
+        NSUserDefaults.standardUserDefaults().setObject(newCustom, forKey: "keyCustom")
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {

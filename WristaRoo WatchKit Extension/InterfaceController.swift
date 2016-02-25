@@ -59,7 +59,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         }
         
         return nil
-    
     }
     
     

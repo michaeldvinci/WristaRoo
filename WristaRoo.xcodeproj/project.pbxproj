@@ -208,12 +208,12 @@
 				F56930161C7D2C8B0048DDAB /* WristaRoo.entitlements */,
 				F5E19FBF1C756409007653F6 /* AppDelegate.swift */,
 				F5E19FC11C756409007653F6 /* ViewController.swift */,
+				F57720911C7E504E00D189D7 /* AddCustomViewController.swift */,
 				F5E19FC31C756409007653F6 /* Main.storyboard */,
 				F5E19FC61C756409007653F6 /* Assets.xcassets */,
 				F5E19FC81C756409007653F6 /* LaunchScreen.storyboard */,
 				F5E19FCB1C756409007653F6 /* Info.plist */,
 				F567D9A91C7771E900817543 /* Images.xcassets */,
-				F57720911C7E504E00D189D7 /* AddCustomViewController.swift */,
 			);
 			path = WristaRoo;
 			sourceTree = "<group>";
@@ -294,6 +294,7 @@
 				F5E19FB91C756409007653F6 /* Frameworks */,
 				F5E19FBA1C756409007653F6 /* Resources */,
 				F5E1A00C1C75640A007653F6 /* Embed Watch Content */,
+				F5E5DD2A1C7E86BD0034B9F0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -365,6 +366,7 @@
 				F5E19FEF1C75640A007653F6 /* Sources */,
 				F5E19FF01C75640A007653F6 /* Frameworks */,
 				F5E19FF11C75640A007653F6 /* Resources */,
+				F5E5DD2C1C7E86E80034B9F0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -488,6 +490,35 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F5E5DD2A1C7E86BD0034B9F0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Set the build number to the count of Git commits\nbuildNumber=$(git rev-list --count HEAD)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+		F5E5DD2C1C7E86E80034B9F0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Set the build number to the count of Git commits\nbuildNumber=$(git rev-list --count HEAD)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F5E19FB81C756409007653F6 /* Sources */ = {

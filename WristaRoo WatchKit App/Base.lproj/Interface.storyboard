@@ -11,6 +11,7 @@
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WristaRoo_WatchKit_App" customModuleProvider="target">
                     <items>
                         <button width="1" height="19.5" alignment="left" title="Update Custom" id="yhy-Ko-pOJ">
+                            <color key="backgroundColor" red="0.072332974137929856" green="0.33006465517241362" blue="0.031088362068965519" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="updateCustom" destination="AgC-eL-Hgc" id="8fy-cE-HbA"/>
                             </connections>
@@ -218,6 +219,7 @@
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
                                         </items>
+                                        <color key="backgroundColor" red="0.072332974137929856" green="0.13415948275862055" blue="0.62184806034482754" alpha="1" colorSpace="calibratedRGB"/>
                                     </group>
                                     <connections>
                                         <outlet property="locationLabel" destination="eOe-7y-EMP" id="uSm-dO-EhD"/>
