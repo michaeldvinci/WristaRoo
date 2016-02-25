@@ -10,12 +10,6 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WristaRoo_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <button width="1" height="19.5" alignment="left" title="Update Custom" id="yhy-Ko-pOJ">
-                            <color key="backgroundColor" red="0.072332974137929856" green="0.33006465517241362" blue="0.031088362068965519" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="updateCustom" destination="AgC-eL-Hgc" id="8fy-cE-HbA"/>
-                            </connections>
-                        </button>
                         <table alignment="left" id="ur1-wO-rFX">
                             <items>
                                 <tableRow identifier="InterfaceTableRowController" id="pAv-5C-J3J" customClass="InterfaceTableRowController" customModule="WristaRoo_WatchKit_Extension">
@@ -34,7 +28,6 @@
                     </items>
                     <connections>
                         <outlet property="mainTable" destination="ur1-wO-rFX" id="T0a-a1-kqt"/>
-                        <outlet property="updateCustom" destination="yhy-Ko-pOJ" id="2Hg-Gl-qli"/>
                     </connections>
                 </controller>
             </objects>

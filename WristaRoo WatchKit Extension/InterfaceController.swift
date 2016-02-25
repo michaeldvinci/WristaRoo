@@ -34,20 +34,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         loadTableData()
     }
     
-    
-    @IBAction func updateCustom() {
-        if (WCSession.isSupported()) {
-            watchSession = WCSession.defaultSession()
-            watchSession.delegate = self;
-            watchSession.activateSession()
-            print(" ")
-            print("CONNECTED!2")
-            print("CONNECTED!2")
-            print("CONNECTED!2")
-        }
-        
-    }
-    
     private func loadTableData() {
         
         mainTable.setNumberOfRows(mains.count, withRowType: "InterfaceTableRowController")
