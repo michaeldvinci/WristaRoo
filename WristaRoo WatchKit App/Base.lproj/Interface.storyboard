@@ -148,12 +148,13 @@
                         <table alignment="left" id="laF-pd-xpz">
                             <items>
                                 <tableRow identifier="Time" selectable="NO" id="3xg-mv-V5Y" customClass="TimeStageActTableRowController" customModule="WristaRoo_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="22.5" alignment="left" id="dfx-ou-UZP">
+                                    <group key="rootItem" width="1" height="22.5" alignment="left" backgroundImage="bgTime.png" id="dfx-ou-UZP">
                                         <items>
                                             <label alignment="left" text="Label" id="GQ9-U5-vf2">
                                                 <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                             </label>
                                         </items>
+                                        <color key="backgroundColor" red="1" green="0.65098039215686276" blue="0.043137254901960784" alpha="0.79000000000000004" colorSpace="calibratedRGB"/>
                                     </group>
                                     <connections>
                                         <outlet property="timeLabel" destination="GQ9-U5-vf2" id="9DD-Be-69t"/>
@@ -189,12 +190,13 @@
                         <table alignment="left" id="xMv-cI-O5w">
                             <items>
                                 <tableRow identifier="Time" selectable="NO" id="73O-w0-SCB" customClass="TimeTableRowController" customModule="WristaRoo_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="21.5" alignment="left" id="aE0-Hs-XaJ">
+                                    <group key="rootItem" width="1" height="21.5" alignment="left" backgroundImage="bgTime.png" id="aE0-Hs-XaJ">
                                         <items>
                                             <label alignment="left" text="Label" id="EDj-zW-32s">
                                                 <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                             </label>
                                         </items>
+                                        <color key="backgroundColor" red="1" green="0.65067137846517931" blue="0.043137254901960784" alpha="0.78911790780141833" colorSpace="calibratedRGB"/>
                                     </group>
                                     <connections>
                                         <outlet property="timeLabel" destination="EDj-zW-32s" id="wzo-Nj-NJx"/>
@@ -207,16 +209,15 @@
                                                 <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
                                             </label>
                                         </items>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </group>
                                     <connections>
                                         <outlet property="actLabel" destination="wX0-19-Tyw" id="2iH-ED-38g"/>
                                     </connections>
                                 </tableRow>
                                 <tableRow identifier="Location" id="kzx-jt-SPI" customClass="LocationTableRowController" customModule="WristaRoo_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="19.5" alignment="left" id="TQP-BD-zIO">
+                                    <group key="rootItem" width="1" height="19.5" alignment="left" backgroundImage="bgStage.png" id="TQP-BD-zIO">
                                         <items>
-                                            <label alignment="right" text="Label" id="eOe-7y-EMP">
+                                            <label height="17" alignment="right" text="Label" id="eOe-7y-EMP">
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
                                         </items>

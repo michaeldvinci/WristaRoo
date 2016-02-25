@@ -12,18 +12,12 @@ class StageInterfaceController: WKInterfaceController {
     
     @IBOutlet var stageTable: WKInterfaceTable!
     
-    static let stages : [String] = ["What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent", "Silent Disco", "Christmas Barn"]
+    let stages : [String] = ["What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent", "Silent Disco", "Christmas Barn"]
     
     //let stageTh = stages
     //let stageFr = stages
     //let stageSa = stages
     //let stageSu = stages
-    
-    
-    let stageTh = ["1What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent", "Silent Disco", "Christmas Barn"]
-    let stageFr = ["2What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent", "Silent Disco", "Christmas Barn"]
-    let stageSa = ["3What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent", "Silent Disco", "Christmas Barn"]
-    let stageSu = ["4What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent", "Silent Disco", "Christmas Barn"]
     
     
     override func awakeWithContext(context: AnyObject?) {
@@ -56,9 +50,9 @@ class StageInterfaceController: WKInterfaceController {
     
     private func loadThStage() {
         
-        stageTable.setNumberOfRows(stageTh.count, withRowType: "StageTableRowController")
+        stageTable.setNumberOfRows(stages.count, withRowType: "StageTableRowController")
         
-        for (index, stageThName) in stageTh.enumerate() {
+        for (index, stageThName) in stages.enumerate() {
             
             let row3 = stageTable.rowControllerAtIndex(index) as! StageTableRowController
             
@@ -69,9 +63,9 @@ class StageInterfaceController: WKInterfaceController {
     
     private func loadFrStage() {
         
-        stageTable.setNumberOfRows(stageFr.count, withRowType: "StageTableRowController")
+        stageTable.setNumberOfRows(stages.count, withRowType: "StageTableRowController")
         
-        for (index, stageFrName) in stageFr.enumerate() {
+        for (index, stageFrName) in stages.enumerate() {
             
             let row3 = stageTable.rowControllerAtIndex(index) as! StageTableRowController
             
@@ -82,9 +76,9 @@ class StageInterfaceController: WKInterfaceController {
     
     private func loadSaStage() {
         
-        stageTable.setNumberOfRows(stageSa.count, withRowType: "StageTableRowController")
+        stageTable.setNumberOfRows(stages.count, withRowType: "StageTableRowController")
         
-        for (index, stageSaName) in stageSa.enumerate() {
+        for (index, stageSaName) in stages.enumerate() {
             
             let row3 = stageTable.rowControllerAtIndex(index) as! StageTableRowController
             
@@ -95,9 +89,9 @@ class StageInterfaceController: WKInterfaceController {
     
     private func loadSuStage() {
         
-        stageTable.setNumberOfRows(stageSu.count, withRowType: "StageTableRowController")
+        stageTable.setNumberOfRows(stages.count, withRowType: "StageTableRowController")
         
-        for (index, stageSuName) in stageSu.enumerate() {
+        for (index, stageSuName) in stages.enumerate() {
             
             let row3 = stageTable.rowControllerAtIndex(index) as! StageTableRowController
             
@@ -110,22 +104,22 @@ class StageInterfaceController: WKInterfaceController {
     {
         
         if segueIdentifier == "showStageAct" && MyVariables.yourVariable == "th"{
-            let stage = stageTh[rowIndex]
+            let stage = stages[rowIndex]
             let stageA = [stage, MyVariables.yourVariable]
             return stageA
         }
         if segueIdentifier == "showChoices" && MyVariables.yourVariable == "fr"{
-            let stage = stageFr[rowIndex]
+            let stage = stages[rowIndex]
             let stageA = [stage, MyVariables.yourVariable]
             return stageA
         }
         if segueIdentifier == "showChoices" && MyVariables.yourVariable == "sa"{
-            let stage = stageSa[rowIndex]
+            let stage = stages[rowIndex]
             let stageA = [stage, MyVariables.yourVariable]
             return stageA
         }
         if segueIdentifier == "showChoices" && MyVariables.yourVariable == "su"{
-            let stage = stageSu[rowIndex]
+            let stage = stages[rowIndex]
             let stageA = [stage, MyVariables.yourVariable]
             return stageA
         }
