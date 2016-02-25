@@ -59,25 +59,14 @@ class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     private func loadThCust() {
         
-        if (WCSession.isSupported()) {
-            watchSession = WCSession.defaultSession()
-            watchSession.delegate = self;
-            watchSession.activateSession()
-            print(" ")
-            print("CONNECTED!2")
-            print("CONNECTED!2")
-            print("CONNECTED!2")
+        let tabledata = NSUserDefaults.standardUserDefaults().arrayForKey("keyRoo")
+        
+        self.choiceTable.setNumberOfRows(tabledata!.count, withRowType: "ChoiceTableRowController")
+        
+        for (index, thName) in tabledata!.enumerate() {
+            let row2 = self.choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
+            row2.choiceLabel.setText(thName as? String)
         }
-        
-        cTimeTable.setNumberOfRows(thTime.count, withRowType: "ChoiceTableRowController2")
-        
-        for (index, thName) in thTime.enumerate() {
-            
-            let row2 = cTimeTable.rowControllerAtIndex(index) as! ChoiceTableRowController
-            
-            row2.choiceTime.setText(thName)
-        }
-        
         
     }
     
@@ -149,28 +138,6 @@ class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
         // This method is called when watch view controller is no longer visible
         NSLog("%@ did deactivate", self)
         super.didDeactivate()
-    }
-    
-    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
-        
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            
-            if let retrievedArray1 = applicationContext["Array1"] as? [String] {
-                self.custArray = retrievedArray1
-                print(" ")
-                print("----------")
-                print(" ")
-                print(self.custArray)
-                print(" ")
-                print("++++++++++")
-                print(" ")
-            }
-            self.choiceTable.setNumberOfRows(self.custArray.count, withRowType: "ChoiceTableRowController")
-            for (index, thName) in self.custArray.enumerate() {
-                let row2 = self.choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
-                row2.choiceLabel.setText(thName)
-            }
-        }
     }
     
 }

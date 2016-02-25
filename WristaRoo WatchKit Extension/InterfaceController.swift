@@ -12,6 +12,7 @@ import WatchConnectivity
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     var watchSession: WCSession!
+    var key = "keyRoo"
     
     @IBOutlet var mainTable: WKInterfaceTable!
     
@@ -34,6 +35,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             print("CONNECTED!2")
             print("CONNECTED!2")
         }
+        
     }
     
     private func loadTableData() {
@@ -72,5 +74,14 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         NSLog("%@ did deactivate", self)
         super.didDeactivate()
     }
+    
+    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            if let retrievedArray1 = applicationContext["Array1"] as? [String] {
+                NSUserDefaults.standardUserDefaults().setObject(retrievedArray1, forKey: "keyRoo")
+            }
+        }
+    }
+
     
 }
