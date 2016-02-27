@@ -90,6 +90,20 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
         return true
     }
     
+    @IBAction func toClear(sender: AnyObject) {
+        arrayNewCustom = []
+        NSUserDefaults.standardUserDefaults().setObject(arrayNewCustom, forKey: "keyCustom")
+        tableView.reloadData()
+        do {
+            let applicationDict = ["Array1": arrayNewCustom]
+            try WCSession.defaultSession().updateApplicationContext(applicationDict)
+        }
+            
+        catch {
+            print(error)
+        }
+    }
+    
     @IBAction func clearA(sender: AnyObject) {
         NSUserDefaults.standardUserDefaults().setObject(clearA, forKey: "keyCustom")
         dispatch_async(dispatch_get_main_queue(), { () -> Void in

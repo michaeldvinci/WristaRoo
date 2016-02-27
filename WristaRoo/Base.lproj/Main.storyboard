@@ -82,7 +82,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="od2-fF-KrF"/>
                                     <barButtonItem title="Clear" id="lhC-WU-nga">
                                         <connections>
-                                            <action selector="clearA:" destination="BYZ-38-t0r" id="ZlG-Ru-cOv"/>
+                                            <action selector="toClear:" destination="BYZ-38-t0r" id="2XE-ao-l8e"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="fO7-Rr-q13"/>
@@ -165,15 +165,15 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8G-AV-nED">
                                 <rect key="frame" x="0.0" y="448" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Add to Custom" id="Du0-Om-GWg">
+                                    <barButtonItem systemItem="cancel" id="ahz-8Y-lkk">
                                         <connections>
-                                            <action selector="addToCustom:" destination="msp-4r-Hch" id="8lg-ta-1Lo"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="93X-gj-tFw"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Er1-Ai-FJ0"/>
-                                    <barButtonItem title="Clear" id="gNi-pq-BGv">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1CL-5O-89f"/>
+                                    <barButtonItem title="Add" id="Du0-Om-GWg">
                                         <connections>
-                                            <action selector="clearList:" destination="msp-4r-Hch" id="zvg-s2-xZB"/>
+                                            <action selector="addToCustom:" destination="msp-4r-Hch" id="8lg-ta-1Lo"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -209,4 +209,7 @@
     <resources>
         <image name="IMG_6726.jpg" width="2661" height="3631"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nkQ-mw-orR"/>
+    </inferredMetricsTieBreakers>
 </document>
