@@ -147,6 +147,7 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("customCell", forIndexPath: indexPath)
+        cell.textLabel?.textColor = UIColor.whiteColor()
         cell.textLabel?.text = arrayCustom[indexPath.item]
         return cell
     }

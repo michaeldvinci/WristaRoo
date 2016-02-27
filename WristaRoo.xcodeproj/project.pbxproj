@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F51CE8161C7F9D4A00CE653C /* bgStage.png in Resources */ = {isa = PBXBuildFile; fileRef = F51CE8141C7F9D4A00CE653C /* bgStage.png */; };
 		F51CE8171C7F9D4A00CE653C /* bgTime.png in Resources */ = {isa = PBXBuildFile; fileRef = F51CE8151C7F9D4A00CE653C /* bgTime.png */; };
-		F51CE8191C7FDDAD00CE653C /* Untitled-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F51CE8181C7FDDAD00CE653C /* Untitled-2.png */; };
 		F567D9AA1C7771E900817543 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F567D9A91C7771E900817543 /* Images.xcassets */; };
 		F56930191C7D2EF00048DDAB /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F56930181C7D2EF00048DDAB /* WatchConnectivity.framework */; };
 		F57720921C7E504E00D189D7 /* AddCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57720911C7E504E00D189D7 /* AddCustomViewController.swift */; };
@@ -104,7 +103,6 @@
 /* Begin PBXFileReference section */
 		F51CE8141C7F9D4A00CE653C /* bgStage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgStage.png; sourceTree = "<group>"; };
 		F51CE8151C7F9D4A00CE653C /* bgTime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgTime.png; sourceTree = "<group>"; };
-		F51CE8181C7FDDAD00CE653C /* Untitled-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Untitled-2.png"; path = "../../../Desktop/Untitled-2.png"; sourceTree = "<group>"; };
 		F567D9A91C7771E900817543 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F56930161C7D2C8B0048DDAB /* WristaRoo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WristaRoo.entitlements; sourceTree = "<group>"; };
 		F56930171C7D2CC90048DDAB /* WristaRoo WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "WristaRoo WatchKit App.entitlements"; sourceTree = "<group>"; };
@@ -213,16 +211,15 @@
 		F5E19FBE1C756409007653F6 /* WristaRoo */ = {
 			isa = PBXGroup;
 			children = (
-				F51CE8181C7FDDAD00CE653C /* Untitled-2.png */,
+				F5E19FCB1C756409007653F6 /* Info.plist */,
 				F56930161C7D2C8B0048DDAB /* WristaRoo.entitlements */,
 				F5E19FBF1C756409007653F6 /* AppDelegate.swift */,
 				F5E19FC11C756409007653F6 /* ViewController.swift */,
 				F57720911C7E504E00D189D7 /* AddCustomViewController.swift */,
 				F5EA5BA31C7F530E003378DC /* EditCustomTableViewController.swift */,
 				F5E19FC31C756409007653F6 /* Main.storyboard */,
-				F5E19FC61C756409007653F6 /* Assets.xcassets */,
 				F5E19FC81C756409007653F6 /* LaunchScreen.storyboard */,
-				F5E19FCB1C756409007653F6 /* Info.plist */,
+				F5E19FC61C756409007653F6 /* Assets.xcassets */,
 				F567D9A91C7771E900817543 /* Images.xcassets */,
 			);
 			path = WristaRoo;
@@ -474,7 +471,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F51CE8191C7FDDAD00CE653C /* Untitled-2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
