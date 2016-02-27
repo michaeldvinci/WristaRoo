@@ -265,6 +265,7 @@
 				F5E1A01E1C75669E007653F6 /* ChoiceInterfaceController.swift */,
 				F5E1A0241C756758007653F6 /* StageInterfaceController.swift */,
 				F5D4329D1C76781C00B018C0 /* ByTimeInterfaceController.swift */,
+				F5D4329F1C7696F800B018C0 /* StageActInterfaceController.swift */,
 				F5E1A0161C7564A9007653F6 /* InterfaceTableRowController.swift */,
 				F5E1A01A1C7565D2007653F6 /* DayTableRowController.swift */,
 				F5E1A0201C7566B8007653F6 /* ChoiceTableRowController.swift */,
@@ -272,14 +273,13 @@
 				F5D432971C7677F600B018C0 /* TimeTableRowController.swift */,
 				F5D432991C7677FF00B018C0 /* ActTableRowController.swift */,
 				F5D4329B1C76780900B018C0 /* LocationTableRowController.swift */,
+				F5D432A11C76972400B018C0 /* TimeStageActTableRowController.swift */,
+				F5D432A31C76975C00B018C0 /* ActStageActTableRowController.swift */,
 				F5E19FFC1C75640A007653F6 /* ExtensionDelegate.swift */,
 				F5E19FFE1C75640A007653F6 /* NotificationController.swift */,
 				F5E1A0001C75640A007653F6 /* Assets.xcassets */,
 				F5E1A0021C75640A007653F6 /* Info.plist */,
 				F5E19FF81C75640A007653F6 /* Supporting Files */,
-				F5D4329F1C7696F800B018C0 /* StageActInterfaceController.swift */,
-				F5D432A11C76972400B018C0 /* TimeStageActTableRowController.swift */,
-				F5D432A31C76975C00B018C0 /* ActStageActTableRowController.swift */,
 			);
 			path = "WristaRoo WatchKit Extension";
 			sourceTree = "<group>";

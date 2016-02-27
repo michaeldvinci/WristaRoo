@@ -54,9 +54,14 @@ class ByTimeInterfaceController: WKInterfaceController {
         }
         
         if context[0] as! String == "By Time" && context[1] as! String == "th" {
+            MyVariables.yourVariable = context[1] as! String
             thTimeTable()
         }
         
+    }
+    
+    struct MyVariables {
+        static var yourVariable = "someString"
     }
     
     private func thTimeTable() {
@@ -85,6 +90,11 @@ class ByTimeInterfaceController: WKInterfaceController {
             let mainName = thTypes[rowIndex]
             return mainName
         }
+        if segueIdentifier == "timeToStage" && MyVariables.yourVariable == "th"{
+            let stageName = thTime[rowIndex]
+            let stageA = [stageName, MyVariables.yourVariable]
+            return stageA
+        }
         
         return nil
         
@@ -92,15 +102,16 @@ class ByTimeInterfaceController: WKInterfaceController {
     
     
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         NSLog("%@ will activate", self)
     }
     
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         NSLog("%@ did deactivate", self)
         super.didDeactivate()
     }
+    
+    //timeToStage
+
     
 }

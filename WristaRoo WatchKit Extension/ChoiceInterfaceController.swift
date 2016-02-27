@@ -59,40 +59,32 @@ class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     private func loadThCust() {
         
-        let tabledata = NSUserDefaults.standardUserDefaults().arrayForKey("keyRoo")
+        if let tabledata = NSUserDefaults.standardUserDefaults().arrayForKey("keyRoo") {
         
-        if tabledata!.count > 0 {
-            self.choiceTable.setNumberOfRows(tabledata!.count, withRowType: "ChoiceTableRowController")
-        }
+            if tabledata.count > 0 {
+                self.choiceTable.setNumberOfRows(tabledata.count, withRowType: "ChoiceTableRowController")
+            } else {
+                self.choiceTable.setNumberOfRows(0, withRowType: "ChoiceTableRowController")
+            }
         
-        for (index, thName) in tabledata!.enumerate() {
-            
-            let row2 = self.choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
-            
+            for (index, thName) in tabledata.enumerate() {
+                let row2 = self.choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
             row2.choiceLabel.setText(thName as? String)
+            }
         }
         
     }
     
     
-    
     private func loadThChoices() {
-        
         choiceTable.setNumberOfRows(thChoice.count, withRowType: "ChoiceTableRowController")
-        
         for (index, thName) in thChoice.enumerate() {
-            
             let row2 = choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
-            
             row2.choiceLabel.setText(thName)
         }
-        
         cTimeTable.setNumberOfRows(thTime.count, withRowType: "ChoiceTableRowController2")
-        
         for (index, thName) in thTime.enumerate() {
-            
             let row2 = cTimeTable.rowControllerAtIndex(index) as! ChoiceTableRowController
-            
             row2.choiceTime.setText(thName)
         }
         
@@ -134,12 +126,10 @@ class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
     
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         NSLog("%@ did deactivate", self)
         super.didDeactivate()
     }

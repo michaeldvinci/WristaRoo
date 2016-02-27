@@ -14,12 +14,6 @@ class StageInterfaceController: WKInterfaceController {
     
     let stages : [String] = ["What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent", "Silent Disco", "Christmas Barn"]
     
-    //let stageTh = stages
-    //let stageFr = stages
-    //let stageSa = stages
-    //let stageSu = stages
-    
-    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
@@ -31,13 +25,13 @@ class StageInterfaceController: WKInterfaceController {
             loadThStage()
             MyVariables.yourVariable = "th"
         } else if context[0] as! String == "By Stage" && context[1] as! String == "fr"{
-            loadFrStage()
+            loadThStage()
             MyVariables.yourVariable = "fr"
         } else if context[0] as! String == "By Stage" && context[1] as! String == "sa"{
-            loadSaStage()
+            loadThStage()
             MyVariables.yourVariable = "sa"
         } else if context[0] as! String == "By Stage" && context[1] as! String == "su"{
-            loadSuStage()
+            loadThStage()
             MyVariables.yourVariable = "su"
         }
         
@@ -49,53 +43,10 @@ class StageInterfaceController: WKInterfaceController {
         
     
     private func loadThStage() {
-        
         stageTable.setNumberOfRows(stages.count, withRowType: "StageTableRowController")
-        
         for (index, stageThName) in stages.enumerate() {
-            
             let row3 = stageTable.rowControllerAtIndex(index) as! StageTableRowController
-            
             row3.stageLabel.setText(stageThName)
-        }
-        
-    }
-    
-    private func loadFrStage() {
-        
-        stageTable.setNumberOfRows(stages.count, withRowType: "StageTableRowController")
-        
-        for (index, stageFrName) in stages.enumerate() {
-            
-            let row3 = stageTable.rowControllerAtIndex(index) as! StageTableRowController
-            
-            row3.stageLabel.setText(stageFrName)
-        }
-        
-    }
-    
-    private func loadSaStage() {
-        
-        stageTable.setNumberOfRows(stages.count, withRowType: "StageTableRowController")
-        
-        for (index, stageSaName) in stages.enumerate() {
-            
-            let row3 = stageTable.rowControllerAtIndex(index) as! StageTableRowController
-            
-            row3.stageLabel.setText(stageSaName)
-        }
-        
-    }
-    
-    private func loadSuStage() {
-        
-        stageTable.setNumberOfRows(stages.count, withRowType: "StageTableRowController")
-        
-        for (index, stageSuName) in stages.enumerate() {
-            
-            let row3 = stageTable.rowControllerAtIndex(index) as! StageTableRowController
-            
-            row3.stageLabel.setText(stageSuName)
         }
         
     }
@@ -130,13 +81,11 @@ class StageInterfaceController: WKInterfaceController {
     
     
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         NSLog("%@ will activate", self)
     }
     
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         NSLog("%@ did deactivate", self)
         super.didDeactivate()
     }

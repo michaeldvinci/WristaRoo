@@ -35,37 +35,29 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     private func loadTableData() {
-        
         mainTable.setNumberOfRows(mains.count, withRowType: "InterfaceTableRowController")
-        
         for (index, mainName) in mains.enumerate() {
-            
             let row = mainTable.rowControllerAtIndex(index) as! InterfaceTableRowController
-            
             row.interfaceLabel.setText(mainName)
         }
         
     }
     
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
-        
         if segueIdentifier == "showSchedule" {
             let mainName = mains[rowIndex]
             return mainName
         }
-        
         return nil
     }
     
     
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         NSLog("%@ will activate", self)
     }
     
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         NSLog("%@ did deactivate", self)
         super.didDeactivate()
     }
