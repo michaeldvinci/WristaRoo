@@ -23,8 +23,11 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
         super.viewDidLoad()
         
         arrayNewCustom = toPass
-        let tabledata = NSUserDefaults.standardUserDefaults().arrayForKey("keyCustom")
-        arrayNewCustom = tabledata as! [String]
+        if let tabledata = NSUserDefaults.standardUserDefaults().arrayForKey("keyCustom") {
+            arrayNewCustom = tabledata as! [String]
+        } else {
+            arrayNewCustom = [""]
+        }
         
         if(WCSession.isSupported()) {
             watchSession = WCSession.defaultSession()
