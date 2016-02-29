@@ -15,11 +15,18 @@ class ByTimeInterfaceController: WKInterfaceController {
     static let this = "This Tent"
     static let that = "That Tent"
     static let disco = "Silent Disco"
+    static let which = "Which Stage"
+    static let what = "What Stage"
     
     @IBOutlet var ByTimeTable: WKInterfaceTable!
     
     let thTypes = ["Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location"]
-    let thTime = [ "4:00 - 6:30", "Tiki Disco", xmas,
+    let frTypes = ["Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location"]
+    let saTypes = ["Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location"]
+    let suTypes = ["Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location"
+        ]
+    let thTime = [
+        "4:00 - 6:30", "Tiki Disco", xmas,
         "5:30 - 8:30", "Quickie Mart", disco,
         "5:45 - 6:30", "Unlocking the Truth", this,
         "6:00 - 6:45", "DMAs", other,
@@ -44,7 +51,131 @@ class ByTimeInterfaceController: WKInterfaceController {
         "12:15 - 1:00", "Mac DeMarco", this,
         "12:15 - 1:15", "Gramatik", other,
         "1:00 - 2:00", "Snicklefritz", xmas,
-        "2:30 - 6:00", "Tiki Disco", xmas]
+        "2:30 - 6:00", "Tiki Disco", xmas
+        ]
+    let frTime = [
+        "1:15 - 2:15", "The Districts", other,
+        "2:00 - 3:00", "Brown Sabbath", which,
+        "2:00 - 3:00", "Pallbearer", that,
+        "2:00 - 4:45", "Full Service Party", xmas,
+        "3:00 - 4:00", "King Gizzard", other,
+        "3:15 - 4:15", "Tanya Tagaq", this,
+        "3:30 - 4:30", "SOJA", what,
+        "3:45 - 4:45", "Royal Blood", which,
+        "3:45 - 4:45", "Between the Buried & Me", that,
+        "4:30 - 6:30", "Motion Potion", disco,
+        "5:00 - 6:00", "Against Me", this,
+        "5:00 - 6:00", "New Breed Brass Band", xmas,
+        "5:30 - 6:30", "Dawes", what,
+        "5:30 - 6:30", "Moon Taxi", which,
+        "5:30 - 6:30", "Rustie", that,
+        "6:15 - 9:00", "Full Service Party", xmas,
+        "6:30 - 7:30", "Sylvan Esso", other,
+        "6:30 - 8:30", "Attom", disco,
+        "6:45 - 7:45", "Guster", this,
+        "7:15 - 8:30", "Kacey Musgraves", that,
+        "7:15 - 8:15", "Atmosphere", which,
+        "7:30 - 8:45", "Alabama Shakes", what,
+        "8:15 - 9:30", "Ben Folds & yMusic", other,
+        "8:30 - 9:45", "Tears for Fears", this,
+        "9:15 - 10:30", "Ben Harper", which,
+        "9:45 - 11:00", "Kendrick Lamar", this,
+        "10:30 - 12:30", "Motion Picture", disco,
+        "11:00 - 12:15", "MSMW", that,
+        "11:00 - 1:00", "Full Service PArty", xmas,
+        "11:15 - 12:15", "Run the Jewels", this,
+        "11:30 - 12:45", "Earth, Wind & Fire", which,
+        "12:00 - 1:30", "Deadmau5", what,
+        "12:!5 - 1:45", "Flying Lotus", other,
+        "12:30 - 2:00", "Matoma", disco,
+        "1:00 - 2:15", "Odesza", this,
+        "1:30 - 2:30", "Jon Cleary", xmas,
+        "2:00 - 3:30", "STS9", that,
+        "2:00 - 4:00", "DJ Prince Hakim", disco,
+        "3:00 - 4:00", "Tiki Disco", xmas,
+        "4:00 - 5:00", "Tropical Party", xmas,
+        "5:00 - 6:00", "Tiki Disco", xmas
+        ]
+    let saTime = [
+        "12:30 - 1:30", "Priory", this,
+        "12:30 - 1:45", "Jon Cleary", that,
+        "12:45 - 1:45", "So Percussion", other,
+        "2:00 - 3:00", "Catfish & the Bottlemen", this,
+        "2:00 - 5:00", "Full Service PArty", xmas,
+        "2:15 - 3:15", "Songhoy Blues", which,
+        "2:30 - 3:30", "Gregory Alan Isakov", that,
+        "2:30 - 3:30", "Phox", other,
+        "3:30 - 4:45", "Trampled by Turtles", what,
+        "3:30 - 5:00", "E.Feld", disco,
+        "3:45 - 4:45", "Woods", this,
+        "4:00 - 5:00", "Rhiannon Giddens", which,
+        "4:15 - 5:15", "SZA", other,
+        "4:15 - 5:30", "Bahams", that,
+        "5:00 - 6:00", "Nola Bounce Party", xmas,
+        "5:00 - 7:00", "SnickleFritz", disco,
+        "5:15 - 6:30", "Bleachers", this,
+        "5:45 - 6:45", "The War on Drugs", which,
+        "5:45 - 7:00", "Hozier", what,
+        "6:00 - 7:30", "Jamie XX", other,
+        "6:00 - 6:00", "Full Service Party", xmas,
+        "6:15 - 7:30", "Sturgill Simpson", that,
+        "7:00 - 8:15", "Belle & Sebastian", this,
+        "7:00 - 10:00", "Tiki Disco", disco,
+        "7:30 - 8:30", "Gary Clark Jr", which,
+        "8:00 - 9:30", "SBTRKT", other,
+        "8:00 - 10:00", "My Morning Jacket", what,
+        "8:15 - 9:30", "Atomic Bomb", that,
+        "9:15 - 10:30", "Childish Gambino", which,
+        "10:00 - 1:00", "Mumford & Sons", what,
+        "11:00 - 12:00", "DJ Logic", disco,
+        "11:00 - 1:00", "Full Service PArty", xmas,
+        "12:00 - 12:45", "Different Slep", disco,
+        "12:00 - 1:15", "Slayer", this,
+        "12:00 - 1:15", "Tycho", that,
+        "12:45 - 1:30", " Nuri", disco,
+        "1:00 - 2:15", "Bassnectar", which,
+        "1:00 - 2:00", "Vogue Dance Off", xmas,
+        "1:30 - 2:15", "Childish Major", disco,
+        "1:30 - 3:00", "Superjam", other,
+        "2:00 - 3:15", "Flume", that,
+        "2:00 - 3:30", "D'Angelo", this,
+        "2:15 - 3:00", "El Dusty", disco,
+        "3:00 - 4:00", "Mike Gao", disco,
+        "3:00 - 4:00", "Robe Rave", xmas,
+        "4:00 - 6:00", " 90s Rave", xmas
+        ]
+    let suTime = [
+        "12:15 - 1:15", "Pokey LaForge", which,
+        "12:30 - 1:15", "Shakey Graves", that,
+        "12:145 - 2:00", "Christopher Denny", this,
+        "1:15 - 2:15", "Jessica Hernandez", other,
+        "1:45 - 2:30", "Hurray for Riff Raff", that,
+        "2:00 - 3:00", "Madisen Ward", which,
+        "2:30 - 3:45", "Twenty One Pilots", what,
+        "2:30 - 3:45", "His Golden Messenger", this,
+        "2:45 - 3:45", "Shabazz Palaces", other,
+        "3:00 - 4:00", "Bela Fleck", that,
+        "3:45 - 5:00", "Awolnation", which,
+        "4:00 - 5:00", "Full Service Party", xmas,
+        "4:15 - 5:15", "MO", other,
+        "4:15 - 5:15", "The Very Best", this,
+        "4:45 - 5:45", "Jerry Douglas", that,
+        "4:45 - 6:00", "Spoon", what,
+        "5:00 - 6:00", "Hip Hop Party", xmas,
+        "5:00 - 8:00", "DJ Logic", disco,
+        "5:45 - 6:45", "Freddie Gibbs & Madlib", other,
+        "5:45 - 7:00", "Brandi Carlile", which,
+        "6:00 - 7:00", "Regge Party", xmas,
+        "6:00 - 7:15", "Rudimental", this,
+        "6:30 - 7:30", "Punch Brothers", that,
+        "7:00 - 8:00", "Florence & the MAchine", what,
+        "7:00 - 9:00", "Full Service Party", xmas,
+        "7:30 - 8:45", "Caribou", other,
+        "7:45 - 9:00", "Robert Plant", which,
+        "8:00 - 9:00", "G-Eazy", this,
+        "8:00 - 9:00", "Bluegrass Superjam", that,
+        "9:00 - 11:30", "Billy Joel", what
+        ]
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -53,9 +184,23 @@ class ByTimeInterfaceController: WKInterfaceController {
             return
         }
         
+        print(context[1])
+        
         if context[0] as! String == "By Time" && context[1] as! String == "th" {
             MyVariables.yourVariable = context[1] as! String
             thTimeTable()
+        }
+        if context[0] as! String == "By Time" && context[1] as! String == "fr" {
+            MyVariables.yourVariable = context[1] as! String
+            frTimeTable()
+        }
+        if context[0] as! String == "By Time" && context[1] as! String == "sa" {
+            MyVariables.yourVariable = context[1] as! String
+            saTimeTable()
+        }
+        if context[0] as! String == "By Time" && context[1] as! String == "su" {
+            MyVariables.yourVariable = context[1] as! String
+            suTimeTable()
         }
         
     }
@@ -65,7 +210,6 @@ class ByTimeInterfaceController: WKInterfaceController {
     }
     
     private func thTimeTable() {
-        
         ByTimeTable.setRowTypes(thTypes)
         for var rowIndex = 0; rowIndex < thTypes.count; rowIndex++ {
             switch thTypes[rowIndex] {
@@ -83,6 +227,63 @@ class ByTimeInterfaceController: WKInterfaceController {
             }
         }
     }
+
+    private func frTimeTable() {
+        ByTimeTable.setRowTypes(frTypes)
+        for var rowIndex = 0; rowIndex < frTypes.count; rowIndex++ {
+            switch frTypes[rowIndex] {
+            case "Time":
+                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! TimeTableRowController
+                row.timeLabel.setText(frTime[rowIndex])
+            case "Act":
+                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! ActTableRowController
+                row.actLabel.setText(frTime[rowIndex])
+            case "Location":
+                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! LocationTableRowController
+                row.locationLabel.setText(frTime[rowIndex])
+            default:
+                print("nope")
+            }
+        }
+    }
+    
+    private func saTimeTable() {
+        ByTimeTable.setRowTypes(saTypes)
+        for var rowIndex = 0; rowIndex < saTypes.count; rowIndex++ {
+            switch saTypes[rowIndex] {
+            case "Time":
+                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! TimeTableRowController
+                row.timeLabel.setText(saTime[rowIndex])
+            case "Act":
+                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! ActTableRowController
+                row.actLabel.setText(saTime[rowIndex])
+            case "Location":
+                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! LocationTableRowController
+                row.locationLabel.setText(saTime[rowIndex])
+            default:
+                print("nope")
+            }
+        }
+    }
+    
+    private func suTimeTable() {
+        ByTimeTable.setRowTypes(suTypes)
+        for var rowIndex = 0; rowIndex < suTypes.count; rowIndex++ {
+            switch suTypes[rowIndex] {
+            case "Time":
+                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! TimeTableRowController
+                row.timeLabel.setText(suTime[rowIndex])
+            case "Act":
+                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! ActTableRowController
+                row.actLabel.setText(suTime[rowIndex])
+            case "Location":
+                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! LocationTableRowController
+                row.locationLabel.setText(suTime[rowIndex])
+            default:
+                print("nope")
+            }
+        }
+    }
     
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
         
@@ -92,6 +293,11 @@ class ByTimeInterfaceController: WKInterfaceController {
         }
         if segueIdentifier == "timeToStage" && MyVariables.yourVariable == "th"{
             let stageName = thTime[rowIndex]
+            let stageA = [stageName, MyVariables.yourVariable]
+            return stageA
+        }
+        if segueIdentifier == "timeToStage" && MyVariables.yourVariable == "fr"{
+            let stageName = frTime[rowIndex]
             let stageA = [stageName, MyVariables.yourVariable]
             return stageA
         }

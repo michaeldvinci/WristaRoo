@@ -41,7 +41,7 @@
                         <table alignment="left" id="SAX-FC-MnS">
                             <items>
                                 <tableRow identifier="DayTableRowController" id="Stf-W9-cKR" customClass="DayTableRowController" customModule="WristaRoo_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="f2l-f8-Czq">
+                                    <group key="rootItem" width="1" height="32.5" alignment="left" id="f2l-f8-Czq">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" text="Label" id="CLD-rq-eIX"/>
                                         </items>

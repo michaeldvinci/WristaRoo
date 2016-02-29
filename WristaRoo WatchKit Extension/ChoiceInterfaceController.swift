@@ -119,6 +119,21 @@ class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
             let dayA = [dayName, MyVariables.yourVariable]
             return dayA
         }
+        if segueIdentifier == "showByTime" && MyVariables.yourVariable == "fr"{
+            let dayName = thTime[rowIndex]
+            let dayA = [dayName, MyVariables.yourVariable]
+            return dayA
+        }
+        if segueIdentifier == "showByTime" && MyVariables.yourVariable == "sa"{
+            let dayName = thTime[rowIndex]
+            let dayA = [dayName, MyVariables.yourVariable]
+            return dayA
+        }
+        if segueIdentifier == "showByTime" && MyVariables.yourVariable == "su"{
+            let dayName = thTime[rowIndex]
+            let dayA = [dayName, MyVariables.yourVariable]
+            return dayA
+        }
         
         return nil
         
