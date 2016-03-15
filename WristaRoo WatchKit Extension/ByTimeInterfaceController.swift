@@ -17,14 +17,12 @@ class ByTimeInterfaceController: WKInterfaceController {
     static let disco = "Silent Disco"
     static let which = "Which Stage"
     static let what = "What Stage"
+    var tempArray: [String] = []
     
     @IBOutlet var ByTimeTable: WKInterfaceTable!
     
-    let thTypes = ["Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location"]
-    let frTypes = ["Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location"]
-    let saTypes = ["Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location","Time", "Act", "Location"]
-    let suTypes = ["Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location", "Time", "Act", "Location"
-        ]
+    let types = ["Time", "Act", "Location"]
+    
     let thTime = [
         "4:00 - 6:30", "Tiki Disco", xmas,
         "5:30 - 8:30", "Quickie Mart", disco,
@@ -53,6 +51,7 @@ class ByTimeInterfaceController: WKInterfaceController {
         "1:00 - 2:00", "Snicklefritz", xmas,
         "2:30 - 6:00", "Tiki Disco", xmas
         ]
+    
     let frTime = [
         "1:15 - 2:15", "The Districts", other,
         "2:00 - 3:00", "Brown Sabbath", which,
@@ -96,6 +95,7 @@ class ByTimeInterfaceController: WKInterfaceController {
         "4:00 - 5:00", "Tropical Party", xmas,
         "5:00 - 6:00", "Tiki Disco", xmas
         ]
+    
     let saTime = [
         "12:30 - 1:30", "Priory", this,
         "12:30 - 1:45", "Jon Cleary", that,
@@ -144,6 +144,7 @@ class ByTimeInterfaceController: WKInterfaceController {
         "3:00 - 4:00", "Robe Rave", xmas,
         "4:00 - 6:00", " 90s Rave", xmas
         ]
+    
     let suTime = [
         "12:15 - 1:15", "Pokey LaForge", which,
         "12:30 - 1:15", "Shakey Graves", that,
@@ -186,21 +187,20 @@ class ByTimeInterfaceController: WKInterfaceController {
         
         print(context[1])
         
-        if context[0] as! String == "By Time" && context[1] as! String == "th" {
+        if context[0] as! String == "By Time" {
             MyVariables.yourVariable = context[1] as! String
-            thTimeTable()
-        }
-        if context[0] as! String == "By Time" && context[1] as! String == "fr" {
-            MyVariables.yourVariable = context[1] as! String
-            frTimeTable()
-        }
-        if context[0] as! String == "By Time" && context[1] as! String == "sa" {
-            MyVariables.yourVariable = context[1] as! String
-            saTimeTable()
-        }
-        if context[0] as! String == "By Time" && context[1] as! String == "su" {
-            MyVariables.yourVariable = context[1] as! String
-            suTimeTable()
+            if context[1] as! String == "th" {
+                timeTable(thTime)
+            }
+            if context[1] as! String == "fr" {
+                timeTable(frTime)
+            }
+            if context[1] as! String == "sa" {
+                timeTable(saTime)
+            }
+            if context[1] as! String == "su" {
+                timeTable(suTime)
+            }
         }
         
     }
@@ -209,103 +209,56 @@ class ByTimeInterfaceController: WKInterfaceController {
         static var yourVariable = "someString"
     }
     
-    private func thTimeTable() {
-        ByTimeTable.setRowTypes(thTypes)
-        for var rowIndex = 0; rowIndex < thTypes.count; rowIndex++ {
-            switch thTypes[rowIndex] {
+    private func timeTable(typesA: [String]) {
+        var tempA: [String] = createTypesArray(typesA)
+        ByTimeTable.setRowTypes(createTypesArray(typesA))
+        for var rowIndex = 0; rowIndex < typesA.count; rowIndex++ {
+            switch tempA[rowIndex] {
             case "Time":
                 let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! TimeTableRowController
-                row.timeLabel.setText(thTime[rowIndex])
+                row.timeLabel.setText(typesA[rowIndex])
             case "Act":
                 let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! ActTableRowController
-                row.actLabel.setText(thTime[rowIndex])
+                row.actLabel.setText(typesA[rowIndex])
             case "Location":
                 let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! LocationTableRowController
-                row.locationLabel.setText(thTime[rowIndex])
-            default:
-                print("nope")
-            }
-        }
-    }
-
-    private func frTimeTable() {
-        ByTimeTable.setRowTypes(frTypes)
-        for var rowIndex = 0; rowIndex < frTypes.count; rowIndex++ {
-            switch frTypes[rowIndex] {
-            case "Time":
-                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! TimeTableRowController
-                row.timeLabel.setText(frTime[rowIndex])
-            case "Act":
-                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! ActTableRowController
-                row.actLabel.setText(frTime[rowIndex])
-            case "Location":
-                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! LocationTableRowController
-                row.locationLabel.setText(frTime[rowIndex])
+                row.locationLabel.setText(typesA[rowIndex])
             default:
                 print("nope")
             }
         }
     }
     
-    private func saTimeTable() {
-        ByTimeTable.setRowTypes(saTypes)
-        for var rowIndex = 0; rowIndex < saTypes.count; rowIndex++ {
-            switch saTypes[rowIndex] {
-            case "Time":
-                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! TimeTableRowController
-                row.timeLabel.setText(saTime[rowIndex])
-            case "Act":
-                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! ActTableRowController
-                row.actLabel.setText(saTime[rowIndex])
-            case "Location":
-                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! LocationTableRowController
-                row.locationLabel.setText(saTime[rowIndex])
-            default:
-                print("nope")
-            }
+    private func createTypesArray (typesA: [String]) -> [String] {
+        for var rowIndex = 0; rowIndex < typesA.count; rowIndex++ {
+            tempArray.append(types[rowIndex % 3])
         }
-    }
-    
-    private func suTimeTable() {
-        ByTimeTable.setRowTypes(suTypes)
-        for var rowIndex = 0; rowIndex < suTypes.count; rowIndex++ {
-            switch suTypes[rowIndex] {
-            case "Time":
-                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! TimeTableRowController
-                row.timeLabel.setText(suTime[rowIndex])
-            case "Act":
-                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! ActTableRowController
-                row.actLabel.setText(suTime[rowIndex])
-            case "Location":
-                let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! LocationTableRowController
-                row.locationLabel.setText(suTime[rowIndex])
-            default:
-                print("nope")
-            }
-        }
+        return tempArray
     }
     
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
         
-        if segueIdentifier == "showByTimes" {
-            let mainName = thTypes[rowIndex]
-            return mainName
+        if segueIdentifier == "timeToStage" {
+            if MyVariables.yourVariable == "th" {
+                let stageA = [thTime[rowIndex], MyVariables.yourVariable]
+                return stageA
+            }
+            if MyVariables.yourVariable == "fr"{
+                let stageA = [frTime[rowIndex], MyVariables.yourVariable]
+                return stageA
+            }
+            if MyVariables.yourVariable == "sa"{
+                let stageA = [saTime[rowIndex], MyVariables.yourVariable]
+                return stageA
+            }
+            if MyVariables.yourVariable == "su"{
+                let stageA = [suTime[rowIndex], MyVariables.yourVariable]
+                return stageA
+            }
+
         }
-        if segueIdentifier == "timeToStage" && MyVariables.yourVariable == "th"{
-            let stageName = thTime[rowIndex]
-            let stageA = [stageName, MyVariables.yourVariable]
-            return stageA
-        }
-        if segueIdentifier == "timeToStage" && MyVariables.yourVariable == "fr"{
-            let stageName = frTime[rowIndex]
-            let stageA = [stageName, MyVariables.yourVariable]
-            return stageA
-        }
-        
         return nil
-        
     }
-    
     
     override func willActivate() {
         super.willActivate()
