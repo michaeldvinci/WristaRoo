@@ -211,7 +211,7 @@ class ByTimeInterfaceController: WKInterfaceController {
     
     private func timeTable(typesA: [String]) {
         var tempA: [String] = createTypesArray(typesA)
-        ByTimeTable.setRowTypes(createTypesArray(typesA))
+        ByTimeTable.setRowTypes(tempA)
         for var rowIndex = 0; rowIndex < typesA.count; rowIndex++ {
             switch tempA[rowIndex] {
             case "Time":

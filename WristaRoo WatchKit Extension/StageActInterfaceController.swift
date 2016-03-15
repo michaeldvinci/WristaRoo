@@ -11,44 +11,14 @@ import WatchKit
 class StageActInterfaceController: WKInterfaceController {
     
     @IBOutlet var stageActTable: WKInterfaceTable!
+    var tempArray: [String] = []
+    var tempA: [String] = []
+    var dayStage: [String] = []
     
-    
-    let stageThisTh = [
-        "Time", "Act",
-        "Time", "Act",
-        "Time", "Act",
-        "Time", "Act",
-        "Time", "Act",
-        "Time", "Act"
-        ]
-    let stageThatTh = [
-        "Time", "Act",
-        "Time", "Act",
-        "Time", "Act",
-        "Time", "Act",
-        "Time", "Act"
-        ]
-    let stageOtherTh = [
-        "Time", "Act",
-        "Time", "Act",
-        "Time", "Act",
-        "Time", "Act",
-        "Time", "Act",
-        "Time", "Act"
-        ]
-    let stageDiscoTh = [
-        "Time", "Act",
-        "Time", "Act",
-        "Time", "Act",
-        "Time", "Act"
-        ]
-    let stageXmasTh = [
-        "Time", "Act",
-        "Time", "Act",
-        "Time", "Act",
-        "Time", "Act",
+    let byTimeA = [
         "Time", "Act"
     ]
+    
     let actThisTh = [
         "5:45 - 6:30", "Unlocking the Truth",
         "7:00 - 7:45", "Strand of Oaks",
@@ -93,118 +63,183 @@ class StageActInterfaceController: WKInterfaceController {
             return
         }
         
-        if context[0] as! String == "This Tent" && context[1] as! String == "th"{
-            thThis()
+        if context[0] as! String == "This Tent" {
+            This(context[1] as! String)
         }
-        if context[0] as! String == "That Tent" && context[1] as! String == "th"{
-            thThat()
+        if context[0] as! String == "That Tent" {
+            That(context[1] as! String)
         }
-        if context[0] as! String == "The Other Tent" && context[1] as! String == "th"{
-            thOther()
+        if context[0] as! String == "The Other Tent" {
+            Other(context[1] as! String)
         }
-        if context[0] as! String == "Silent Disco" && context[1] as! String == "th"{
-            thDisco()
+        if context[0] as! String == "Silent Disco" {
+            Disco(context[1] as! String)
         }
-        if context[0] as! String == "Christmas Barn" && context[1] as! String == "th"{
-            thXmas()
+        if context[0] as! String == "Christmas Barn" {
+            Xmas(context[1] as! String)
         }
-        
     }
     
-    private func thThis() {
+    struct MyVariables {
+        static var yourVariable = "someString"
+    }
+    
+    //
+    // ACTUAL WORKING CODE
+    // This(  , actThisThurs )
+    //
+    
+    private func This(dayA: String) {
         
-        stageActTable.setRowTypes(stageThisTh)
-        for var rowIndex = 0; rowIndex < stageThisTh.count; rowIndex++ {
-            switch stageThisTh[rowIndex] {
+        if dayA == "th" {
+            dayStage = actThisTh
+        }
+        if dayA == "fr" {
+            dayStage = actThisTh
+        }
+        if dayA == "sa" {
+            dayStage = actThisTh
+        }
+        if dayA == "su" {
+            dayStage = actThisTh
+        }
+        
+        timeTable(dayStage)
+    }
+    
+    private func That(dayA: String) {
+        
+        if dayA == "th" {
+            dayStage = actThatTh
+        }
+        if dayA == "fr" {
+            dayStage = actThatTh
+        }
+        if dayA == "sa" {
+            dayStage = actThatTh
+        }
+        if dayA == "su" {
+            dayStage = actThatTh
+        }
+        
+        timeTable(dayStage)
+    }
+    
+    private func Which(dayA: String) {
+        
+        if dayA == "fr" {
+            dayStage = actOtherTh
+        }
+        if dayA == "sa" {
+            dayStage = actOtherTh
+        }
+        if dayA == "su" {
+            dayStage = actOtherTh
+        }
+        
+        timeTable(dayStage)
+    }
+    
+    private func What(dayA: String) {
+        
+        if dayA == "fr" {
+            dayStage = actThisTh
+        }
+        if dayA == "sa" {
+            dayStage = actThisTh
+        }
+        if dayA == "su" {
+            dayStage = actThisTh
+        }
+        
+        timeTable(dayStage)
+    }
+    
+    private func Other(dayA: String) {
+        
+        if dayA == "th" {
+            dayStage = actOtherTh
+        }
+        if dayA == "fr" {
+            dayStage = actDiscoTh
+        }
+        if dayA == "sa" {
+            dayStage = actDiscoTh
+        }
+        if dayA == "su" {
+            dayStage = actDiscoTh
+        }
+        
+        timeTable(dayStage)
+    }
+    
+    private func Disco(dayA: String) {
+        
+        if dayA == "th" {
+            dayStage = actDiscoTh
+        }
+        if dayA == "fr" {
+            dayStage = actThisTh
+        }
+        if dayA == "sa" {
+            dayStage = actThisTh
+        }
+        if dayA == "su" {
+            dayStage = actThisTh
+        }
+        
+        timeTable(dayStage)
+    }
+    
+    private func Xmas(dayA: String) {
+        
+        if dayA == "th" {
+            dayStage = actXmasTh
+        }
+        if dayA == "fr" {
+            dayStage = actThisTh
+        }
+        if dayA == "sa" {
+            dayStage = actThisTh
+        }
+        if dayA == "su" {
+            dayStage = actThisTh
+        }
+        
+        timeTable(dayStage)
+    }
+    
+    //
+    // BELOW THIS LINE IS CODE - ;p;
+    //
+    
+    private func timeTable(stage: [String]) {
+        tempA = createTimeArray(stage)
+        stageActTable.setRowTypes(tempA)
+        for var rowIndex = 0; rowIndex < tempA.count; rowIndex++ {
+            switch tempA[rowIndex] {
             case "Time":
                 let row = stageActTable.rowControllerAtIndex(rowIndex) as! TimeStageActTableRowController
-                row.timeLabel.setText(actThisTh[rowIndex])
+                row.timeLabel.setText(stage[rowIndex])
             case "Act":
                 let row = stageActTable.rowControllerAtIndex(rowIndex) as! ActStageActTableRowController
-                row.actLabel.setText(actThisTh[rowIndex])
+                row.actLabel.setText(stage[rowIndex])
             default:
                 print("nope")
             }
         }
     }
     
-    private func thThat() {
-        
-        stageActTable.setRowTypes(stageThatTh)
-        for var rowIndex = 0; rowIndex < stageThatTh.count; rowIndex++ {
-            switch stageThatTh[rowIndex] {
-            case "Time":
-                let row = stageActTable.rowControllerAtIndex(rowIndex) as! TimeStageActTableRowController
-                row.timeLabel.setText(actThatTh[rowIndex])
-            case "Act":
-                let row = stageActTable.rowControllerAtIndex(rowIndex) as! ActStageActTableRowController
-                row.actLabel.setText(actThatTh[rowIndex])
-            default:
-                print("nope")
-            }
+    private func createTimeArray (dayStage: [String]) -> [String] {
+        for var rowIndex = 0; rowIndex < dayStage.count; rowIndex++ {
+            tempArray.append(byTimeA[rowIndex % 2])
         }
-    }
-    
-    private func thOther() {
-        
-        stageActTable.setRowTypes(stageOtherTh)
-        for var rowIndex = 0; rowIndex < stageOtherTh.count; rowIndex++ {
-            switch stageOtherTh[rowIndex] {
-            case "Time":
-                let row = stageActTable.rowControllerAtIndex(rowIndex) as! TimeStageActTableRowController
-                row.timeLabel.setText(actOtherTh[rowIndex])
-            case "Act":
-                let row = stageActTable.rowControllerAtIndex(rowIndex) as! ActStageActTableRowController
-                row.actLabel.setText(actOtherTh[rowIndex])
-            default:
-                print("nope")
-            }
-        }
-    }
-    
-    private func thDisco() {
-        
-        stageActTable.setRowTypes(stageDiscoTh)
-        for var rowIndex = 0; rowIndex < stageDiscoTh.count; rowIndex++ {
-            switch stageDiscoTh[rowIndex] {
-            case "Time":
-                let row = stageActTable.rowControllerAtIndex(rowIndex) as! TimeStageActTableRowController
-                row.timeLabel.setText(actDiscoTh[rowIndex])
-            case "Act":
-                let row = stageActTable.rowControllerAtIndex(rowIndex) as! ActStageActTableRowController
-                row.actLabel.setText(actDiscoTh[rowIndex])
-            default:
-                print("nope")
-            }
-        }
-    }
-    
-    private func thXmas() {
-        
-        stageActTable.setRowTypes(stageXmasTh)
-        for var rowIndex = 0; rowIndex < stageXmasTh.count; rowIndex++ {
-            switch stageXmasTh[rowIndex] {
-            case "Time":
-                let row = stageActTable.rowControllerAtIndex(rowIndex) as! TimeStageActTableRowController
-                row.timeLabel.setText(actXmasTh[rowIndex])
-            case "Act":
-                let row = stageActTable.rowControllerAtIndex(rowIndex) as! ActStageActTableRowController
-                row.actLabel.setText(actXmasTh[rowIndex])
-            default:
-                print("nope")
-            }
-        }
+        return tempArray
     }
     
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
-        
-        if segueIdentifier == "showByTimes" {
-            let mainName = stageThisTh[rowIndex]
-            return mainName
-        }
-        
+
         return nil
-        
     }
     
     

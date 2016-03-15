@@ -18,11 +18,8 @@ class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
     var custArray = [String]()
     var watchSession: WCSession!
     
-    static let choicesC : [String] = ["By Stage"]
-    static let choicesD : [String] = ["By Time"]
-    
-    let thChoice = choicesC
-    let thTime = choicesD
+    let choicesC : [String] = ["By Stage"]
+    let choicesD : [String] = ["By Time"]
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -33,16 +30,16 @@ class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
         }
         
         if context[0] as! String == "Thursday" && context[1] as! String == "full" {
-            loadThChoices()
+            loadchoicesCs()
             MyVariables.yourVariable = "th"
         } else if context[0] as! String == "Friday" && context[1] as! String == "full" {
-            loadThChoices()
+            loadchoicesCs()
             MyVariables.yourVariable = "fr"
         } else if context[0] as! String == "Saturday" && context[1] as! String == "full" {
-            loadThChoices()
+            loadchoicesCs()
             MyVariables.yourVariable = "sa"
         } else if context[0] as! String == "Sunday" && context[1] as! String == "full" {
-            loadThChoices()
+            loadchoicesCs()
             MyVariables.yourVariable = "su"
         } else if context[0] as! String == "Thursday" && context[1] as! String == "cust" {
             loadThCust()
@@ -76,14 +73,14 @@ class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     
-    private func loadThChoices() {
-        choiceTable.setNumberOfRows(thChoice.count, withRowType: "ChoiceTableRowController")
-        for (index, thName) in thChoice.enumerate() {
+    private func loadchoicesCs() {
+        choiceTable.setNumberOfRows(choicesC.count, withRowType: "ChoiceTableRowController")
+        for (index, thName) in choicesC.enumerate() {
             let row2 = choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
             row2.choiceLabel.setText(thName)
         }
-        cTimeTable.setNumberOfRows(thTime.count, withRowType: "ChoiceTableRowController2")
-        for (index, thName) in thTime.enumerate() {
+        cTimeTable.setNumberOfRows(choicesD.count, withRowType: "ChoiceTableRowController2")
+        for (index, thName) in choicesD.enumerate() {
             let row2 = cTimeTable.rowControllerAtIndex(index) as! ChoiceTableRowController
             row2.choiceTime.setText(thName)
         }
@@ -94,43 +91,41 @@ class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject?
     {
         
-        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "th"{
-            let dayName = thChoice[rowIndex]
-            let dayA = [dayName, MyVariables.yourVariable]
-            return dayA
-        }
-        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "fr"{
-            let dayName = thChoice[rowIndex]
-            let dayA = [dayName, MyVariables.yourVariable]
-            return dayA
-        }
-        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "sa"{
-            let dayName = thChoice[rowIndex]
-            let dayA = [dayName, MyVariables.yourVariable]
-            return dayA
-        }
-        if segueIdentifier == "showChoices" && MyVariables.yourVariable == "su"{
-            let dayName = thChoice[rowIndex]
-            let dayA = [dayName, MyVariables.yourVariable]
-            return dayA
+        if segueIdentifier == "showChoices" {
+            if MyVariables.yourVariable == "th"{
+                let dayA = [choicesC[rowIndex], MyVariables.yourVariable]
+                return dayA
+            }
+            if MyVariables.yourVariable == "fr"{
+                let dayA = [choicesC[rowIndex], MyVariables.yourVariable]
+                return dayA
+            }
+            if MyVariables.yourVariable == "sa"{
+                let dayA = [choicesC[rowIndex], MyVariables.yourVariable]
+                return dayA
+            }
+            if MyVariables.yourVariable == "su"{
+                let dayA = [choicesC[rowIndex], MyVariables.yourVariable]
+                return dayA
+            }
         }
         if segueIdentifier == "showByTime" && MyVariables.yourVariable == "th"{
-            let dayName = thTime[rowIndex]
+            let dayName = choicesD[rowIndex]
             let dayA = [dayName, MyVariables.yourVariable]
             return dayA
         }
         if segueIdentifier == "showByTime" && MyVariables.yourVariable == "fr"{
-            let dayName = thTime[rowIndex]
+            let dayName = choicesD[rowIndex]
             let dayA = [dayName, MyVariables.yourVariable]
             return dayA
         }
         if segueIdentifier == "showByTime" && MyVariables.yourVariable == "sa"{
-            let dayName = thTime[rowIndex]
+            let dayName = choicesD[rowIndex]
             let dayA = [dayName, MyVariables.yourVariable]
             return dayA
         }
         if segueIdentifier == "showByTime" && MyVariables.yourVariable == "su"{
-            let dayName = thTime[rowIndex]
+            let dayName = choicesD[rowIndex]
             let dayA = [dayName, MyVariables.yourVariable]
             return dayA
         }
