@@ -13,7 +13,6 @@ class StageActInterfaceController: WKInterfaceController {
     @IBOutlet var stageActTable: WKInterfaceTable!
     var tempArray: [String] = []
     var tempA: [String] = []
-    var dayStage: [String] = []
     
     let byTimeA = [
         "Time", "Act"
@@ -80,10 +79,6 @@ class StageActInterfaceController: WKInterfaceController {
         }
     }
     
-    struct MyVariables {
-        static var yourVariable = "someString"
-    }
-    
     //
     // ACTUAL WORKING CODE
     // This(  , actThisThurs )
@@ -92,121 +87,107 @@ class StageActInterfaceController: WKInterfaceController {
     private func This(dayA: String) {
         
         if dayA == "th" {
-            dayStage = actThisTh
+            timeTable(actThisTh)
         }
         if dayA == "fr" {
-            dayStage = actThisTh
+            timeTable(actThisTh)
         }
         if dayA == "sa" {
-            dayStage = actThisTh
+            timeTable(actThisTh)
         }
         if dayA == "su" {
-            dayStage = actThisTh
+            timeTable(actThisTh)
         }
-        
-        timeTable(dayStage)
     }
     
     private func That(dayA: String) {
         
         if dayA == "th" {
-            dayStage = actThatTh
+            timeTable(actThatTh)
         }
         if dayA == "fr" {
-            dayStage = actThatTh
+            timeTable(actThatTh)
         }
         if dayA == "sa" {
-            dayStage = actThatTh
+            timeTable(actThatTh)
         }
         if dayA == "su" {
-            dayStage = actThatTh
+            timeTable(actThatTh)
         }
-        
-        timeTable(dayStage)
     }
     
     private func Which(dayA: String) {
         
         if dayA == "fr" {
-            dayStage = actOtherTh
+            timeTable(actOtherTh)
         }
         if dayA == "sa" {
-            dayStage = actOtherTh
+            timeTable(actOtherTh)
         }
         if dayA == "su" {
-            dayStage = actOtherTh
+            timeTable(actOtherTh)
         }
-        
-        timeTable(dayStage)
     }
     
     private func What(dayA: String) {
         
         if dayA == "fr" {
-            dayStage = actThisTh
+            timeTable(actThisTh)
         }
         if dayA == "sa" {
-            dayStage = actThisTh
+            timeTable(actThisTh)
         }
         if dayA == "su" {
-            dayStage = actThisTh
+            timeTable(actThisTh)
         }
-        
-        timeTable(dayStage)
     }
     
     private func Other(dayA: String) {
         
         if dayA == "th" {
-            dayStage = actOtherTh
+            timeTable(actOtherTh)
         }
         if dayA == "fr" {
-            dayStage = actDiscoTh
+            timeTable(actDiscoTh)
         }
         if dayA == "sa" {
-            dayStage = actDiscoTh
+            timeTable(actDiscoTh)
         }
         if dayA == "su" {
-            dayStage = actDiscoTh
+            timeTable(actDiscoTh)
         }
-        
-        timeTable(dayStage)
     }
     
     private func Disco(dayA: String) {
         
         if dayA == "th" {
-            dayStage = actDiscoTh
+            timeTable(actDiscoTh)
         }
         if dayA == "fr" {
-            dayStage = actThisTh
+            timeTable(actThisTh)
         }
         if dayA == "sa" {
-            dayStage = actThisTh
+            timeTable(actThisTh)
         }
         if dayA == "su" {
-            dayStage = actThisTh
+            timeTable(actThisTh)
         }
-        
-        timeTable(dayStage)
     }
     
     private func Xmas(dayA: String) {
         
         if dayA == "th" {
-            dayStage = actXmasTh
+            timeTable(actXmasTh)
         }
         if dayA == "fr" {
-            dayStage = actThisTh
+            timeTable(actThisTh)
         }
         if dayA == "sa" {
-            dayStage = actThisTh
+            timeTable(actThisTh)
         }
         if dayA == "su" {
-            dayStage = actThisTh
+            timeTable(actThisTh)
         }
-        
-        timeTable(dayStage)
     }
     
     //

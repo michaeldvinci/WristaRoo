@@ -217,6 +217,7 @@
                                         <color key="backgroundColor" red="0.072332974137929856" green="0.13415948275862055" blue="0.62184806034482754" alpha="1" colorSpace="calibratedRGB"/>
                                     </group>
                                     <connections>
+                                        <outlet property="LocationGroup" destination="TQP-BD-zIO" id="MNY-S8-LYq"/>
                                         <outlet property="locationLabel" destination="eOe-7y-EMP" id="uSm-dO-EhD"/>
                                         <segue destination="M9G-nw-wuM" kind="push" identifier="timeToStage" id="jFv-xb-Rdj"/>
                                     </connections>

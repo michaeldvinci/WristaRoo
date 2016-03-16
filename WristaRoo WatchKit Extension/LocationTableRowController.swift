@@ -11,6 +11,8 @@ import WatchKit
 class LocationTableRowController: NSObject {
     
     
+    @IBOutlet var LocationGroup: WKInterfaceGroup!
     @IBOutlet var locationLabel: WKInterfaceLabel!
+    @IBOutlet weak var myImage: WKInterfaceImage!
     
 }

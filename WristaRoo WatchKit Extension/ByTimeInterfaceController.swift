@@ -222,13 +222,35 @@ class ByTimeInterfaceController: WKInterfaceController {
                 row.actLabel.setText(typesA[rowIndex])
             case "Location":
                 let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! LocationTableRowController
+                //row.locationLabel.setTextColor(blackColor())
+                if typesA[rowIndex] == "Silent Disco" {
+                    row.LocationGroup.setBackgroundImageNamed("disco")
+                }
+                else if typesA[rowIndex] == "Christmas Barn" {
+                    row.LocationGroup.setBackgroundImageNamed("xmas")
+                }
+                else if typesA[rowIndex] == "The Other Tent" {
+                    row.LocationGroup.setBackgroundImageNamed("other")
+                }
+                else if typesA[rowIndex] == "This Tent" {
+                    row.LocationGroup.setBackgroundImageNamed("this")
+                }
+                else if typesA[rowIndex] == "That Tent" {
+                    row.LocationGroup.setBackgroundImageNamed("that")
+                }
+                else if typesA[rowIndex] == "Which Stage" {
+                    row.LocationGroup.setBackgroundImageNamed("which")
+                }
+                else if typesA[rowIndex] == "What Stage" {
+                    row.LocationGroup.setBackgroundImageNamed("what")
+                }
                 row.locationLabel.setText(typesA[rowIndex])
             default:
                 print("nope")
             }
         }
     }
-    
+
     private func createTypesArray (typesA: [String]) -> [String] {
         for var rowIndex = 0; rowIndex < typesA.count; rowIndex++ {
             tempArray.append(types[rowIndex % 3])

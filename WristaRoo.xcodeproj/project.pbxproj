@@ -11,6 +11,13 @@
 		F51CE8171C7F9D4A00CE653C /* bgTime.png in Resources */ = {isa = PBXBuildFile; fileRef = F51CE8151C7F9D4A00CE653C /* bgTime.png */; };
 		F567D9AA1C7771E900817543 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F567D9A91C7771E900817543 /* Images.xcassets */; };
 		F56930191C7D2EF00048DDAB /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F56930181C7D2EF00048DDAB /* WatchConnectivity.framework */; };
+		F56A671F1C99B54500BB56A6 /* disco.png in Resources */ = {isa = PBXBuildFile; fileRef = F56A67181C99B54500BB56A6 /* disco.png */; };
+		F56A67201C99B54500BB56A6 /* other.png in Resources */ = {isa = PBXBuildFile; fileRef = F56A67191C99B54500BB56A6 /* other.png */; };
+		F56A67211C99B54500BB56A6 /* that.png in Resources */ = {isa = PBXBuildFile; fileRef = F56A671A1C99B54500BB56A6 /* that.png */; };
+		F56A67221C99B54500BB56A6 /* this.png in Resources */ = {isa = PBXBuildFile; fileRef = F56A671B1C99B54500BB56A6 /* this.png */; };
+		F56A67231C99B54500BB56A6 /* what.png in Resources */ = {isa = PBXBuildFile; fileRef = F56A671C1C99B54500BB56A6 /* what.png */; };
+		F56A67241C99B54500BB56A6 /* which.png in Resources */ = {isa = PBXBuildFile; fileRef = F56A671D1C99B54500BB56A6 /* which.png */; };
+		F56A67251C99B54500BB56A6 /* xmas.png in Resources */ = {isa = PBXBuildFile; fileRef = F56A671E1C99B54500BB56A6 /* xmas.png */; };
 		F57720921C7E504E00D189D7 /* AddCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57720911C7E504E00D189D7 /* AddCustomViewController.swift */; };
 		F5D432981C7677F600B018C0 /* TimeTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D432971C7677F600B018C0 /* TimeTableRowController.swift */; };
 		F5D4329A1C7677FF00B018C0 /* ActTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D432991C7677FF00B018C0 /* ActTableRowController.swift */; };
@@ -108,6 +115,13 @@
 		F56930171C7D2CC90048DDAB /* WristaRoo WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "WristaRoo WatchKit App.entitlements"; sourceTree = "<group>"; };
 		F56930181C7D2EF00048DDAB /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		F569301A1C7D3FBD0048DDAB /* WristaRoo WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "WristaRoo WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		F56A67181C99B54500BB56A6 /* disco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = disco.png; path = "../../../Desktop/WristaRoo Images/disco.png"; sourceTree = "<group>"; };
+		F56A67191C99B54500BB56A6 /* other.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = other.png; path = "../../../Desktop/WristaRoo Images/other.png"; sourceTree = "<group>"; };
+		F56A671A1C99B54500BB56A6 /* that.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = that.png; path = "../../../Desktop/WristaRoo Images/that.png"; sourceTree = "<group>"; };
+		F56A671B1C99B54500BB56A6 /* this.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = this.png; path = "../../../Desktop/WristaRoo Images/this.png"; sourceTree = "<group>"; };
+		F56A671C1C99B54500BB56A6 /* what.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = what.png; path = "../../../Desktop/WristaRoo Images/what.png"; sourceTree = "<group>"; };
+		F56A671D1C99B54500BB56A6 /* which.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = which.png; path = "../../../Desktop/WristaRoo Images/which.png"; sourceTree = "<group>"; };
+		F56A671E1C99B54500BB56A6 /* xmas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = xmas.png; path = "../../../Desktop/WristaRoo Images/xmas.png"; sourceTree = "<group>"; };
 		F57720911C7E504E00D189D7 /* AddCustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCustomViewController.swift; sourceTree = "<group>"; };
 		F5D432971C7677F600B018C0 /* TimeTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableRowController.swift; sourceTree = "<group>"; };
 		F5D432991C7677FF00B018C0 /* ActTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActTableRowController.swift; sourceTree = "<group>"; };
@@ -246,6 +260,13 @@
 		F5E19FE81C756409007653F6 /* WristaRoo WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				F56A67181C99B54500BB56A6 /* disco.png */,
+				F56A67191C99B54500BB56A6 /* other.png */,
+				F56A671A1C99B54500BB56A6 /* that.png */,
+				F56A671B1C99B54500BB56A6 /* this.png */,
+				F56A671C1C99B54500BB56A6 /* what.png */,
+				F56A671D1C99B54500BB56A6 /* which.png */,
+				F56A671E1C99B54500BB56A6 /* xmas.png */,
 				F51CE8141C7F9D4A00CE653C /* bgStage.png */,
 				F51CE8151C7F9D4A00CE653C /* bgTime.png */,
 				F56930171C7D2CC90048DDAB /* WristaRoo WatchKit App.entitlements */,
@@ -485,10 +506,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F56A671F1C99B54500BB56A6 /* disco.png in Resources */,
 				F5E19FED1C756409007653F6 /* Assets.xcassets in Resources */,
+				F56A67231C99B54500BB56A6 /* what.png in Resources */,
 				F51CE8171C7F9D4A00CE653C /* bgTime.png in Resources */,
+				F56A67221C99B54500BB56A6 /* this.png in Resources */,
 				F51CE8161C7F9D4A00CE653C /* bgStage.png in Resources */,
+				F56A67201C99B54500BB56A6 /* other.png in Resources */,
+				F56A67211C99B54500BB56A6 /* that.png in Resources */,
 				F5E19FEB1C756409007653F6 /* Interface.storyboard in Resources */,
+				F56A67251C99B54500BB56A6 /* xmas.png in Resources */,
+				F56A67241C99B54500BB56A6 /* which.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
