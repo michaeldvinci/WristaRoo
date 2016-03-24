@@ -212,7 +212,7 @@ class ByTimeInterfaceController: WKInterfaceController {
     private func timeTable(typesA: [String]) {
         var tempA: [String] = createTypesArray(typesA)
         ByTimeTable.setRowTypes(tempA)
-        for var rowIndex = 0; rowIndex < typesA.count; rowIndex++ {
+        for var rowIndex = 0; rowIndex < typesA.count; rowIndex += 1 {
             switch tempA[rowIndex] {
             case "Time":
                 let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! TimeTableRowController
@@ -222,7 +222,7 @@ class ByTimeInterfaceController: WKInterfaceController {
                 row.actLabel.setText(typesA[rowIndex])
             case "Location":
                 let row = ByTimeTable.rowControllerAtIndex(rowIndex) as! LocationTableRowController
-                //row.locationLabel.setTextColor(blackColor())
+                row.locationLabel.setTextColor(UIColor.blackColor())
                 if typesA[rowIndex] == "Silent Disco" {
                     row.LocationGroup.setBackgroundImageNamed("disco")
                 }
@@ -252,7 +252,7 @@ class ByTimeInterfaceController: WKInterfaceController {
     }
 
     private func createTypesArray (typesA: [String]) -> [String] {
-        for var rowIndex = 0; rowIndex < typesA.count; rowIndex++ {
+        for var rowIndex = 0; rowIndex < typesA.count; rowIndex += 1 {
             tempArray.append(types[rowIndex % 3])
         }
         return tempArray

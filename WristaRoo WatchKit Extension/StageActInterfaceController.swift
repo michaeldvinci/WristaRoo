@@ -197,7 +197,7 @@ class StageActInterfaceController: WKInterfaceController {
     private func timeTable(stage: [String]) {
         tempA = createTimeArray(stage)
         stageActTable.setRowTypes(tempA)
-        for var rowIndex = 0; rowIndex < tempA.count; rowIndex++ {
+        for var rowIndex = 0; rowIndex < tempA.count; rowIndex += 1 {
             switch tempA[rowIndex] {
             case "Time":
                 let row = stageActTable.rowControllerAtIndex(rowIndex) as! TimeStageActTableRowController
@@ -212,7 +212,7 @@ class StageActInterfaceController: WKInterfaceController {
     }
     
     private func createTimeArray (dayStage: [String]) -> [String] {
-        for var rowIndex = 0; rowIndex < dayStage.count; rowIndex++ {
+        for var rowIndex = 0; rowIndex < dayStage.count; rowIndex += 1 {
             tempArray.append(byTimeA[rowIndex % 2])
         }
         return tempArray
