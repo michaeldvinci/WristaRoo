@@ -5,6 +5,8 @@
 //  Created by Michael Vinci on 2/17/16.
 //  Copyright © 2016 Michael Vinci. All rights reserved.
 //
+//
+//
 
 import WatchKit
 import Foundation
@@ -66,7 +68,7 @@ class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
         
             for (index, thName) in tabledata.enumerate() {
                 let row2 = self.choiceTable.rowControllerAtIndex(index) as! ChoiceTableRowController
-            row2.choiceLabel.setText(thName as? String)
+                row2.choiceLabel.setText(thName as? String)
             }
         }
         
