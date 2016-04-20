@@ -18,9 +18,6 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_6726.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SD8-Gd-HFR">
-                                <rect key="frame" x="0.0" y="-57" width="600" height="601"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lO3-yn-k19">
                                 <rect key="frame" x="0.0" y="54" width="600" height="384"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -60,9 +57,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQj-8R-PEp">
-                                <rect key="frame" x="254" y="33" width="92" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQj-8R-PEp">
+                                <rect key="frame" x="-1061" y="-1768" width="2723" height="3631"/>
                                 <state key="normal" title="Send it!">
                                     <color key="titleColor" red="0.99457131409999999" green="0.99457131409999999" blue="0.99457131409999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -97,21 +93,17 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.54509803921568623" green="0.1803921568627451" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lO3-yn-k19" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="54" id="0pq-Qn-xCg"/>
                             <constraint firstItem="LQj-8R-PEp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Jy-2q-ala"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CUX-w7-AJS" secondAttribute="bottom" constant="2" id="8JE-Nz-0xQ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SD8-Gd-HFR" secondAttribute="bottom" constant="-57" id="Dnu-qd-5Xk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="SD8-Gd-HFR" secondAttribute="trailing" constant="-20" id="GID-HS-HKz"/>
-                            <constraint firstItem="SD8-Gd-HFR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="JAf-zs-XOP"/>
                             <constraint firstItem="lO3-yn-k19" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="PGK-pe-5Kx"/>
                             <constraint firstItem="CUX-w7-AJS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="d0D-kh-AYz"/>
                             <constraint firstItem="CUX-w7-AJS" firstAttribute="bottom" secondItem="lO3-yn-k19" secondAttribute="bottom" id="g4c-C5-SMm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lO3-yn-k19" secondAttribute="trailing" constant="-20" id="lkJ-cU-VTM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CUX-w7-AJS" secondAttribute="bottom" id="rqM-cA-DgF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CUX-w7-AJS" secondAttribute="trailing" constant="-20" id="sV9-aF-Ldt"/>
-                            <constraint firstItem="SD8-Gd-HFR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-57" id="u77-mV-WjV"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -145,9 +137,6 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IMG_6726.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Nw9-b3-Wz5">
-                                <rect key="frame" x="0.0" y="-65" width="600" height="601"/>
-                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8G-AV-nED">
                                 <rect key="frame" x="0.0" y="448" width="600" height="44"/>
                                 <constraints>
@@ -186,20 +175,16 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.5450980392" green="0.18039215689999999" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="Nw9-b3-Wz5" secondAttribute="bottom" id="Icw-iC-5gO"/>
                             <constraint firstItem="z00-YY-Xj1" firstAttribute="leading" secondItem="0Et-bZ-eQJ" secondAttribute="leadingMargin" constant="-20" id="L7h-CI-o4E"/>
                             <constraint firstAttribute="trailingMargin" secondItem="z00-YY-Xj1" secondAttribute="trailing" constant="-20" id="Q8c-d5-XAd"/>
                             <constraint firstItem="4Gi-e9-WBs" firstAttribute="top" secondItem="l8G-AV-nED" secondAttribute="bottom" id="QFU-pp-qkd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Nw9-b3-Wz5" secondAttribute="trailing" constant="-20" id="Sfc-Ua-Cqt"/>
                             <constraint firstItem="l8G-AV-nED" firstAttribute="top" secondItem="z00-YY-Xj1" secondAttribute="bottom" constant="44" id="Vu3-nb-mum"/>
                             <constraint firstItem="z00-YY-Xj1" firstAttribute="top" secondItem="Knr-nb-OU2" secondAttribute="bottom" id="WlN-YF-92l"/>
                             <constraint firstItem="l8G-AV-nED" firstAttribute="top" secondItem="z00-YY-Xj1" secondAttribute="bottom" constant="44" id="eIq-9E-lA1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l8G-AV-nED" secondAttribute="trailing" constant="-20" id="gZb-uO-tBU"/>
-                            <constraint firstItem="Nw9-b3-Wz5" firstAttribute="leading" secondItem="0Et-bZ-eQJ" secondAttribute="leadingMargin" constant="-20" id="k8P-Qb-LbH"/>
                             <constraint firstItem="l8G-AV-nED" firstAttribute="leading" secondItem="0Et-bZ-eQJ" secondAttribute="leadingMargin" constant="-20" id="tL3-rs-Uf7"/>
-                            <constraint firstItem="Nw9-b3-Wz5" firstAttribute="top" secondItem="0Et-bZ-eQJ" secondAttribute="topMargin" id="w4w-Hp-u4s"/>
                             <constraint firstItem="l8G-AV-nED" firstAttribute="top" secondItem="z00-YY-Xj1" secondAttribute="bottom" constant="1" id="ztm-Y7-iqN"/>
                         </constraints>
                     </view>
@@ -215,9 +200,6 @@
             <point key="canvasLocation" x="1117" y="-336"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="IMG_6726.jpg" width="2661" height="3631"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nkQ-mw-orR"/>
     </inferredMetricsTieBreakers>

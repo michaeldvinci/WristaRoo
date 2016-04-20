@@ -150,6 +150,7 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
         cell.textLabel?.textColor = UIColor.whiteColor()
         cell.textLabel?.text = arrayCustom[indexPath.item]
         cell.textLabel?.textAlignment = .Center
+        
         return cell
     }
     
@@ -159,6 +160,9 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
         if !newCustom.contains(arrayCustom[indexPath.row]) {
             newCustom.append(arrayCustom[indexPath.row])
         }
+        let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        selectedCell.contentView.backgroundColor = colorWithHexString("#802499")
+        selectedCell.textLabel?.textColor = colorWithHexString("#00c411")
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
@@ -166,6 +170,10 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
         if let index = selectedIndexPaths.indexOf(indexPath) {
             selectedIndexPaths.removeAtIndex(index)
         }
+        
+        let cellToDeSelect:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        cellToDeSelect.contentView.backgroundColor = colorWithHexString("#8b2ea4") //983bb0
+        cellToDeSelect.textLabel?.textColor = colorWithHexString("#FFFFFF")
         
     }
     @IBAction func clearList(sender: AnyObject) {
@@ -197,6 +205,30 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
             NSUserDefaults.standardUserDefaults().setObject(newCustom, forKey: "keyCustom")
             svc.toPass = newCustom
         }
+    }
+    
+    func colorWithHexString (hex:String) -> UIColor {
+        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
+        
+        if (cString.hasPrefix("#")) {
+            cString = (cString as NSString).substringFromIndex(1)
+        }
+        
+        if (cString.characters.count != 6) {
+            return UIColor.grayColor()
+        }
+        
+        let rString = (cString as NSString).substringToIndex(2)
+        let gString = ((cString as NSString).substringFromIndex(2) as NSString).substringToIndex(2)
+        let bString = ((cString as NSString).substringFromIndex(4) as NSString).substringToIndex(2)
+        
+        var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
+        NSScanner(string: rString).scanHexInt(&r)
+        NSScanner(string: gString).scanHexInt(&g)
+        NSScanner(string: bString).scanHexInt(&b)
+        
+        
+        return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
     }
 }
 
