@@ -14,8 +14,8 @@ import WatchConnectivity
 
 class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
     
-    @IBOutlet var choiceTable: WKInterfaceTable!
     @IBOutlet var cTimeTable: WKInterfaceTable!
+    @IBOutlet var choiceTable: WKInterfaceTable!
     
     var custArray = [String]()
     var watchSession: WCSession!
