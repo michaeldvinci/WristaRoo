@@ -55,6 +55,7 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCellWithIdentifier("customCell", forIndexPath: indexPath)
         cell.textLabel?.textColor = UIColor.whiteColor()
         cell.textLabel?.text = arrayNewCustom[indexPath.item] as? String
+        cell.textLabel?.textAlignment = .Center
         return cell
     }
 

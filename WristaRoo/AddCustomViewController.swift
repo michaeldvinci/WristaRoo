@@ -149,6 +149,7 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCellWithIdentifier("customCell", forIndexPath: indexPath)
         cell.textLabel?.textColor = UIColor.whiteColor()
         cell.textLabel?.text = arrayCustom[indexPath.item]
+        cell.textLabel?.textAlignment = .Center
         return cell
     }
     

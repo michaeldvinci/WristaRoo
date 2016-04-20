@@ -38,6 +38,7 @@ class EditCustomTableViewController: UIViewController, UITableViewDataSource, UI
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("customCell", forIndexPath: indexPath)
         cell.textLabel?.text = arrayNewCustom[indexPath.item] as? String
+        cell.textLabel?.textAlignment = .Center
         return cell
     }
     
