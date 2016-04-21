@@ -15,6 +15,9 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
     var clearA = [String]()
     @IBOutlet weak var toPrint: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var buttonC: UIBarButtonItem!
+    @IBOutlet weak var buttonA: UIBarButtonItem!
             
     var arrayCustom = [
         "Pearl Jam",
@@ -178,6 +181,14 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
         if tabledata?.count > 0 {
             newCustom = tabledata as! [String]
         }
+        
+        self.toolbar.setBackgroundImage(UIImage(),
+                                        forToolbarPosition: UIBarPosition.Any,
+                                        barMetrics: UIBarMetrics.Default)
+        self.toolbar.setShadowImage(UIImage(),
+                                    forToolbarPosition: UIBarPosition.Any)
+        self.buttonA.tintColor=colorWithHexString("#ffffff")
+        self.buttonC.tintColor=colorWithHexString("#ffffff")
         
         tableView.dataSource = self
         tableView.delegate = self

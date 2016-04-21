@@ -117,8 +117,12 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
+                        <outlet property="buttonA" destination="fXg-2W-Ijp" id="1EE-7h-Bqa"/>
+                        <outlet property="buttonC" destination="lhC-WU-nga" id="Yff-fh-eex"/>
+                        <outlet property="buttonE" destination="tCN-v4-QVf" id="z6g-LS-w26"/>
                         <outlet property="editButton" destination="tCN-v4-QVf" id="1IS-95-ffx"/>
                         <outlet property="tableView" destination="lO3-yn-k19" id="ggp-6V-h3b"/>
+                        <outlet property="toolbar" destination="CUX-w7-AJS" id="0Yl-Wy-agu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -191,7 +195,10 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
+                        <outlet property="buttonA" destination="Du0-Om-GWg" id="o7M-JG-Sd8"/>
+                        <outlet property="buttonC" destination="ahz-8Y-lkk" id="4MR-GI-2CM"/>
                         <outlet property="tableView" destination="z00-YY-Xj1" id="8Ou-ET-M8g"/>
+                        <outlet property="toolbar" destination="l8G-AV-nED" id="F7b-T0-Q9w"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="addToCustom" id="nkQ-mw-orR"/>
                     </connections>
                 </viewController>
