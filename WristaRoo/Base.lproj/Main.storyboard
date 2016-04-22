@@ -57,15 +57,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQj-8R-PEp">
-                                <rect key="frame" x="-1061" y="-1768" width="2723" height="3631"/>
-                                <state key="normal" title="Send it!">
-                                    <color key="titleColor" red="0.99457131409999999" green="0.99457131409999999" blue="0.99457131409999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendCustArray:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xsq-BM-87m"/>
-                                </connections>
-                            </button>
                             <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUX-w7-AJS">
                                 <rect key="frame" x="0.0" y="443" width="600" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -79,15 +70,15 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="od2-fF-KrF"/>
-                                    <barButtonItem title="Clear" id="lhC-WU-nga">
+                                    <barButtonItem title="Send" id="lhC-WU-nga">
                                         <connections>
-                                            <action selector="toClear:" destination="BYZ-38-t0r" id="2XE-ao-l8e"/>
+                                            <action selector="sendCustArray:" destination="BYZ-38-t0r" id="QLp-S4-Wr9"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="fO7-Rr-q13"/>
                                     <barButtonItem title="Add" id="fXg-2W-Ijp">
                                         <connections>
-                                            <segue destination="msp-4r-Hch" kind="show" id="pqa-K9-9lN"/>
+                                            <segue destination="msp-4r-Hch" kind="show" animates="NO" id="pqa-K9-9lN"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -96,7 +87,6 @@
                         <color key="backgroundColor" red="0.54509803921568623" green="0.1803921568627451" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lO3-yn-k19" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="54" id="0pq-Qn-xCg"/>
-                            <constraint firstItem="LQj-8R-PEp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Jy-2q-ala"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CUX-w7-AJS" secondAttribute="bottom" constant="2" id="8JE-Nz-0xQ"/>
                             <constraint firstItem="lO3-yn-k19" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="PGK-pe-5Kx"/>
                             <constraint firstItem="CUX-w7-AJS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="d0D-kh-AYz"/>
@@ -149,7 +139,7 @@
                                 <items>
                                     <barButtonItem systemItem="cancel" id="ahz-8Y-lkk">
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="93X-gj-tFw"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="93X-gj-tFw"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1CL-5O-89f"/>
@@ -199,7 +189,7 @@
                         <outlet property="buttonC" destination="ahz-8Y-lkk" id="4MR-GI-2CM"/>
                         <outlet property="tableView" destination="z00-YY-Xj1" id="8Ou-ET-M8g"/>
                         <outlet property="toolbar" destination="l8G-AV-nED" id="F7b-T0-Q9w"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="addToCustom" id="nkQ-mw-orR"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="addToCustom" animates="NO" id="nkQ-mw-orR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tba-do-esT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -208,6 +198,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nkQ-mw-orR"/>
+        <segue reference="93X-gj-tFw"/>
     </inferredMetricsTieBreakers>
 </document>
