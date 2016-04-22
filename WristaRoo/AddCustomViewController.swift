@@ -187,8 +187,8 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
                                         barMetrics: UIBarMetrics.Default)
         self.toolbar.setShadowImage(UIImage(),
                                     forToolbarPosition: UIBarPosition.Any)
-        self.buttonA.tintColor=colorWithHexString("#ffffff")
-        self.buttonC.tintColor=colorWithHexString("#ffffff")
+        self.buttonA.tintColor=colorWithHexString("#00c411")
+        self.buttonC.tintColor=colorWithHexString("#00c411")
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -209,6 +209,10 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
         cell.textLabel?.textAlignment = .Center
         
         return cell
+        
+        //  limeGreen   00c411
+        //  lightPurp   8b2ea4
+        //  darkPurp    371555
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -229,7 +233,7 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
         }
         
         let cellToDeSelect:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-        cellToDeSelect.contentView.backgroundColor = colorWithHexString("#8b2ea4") //983bb0
+        cellToDeSelect.contentView.backgroundColor = colorWithHexString("#371555") //983bb0
         cellToDeSelect.textLabel?.textColor = colorWithHexString("#FFFFFF")
         
     }

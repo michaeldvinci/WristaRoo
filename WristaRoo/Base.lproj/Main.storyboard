@@ -59,7 +59,7 @@
                             </tableView>
                             <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUX-w7-AJS">
                                 <rect key="frame" x="0.0" y="443" width="600" height="44"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.2156862745" green="0.08235294118" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="p7K-Qf-Xhf"/>
                                 </constraints>
@@ -110,7 +110,6 @@
                         <outlet property="buttonA" destination="fXg-2W-Ijp" id="1EE-7h-Bqa"/>
                         <outlet property="buttonC" destination="lhC-WU-nga" id="Yff-fh-eex"/>
                         <outlet property="buttonE" destination="tCN-v4-QVf" id="z6g-LS-w26"/>
-                        <outlet property="editButton" destination="tCN-v4-QVf" id="1IS-95-ffx"/>
                         <outlet property="tableView" destination="lO3-yn-k19" id="ggp-6V-h3b"/>
                         <outlet property="toolbar" destination="CUX-w7-AJS" id="0Yl-Wy-agu"/>
                     </connections>
@@ -133,6 +132,7 @@
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8G-AV-nED">
                                 <rect key="frame" x="0.0" y="448" width="600" height="44"/>
+                                <color key="backgroundColor" red="0.21568627450980393" green="0.082352941176470587" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="U69-6y-aG6"/>
                                 </constraints>

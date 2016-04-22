@@ -45,9 +45,10 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
                                         barMetrics: UIBarMetrics.Default)
         self.toolbar.setShadowImage(UIImage(),
                                     forToolbarPosition: UIBarPosition.Any)
-        self.buttonA.tintColor=colorWithHexString("#ffffff")
-        self.buttonC.tintColor=colorWithHexString("#ffffff")
-        self.buttonE.tintColor=colorWithHexString("#ffffff")
+        
+        self.buttonA.tintColor=colorWithHexString("#00c411")
+        self.buttonE.tintColor=colorWithHexString("#00c411")
+        self.buttonC.tintColor=colorWithHexString("#00c411")
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -56,6 +57,10 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
         self.tableView.allowsMultipleSelectionDuringEditing = false
 
     }
+    
+    //  limeGreen   00c411
+    //  lightPurp   8b2ea4
+    //  darkPurp    371555
     
     @IBOutlet weak var editButton: UIBarButtonItem!
     
@@ -93,11 +98,11 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
     
     @IBAction func toEdit(sender: AnyObject) {
         if (self.tableView.editing) {
-            editButton.title = "Edit"
-            self.tableView.setEditing(false, animated: true)
+            buttonE.title = "Edit"
+            self.tableView.setEditing(false, animated: false)
         } else {
-            editButton.title = "Done"
-            self.tableView.setEditing(true, animated: true)
+            buttonE.title = "Done"
+            self.tableView.setEditing(true, animated: false)
         }
     }
     
