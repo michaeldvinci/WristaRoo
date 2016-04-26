@@ -8,6 +8,10 @@
 
 import UIKit
 import WatchConnectivity
+import Alamofire
+import Foundation
+import Realm
+import SwiftCSV
 
 class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource, UITableViewDelegate {
 
@@ -26,6 +30,35 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var localPath: NSURL?
+        Alamofire.download(.GET,
+            "http://wristaroo.com/schedule/wristaroo.csv",
+            destination: { (temporaryURL, response) in
+                let directoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+                let pathComponent = response.suggestedFilename
+                
+                localPath = directoryURL.URLByAppendingPathComponent(pathComponent!)
+                
+                return localPath!
+                //
+        })
+            .response { (request, response, _, error) in
+                print(response)
+                print("Downloaded file to \(localPath!)")
+                
+                /**
+                do {
+                    print("test")
+                    let csv =  try CSV(url: localPath!)
+                    print(csv.header)
+                } catch {
+                    print("test2")
+                }
+ **/
+        }
+        
+        print (localPath)
         
         arrayNewCustom = toPass
         if let tabledata = NSUserDefaults.standardUserDefaults().arrayForKey("keyCustom") {
@@ -55,6 +88,8 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
         tableView.reloadData()
         self.tableView.allowsMultipleSelection = true
         self.tableView.allowsMultipleSelectionDuringEditing = false
+        
+        
 
     }
     
@@ -63,6 +98,7 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
     //  darkPurp    371555
     
     @IBOutlet weak var editButton: UIBarButtonItem!
+    
     
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
@@ -175,5 +211,7 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
         
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
     }
+    
+    
 }
 

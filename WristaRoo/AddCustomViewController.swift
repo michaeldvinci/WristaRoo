@@ -18,6 +18,8 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var buttonC: UIBarButtonItem!
     @IBOutlet weak var buttonA: UIBarButtonItem!
+    
+    var selectedRows = [NSMutableIndexSet]()
             
     var arrayCustom = [
         "Pearl Jam",
@@ -233,7 +235,7 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
         }
         
         let cellToDeSelect:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-        cellToDeSelect.contentView.backgroundColor = colorWithHexString("#371555") //983bb0
+        cellToDeSelect.contentView.backgroundColor = colorWithHexString("#8b2ea4") //983bb0
         cellToDeSelect.textLabel?.textColor = colorWithHexString("#FFFFFF")
         
     }
@@ -265,6 +267,8 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
             let svc = segue.destinationViewController as! ViewController;
             NSUserDefaults.standardUserDefaults().setObject(newCustom, forKey: "keyCustom")
             svc.toPass = newCustom
+            
+            selectedRows = [NSMutableIndexSet]()
         }
     }
     
