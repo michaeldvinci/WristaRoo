@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5183FF71CD0489E00E7CC06 /* wristaroo.csv in Resources */ = {isa = PBXBuildFile; fileRef = F5183FF61CD0489E00E7CC06 /* wristaroo.csv */; };
 		F518DA491CCEF8B600DDEFB3 /* SwiftCSV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F518DA3C1CCEF86400DDEFB3 /* SwiftCSV.framework */; };
 		F518DA4A1CCEF8B600DDEFB3 /* SwiftCSV.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F518DA3C1CCEF86400DDEFB3 /* SwiftCSV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F51CE8161C7F9D4A00CE653C /* bgStage.png in Resources */ = {isa = PBXBuildFile; fileRef = F51CE8141C7F9D4A00CE653C /* bgStage.png */; };
@@ -252,6 +253,8 @@
 /* Begin PBXFileReference section */
 		1FCB74198975EDA9C9AE86E4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDAEA622DBBF0FF79572A45 /* Pods_WristaRoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WristaRoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5183FF51CD040CC00E7CC06 /* WristaRoo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WristaRoo-Bridging-Header.h"; sourceTree = "<group>"; };
+		F5183FF61CD0489E00E7CC06 /* wristaroo.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wristaroo.csv; sourceTree = "<group>"; };
 		F518DA311CCEF86100DDEFB3 /* SwiftCSV.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftCSV.xcodeproj; path = "../../Downloads/SwiftCSV-master/SwiftCSV.xcodeproj"; sourceTree = "<group>"; };
 		F51CE8141C7F9D4A00CE653C /* bgStage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgStage.png; sourceTree = "<group>"; };
 		F51CE8151C7F9D4A00CE653C /* bgTime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgTime.png; sourceTree = "<group>"; };
@@ -390,6 +393,8 @@
 		F5E19FB31C756409007653F6 = {
 			isa = PBXGroup;
 			children = (
+				F5183FF61CD0489E00E7CC06 /* wristaroo.csv */,
+				F5183FF51CD040CC00E7CC06 /* WristaRoo-Bridging-Header.h */,
 				F518DA311CCEF86100DDEFB3 /* SwiftCSV.xcodeproj */,
 				F55CB86B1CCED5E200F127F3 /* Realm.framework */,
 				F55CB86C1CCED5E200F127F3 /* RealmSwift.framework */,
@@ -613,7 +618,7 @@
 		F5E19FB41C756409007653F6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Michael Vinci";
 				TargetAttributes = {
@@ -794,6 +799,7 @@
 			files = (
 				F5E19FCA1C756409007653F6 /* LaunchScreen.storyboard in Resources */,
 				F567D9AA1C7771E900817543 /* Images.xcassets in Resources */,
+				F5183FF71CD0489E00E7CC06 /* wristaroo.csv in Resources */,
 				F5E19FC71C756409007653F6 /* Assets.xcassets in Resources */,
 				F5E19FC51C756409007653F6 /* Main.storyboard in Resources */,
 			);
@@ -1157,6 +1163,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WristaRoo/WristaRoo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1170,6 +1177,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WristaRoo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1178,6 +1187,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WristaRoo/WristaRoo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alejandro Figueroa (7535C4GECV)";
@@ -1191,6 +1201,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = conedmiro.WristaRoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WristaRoo-Bridging-Header.h";
 			};
 			name = Release;
 		};

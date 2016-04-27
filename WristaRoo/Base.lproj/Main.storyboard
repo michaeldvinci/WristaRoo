@@ -87,12 +87,11 @@
                         <color key="backgroundColor" red="0.54509803921568623" green="0.1803921568627451" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lO3-yn-k19" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="54" id="0pq-Qn-xCg"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CUX-w7-AJS" secondAttribute="bottom" constant="2" id="8JE-Nz-0xQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CUX-w7-AJS" secondAttribute="bottom" id="CRB-gv-9J6"/>
                             <constraint firstItem="lO3-yn-k19" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="PGK-pe-5Kx"/>
                             <constraint firstItem="CUX-w7-AJS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="d0D-kh-AYz"/>
                             <constraint firstItem="CUX-w7-AJS" firstAttribute="bottom" secondItem="lO3-yn-k19" secondAttribute="bottom" id="g4c-C5-SMm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lO3-yn-k19" secondAttribute="trailing" constant="-20" id="lkJ-cU-VTM"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CUX-w7-AJS" secondAttribute="bottom" id="rqM-cA-DgF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CUX-w7-AJS" secondAttribute="trailing" constant="-20" id="sV9-aF-Ldt"/>
                         </constraints>
                     </view>
@@ -176,10 +175,8 @@
                             <constraint firstItem="4Gi-e9-WBs" firstAttribute="top" secondItem="l8G-AV-nED" secondAttribute="bottom" id="QFU-pp-qkd"/>
                             <constraint firstItem="l8G-AV-nED" firstAttribute="top" secondItem="z00-YY-Xj1" secondAttribute="bottom" constant="44" id="Vu3-nb-mum"/>
                             <constraint firstItem="z00-YY-Xj1" firstAttribute="top" secondItem="Knr-nb-OU2" secondAttribute="bottom" id="WlN-YF-92l"/>
-                            <constraint firstItem="l8G-AV-nED" firstAttribute="top" secondItem="z00-YY-Xj1" secondAttribute="bottom" constant="44" id="eIq-9E-lA1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l8G-AV-nED" secondAttribute="trailing" constant="-20" id="gZb-uO-tBU"/>
                             <constraint firstItem="l8G-AV-nED" firstAttribute="leading" secondItem="0Et-bZ-eQJ" secondAttribute="leadingMargin" constant="-20" id="tL3-rs-Uf7"/>
-                            <constraint firstItem="l8G-AV-nED" firstAttribute="top" secondItem="z00-YY-Xj1" secondAttribute="bottom" constant="1" id="ztm-Y7-iqN"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>

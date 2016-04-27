@@ -6,8 +6,8 @@
 //  Copyright © 2016 Michael Vinci. All rights reserved.
 //
 
-import UIKit
 import WatchConnectivity
+import UIKit 
 import Alamofire
 import Foundation
 import Realm
@@ -45,20 +45,25 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
         })
             .response { (request, response, _, error) in
                 print(response)
-                print("Downloaded file to \(localPath!)")
-                
-                /**
-                do {
-                    print("test")
-                    let csv =  try CSV(url: localPath!)
-                    print(csv.header)
-                } catch {
-                    print("test2")
-                }
- **/
-        }
+            }
         
-        print (localPath)
+        var filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first! as String
+        
+        filePath = (filePath as NSString).stringByAppendingPathComponent("wristaroo.csv")
+        
+        let filePathURL = NSURL.fileURLWithPath(filePath)
+        print("\noutside filePath: \(filePath)")
+        
+        do {
+            let csv = try CSV(url: filePathURL)
+            print("test")
+            
+            csv.enumerateAsArray({ (array) in
+                print(array.first)
+            })
+        } catch {
+            print("error outside")
+        }
         
         arrayNewCustom = toPass
         if let tabledata = NSUserDefaults.standardUserDefaults().arrayForKey("keyCustom") {
@@ -88,8 +93,6 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
         tableView.reloadData()
         self.tableView.allowsMultipleSelection = true
         self.tableView.allowsMultipleSelectionDuringEditing = false
-        
-        
 
     }
     
