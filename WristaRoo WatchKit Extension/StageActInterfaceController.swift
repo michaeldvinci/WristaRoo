@@ -7,10 +7,12 @@
 //
 
 import WatchKit
+import RealmSwift
 
 class StageActInterfaceController: WKInterfaceController {
     
     @IBOutlet var stageActTable: WKInterfaceTable!
+    let realm = try! Realm()
     var tempArray: [String] = []
     var tempA: [String] = []
     

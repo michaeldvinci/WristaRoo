@@ -7,6 +7,7 @@
 //
 
 import WatchKit
+import RealmSwift
 
 class DayInterfaceController: WKInterfaceController {
     
@@ -14,6 +15,7 @@ class DayInterfaceController: WKInterfaceController {
     
     static let daysC = ["Thursday", "Friday", "Saturday", "Sunday"]
     
+    let realm = try! Realm()
     let days = daysC
     let custom = daysC
     

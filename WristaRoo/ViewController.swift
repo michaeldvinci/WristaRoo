@@ -11,7 +11,6 @@ import UIKit
 import Alamofire
 import Foundation
 import RealmSwift
-import SwiftCSV
 
 class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource, UITableViewDelegate {
 
@@ -31,7 +30,6 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         var localPath: NSURL?
         Alamofire.download(.GET,

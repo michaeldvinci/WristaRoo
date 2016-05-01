@@ -7,11 +7,13 @@
 //
 
 import WatchKit
+import RealmSwift
 
 class StageInterfaceController: WKInterfaceController {
     
     @IBOutlet var stageTable: WKInterfaceTable!
     
+    let realm = try! Realm()
     let stages : [String] = ["What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent", "Silent Disco", "Christmas Barn"]
     
     override func awakeWithContext(context: AnyObject?) {

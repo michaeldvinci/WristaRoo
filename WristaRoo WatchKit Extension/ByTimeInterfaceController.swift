@@ -7,9 +7,11 @@
 //
 
 import WatchKit
+import RealmSwift
 
 class ByTimeInterfaceController: WKInterfaceController {
     
+    let realm = try! Realm()
     static let xmas = "Christmas Barn"
     static let other = "The Other Tent"
     static let this = "This Tent"

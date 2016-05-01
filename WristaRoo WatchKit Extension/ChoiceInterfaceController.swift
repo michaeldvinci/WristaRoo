@@ -11,12 +11,14 @@
 import WatchKit
 import Foundation
 import WatchConnectivity
+import RealmSwift
 
 class ChoiceInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     @IBOutlet var cTimeTable: WKInterfaceTable!
     @IBOutlet var choiceTable: WKInterfaceTable!
     
+    let realm = try! Realm()
     var custArray = [String]()
     var watchSession: WCSession!
     

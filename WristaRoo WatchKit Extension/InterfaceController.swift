@@ -8,10 +8,11 @@
 
 import WatchKit
 import WatchConnectivity
-//import RealmSwift
+import RealmSwift
 
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
+    let realm = try! Realm()
     var watchSession: WCSession!
     var key = "keyRoo"
     
@@ -41,6 +42,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             let row = mainTable.rowControllerAtIndex(index) as! InterfaceTableRowController
             row.interfaceLabel.setText(mainName)
         }
+        let acts = realm.objects(Act).filter("custom = 1")
+        print(acts)
         
     }
     
