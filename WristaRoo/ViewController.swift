@@ -10,13 +10,14 @@ import WatchConnectivity
 import UIKit 
 import Alamofire
 import Foundation
-import Realm
+import RealmSwift
 import SwiftCSV
 
 class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView!
     
+    let realm = try! Realm()
     var toPass = []
     var watchSession: WCSession?
     var arrayNewCustom = []
@@ -31,39 +32,60 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         var localPath: NSURL?
         Alamofire.download(.GET,
-            "http://wristaroo.com/schedule/wristaroo.csv",
+            "http://wristaroo.com/schedule/default.realm",
             destination: { (temporaryURL, response) in
+                
+                /**
+                let uiRealm = try! Realm()
+                
+                do {
+                    let csv = try CSV(url: temporaryURL, encoding:NSASCIIStringEncoding)
+                    
+                    print(csv.header)
+                    print(csv.rows[0]["actID"])
+                    print(csv.rows[1]["actID"])
+                    //csv.columns["stageOrder"]![0] = Int(csv.columns["stageOrder"]![0])
+                    
+                    //csv.columns[0][0] = Int(csv.columns[0][0])
+                    
+                    for i in 0 ... (csv.rows.count - 1) {
+                        try! uiRealm.write { () -> Void in
+                            let actID = Int(csv.rows[i]["actID"]!)! as Int
+                            let actName = String(UTF8String: csv.rows[i]["actName"]!)! as String
+                            let stage = String(UTF8String: csv.rows[i]["stage"]!)! as String
+                            let day = String(UTF8String: csv.rows[i]["day"]!)! as String
+                            let dayOrder = Int(csv.rows[i]["dayOrder"]!)! as Int
+                            let stageOrder = Int(csv.rows[i]["stageOrder"]!)! as Int
+                            let timeDisplay = String(UTF8String: csv.rows[i]["timeDisplay"]!)! as String
+                            let custom = Int(csv.rows[i]["custom"]!)! as Int
+                            
+                            uiRealm.add(Act(value: [actID, actName, stage, day, dayOrder, stageOrder, timeDisplay, custom]))
+                            print("Act Added")
+                        }
+                     }
+                    
+                    csv.enumerateAsArray({ (array) in
+                        //print(array.first)
+                    })
+                } catch {
+                    print("error outside")
+                }
+                **/
+                
                 let directoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
                 let pathComponent = response.suggestedFilename
                 
                 localPath = directoryURL.URLByAppendingPathComponent(pathComponent!)
                 
                 return localPath!
-                //
+                
         })
             .response { (request, response, _, error) in
                 print(response)
             }
-        
-        var filePath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first! as String
-        
-        filePath = (filePath as NSString).stringByAppendingPathComponent("wristaroo.csv")
-        
-        let filePathURL = NSURL.fileURLWithPath(filePath)
-        print("\noutside filePath: \(filePath)")
-        
-        do {
-            let csv = try CSV(url: filePathURL)
-            print("test")
-            
-            csv.enumerateAsArray({ (array) in
-                print(array.first)
-            })
-        } catch {
-            print("error outside")
-        }
         
         arrayNewCustom = toPass
         if let tabledata = NSUserDefaults.standardUserDefaults().arrayForKey("keyCustom") {
@@ -105,14 +127,18 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
     
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
-        return arrayNewCustom.count
+        let acts = realm.objects(Act).filter("custom = 1")
+        
+        return acts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
+        let acts = realm.objects(Act).filter("custom = 1")
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("customCell", forIndexPath: indexPath)
         cell.textLabel?.textColor = UIColor.whiteColor()
-        cell.textLabel?.text = arrayNewCustom[indexPath.item] as? String
+        cell.textLabel?.text = acts[indexPath.item]["actName"] as? String
         cell.textLabel?.textAlignment = .Center
         return cell
     }
@@ -170,16 +196,6 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
         })
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            tempANC = arrayNewCustom.mutableCopy() as! NSMutableArray
-            tempANC.removeObjectAtIndex(indexPath.row)
-            arrayNewCustom = tempANC
-            NSUserDefaults.standardUserDefaults().setObject(arrayNewCustom, forKey: "keyCustom")
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-        }
-    }
-    
     private func sendToWatch() {
         do {
             let applicationDict = ["Array1": arrayNewCustom]
@@ -188,6 +204,21 @@ class ViewController: UIViewController, WCSessionDelegate, UITableViewDataSource
             
         catch {
             print(error)
+        }
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle:
+        UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let acts = realm.objects(Act)
+        let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        
+        if editingStyle == .Delete {
+            try! realm.write {
+                acts.filter("actName == %@", (selectedCell.textLabel?.text)!).setValue(0, forKey: "custom")
+            }
+            
+            tableView.reloadData()
         }
     }
     

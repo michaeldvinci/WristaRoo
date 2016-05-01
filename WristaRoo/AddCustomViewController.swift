@@ -7,9 +7,11 @@
 //
         
 import UIKit
+import RealmSwift
         
 class AddCustomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-            
+    
+    let realm = try! Realm()
     var selectedIndexPaths = [NSIndexPath]()
     var newCustom = [String]()
     var clearA = [String]()
@@ -20,7 +22,8 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var buttonA: UIBarButtonItem!
     
     var selectedRows = [NSMutableIndexSet]()
-            
+    
+    /**
     var arrayCustom = [
         "Pearl Jam",
         "Dead & Co.",
@@ -174,7 +177,7 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
         "Swim Deep",
         "Austin Plaine"
     ]
-    
+    **/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -200,14 +203,18 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
-        return arrayCustom.count
+        let acts = realm.objects(Act).filter("custom = 0")
+        
+        return acts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
+        let acts = realm.objects(Act).filter("custom = 0")
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("customCell", forIndexPath: indexPath)
         cell.textLabel?.textColor = UIColor.whiteColor()
-        cell.textLabel?.text = arrayCustom[indexPath.item]
+        cell.textLabel?.text = acts[indexPath.item]["actName"] as? String
         cell.textLabel?.textAlignment = .Center
         
         return cell
@@ -220,12 +227,16 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         selectedIndexPaths.append(indexPath)
-        if !newCustom.contains(arrayCustom[indexPath.row]) {
-            newCustom.append(arrayCustom[indexPath.row])
-        }
+        
+        let acts = realm.objects(Act)
+        
         let selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         selectedCell.contentView.backgroundColor = colorWithHexString("#802499")
         selectedCell.textLabel?.textColor = colorWithHexString("#00c411")
+        
+        try! realm.write {
+            acts.filter("actName == %@", (selectedCell.textLabel?.text)!).setValue(1, forKey: "custom")
+        }
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
@@ -234,11 +245,17 @@ class AddCustomViewController: UIViewController, UITableViewDataSource, UITableV
             selectedIndexPaths.removeAtIndex(index)
         }
         
+        let acts = realm.objects(Act)
+        
         let cellToDeSelect:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         cellToDeSelect.contentView.backgroundColor = colorWithHexString("#8b2ea4") //983bb0
         cellToDeSelect.textLabel?.textColor = colorWithHexString("#FFFFFF")
         
+        try! realm.write {
+            acts.filter("actName == %@", (cellToDeSelect.textLabel?.text)!).setValue(0, forKey: "custom")
+        }
     }
+    
     @IBAction func clearList(sender: AnyObject) {
         newCustom = clearA
         NSUserDefaults.standardUserDefaults().setObject(newCustom, forKey: "keyCustom")
